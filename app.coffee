@@ -1,9 +1,12 @@
 express = require('express')
 routes = require('./routes')
 path = require('path')
+http = require('http')
 app = express()
 
 app.configure ->
+	app.set('port', 8088);
+	app.set('title', 'Portfolio');
 	app.set 'views', __dirname + '/views'
 	app.set 'view engine', 'jade'
 	app.use express.logger 'dev'
@@ -17,16 +20,9 @@ app.configure 'development', ->
 	app.use express.errorHandler()
 	@
 
+# ROUTES
 app.get '/', routes.other.index
-app.get '/instagram', routes.instagram.all
-app.get '/instagram/tag/:tag', routes.instagram.tag
 
-app.get '/github', routes.github.all
-
-app.get '/twitter', routes.twitter.all
-app.get '/twitter/tag/:tag', routes.twitter.tag
-
-app.get '/delicious', routes.delicious.all
-app.get '/delicious/tag/:tag', routes.delicious.tag
-
-module.exports = app
+http.createServer(app).listen(app.get('port'), "node.portfolio", ()->
+  console.log "Express server listening on port " + app.get('port')
+ )

@@ -1,11 +1,10 @@
 {
   "author": "Robbie Bardijn",
-  "name": "Express-Instagram-app",
+  "name": "Portfolio-2013",
   "version": "0.0.1",
   "private": true,
-  "main": "app",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.coffee"
   },
   "dependencies": {
     "matchdep": "*"
