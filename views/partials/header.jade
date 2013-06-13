@@ -1,0 +1,10 @@
+block header
+	header
+		nav
+			ul#navs
+
+			ul#socials
+				each social in socials
+					li
+						a(class="#{social.name}",href="#{social.url}")
+							span.visuallyhidden= social.name
