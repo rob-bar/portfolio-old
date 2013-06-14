@@ -6,14 +6,25 @@
 @import "compass/css3/"
 @import "compass/typography/"
 @import "compass/utilities/"
+@import "ui/socials/*.png"
+@import "ui/socials-hover/*.png"
 
 /* ====================================================================================================== */
 /* VARS
 /* ====================================================================================================== */
+//colors
+$bg_0: #293742
+$bg_100: #192026
+$nav_0: #fefdfd
+$nav_100: #dadada
+$nav_hov_0: #090909
+$nav_hov_100: #272727
 
 /* ====================================================================================================== */
 /* INITS & FONTS
 /* ====================================================================================================== */
++all-socials-sprites
++all-socials-hover-sprites
 +h5bp-normalize
 +h5bp-helpers
 
@@ -22,7 +33,12 @@
 /* ====================================================================================================== */
 /* MIXINS
 /* ====================================================================================================== */
+@mixin rect($width, $height)
+	width: $width
+	height: $height
 
+@mixin bgpos($width, $height, $row, $col)
+	background-position: (-$col * $width) (-$row * $height)
 .unselectable
 	-moz-user-select: -moz-none
 	-khtml-user-select: none
@@ -42,8 +58,61 @@
 /* ====================================================================================================== */
 /* GENERAL
 /* ====================================================================================================== */
+body, html
+	height: 100%
+
 body
 	@extend .fontsmoothing
+	+background(image-url('layout/pat.png'), linear-gradient(center top, $bg_0, $bg_100))
+
+
+	nav
+		width: 100%
+		height: 55px
+		+box-shadow(rgba(0, 0, 0, 0.7) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset)
+		+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
+		overflow: hidden
+		position: relative
+
+		ul
+			margin: 0 10px
+			padding: 0
+			list-style-type: none
+
+			&#social
+				position: absolute
+				right: 0
+
+				li
+					float: left
+					+rect(55px, 55px)
+					border-left: 1px solid #fafafa
+					border-right: 1px solid #d0d0d0
+
+					&:hover
+						span.hov
+							top: 0px
+						span.nor
+							top: 55px
+
+					span.hov
+						+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_0, $nav_hov_100))
+						position: absolute
+						top: -55px
+
+					span.nor
+						position: relative
+						top: 0px
+
+					span
+						+ceaser-transition($easeOutExpo, all, 600ms)
+						a
+							display: block
+							+rect(55px, 55px)
+
+
+
+
 
 /* ====================================================================================================== */
 /* PAGES
@@ -55,4 +124,4 @@ body
 
 /* ====================================================================================================== */
 /* GENERIC
-/* ====================================================================================================== */
+/* ======================================================================================================

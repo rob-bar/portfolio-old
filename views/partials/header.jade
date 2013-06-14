@@ -2,9 +2,21 @@ block header
 	header
 		nav
 			ul#navs
+				each nav in navs
+					li
+						span.hov
+							a(class="#{nav.name.toLowerCase()}", href="/#{nav.url}")
+								span.visuallyhidden= nav.name
+						span.nor
+							a(class="#{nav.name.toLowerCase()}", href="/#{nav.url}")
+								span.visuallyhidden= nav.name
 
-			ul#socials
+			ul#social
 				each social in socials
 					li
-						a(class="#{social.name}",href="#{social.url}")
-							span.visuallyhidden= social.name
+						span.hov
+							a(class="socials-hover-#{social.name.toLowerCase()} socials-hover-sprite", href="#{social.url}")
+								span.visuallyhidden= social.name
+						span.nor
+							a(class="socials-#{social.name.toLowerCase()} socials-sprite", href="#{social.url}")
+								span.visuallyhidden= social.name

@@ -15,8 +15,8 @@ module.exports = (grunt) ->
           httpPath: "/"
           relativeAssets: true
           boring: true
-          debugInfo: true
-          outputStyle: 'compressed'
+          debugInfo: false
+          outputStyle: 'nested'
           raw: 'preferred_syntax = :sass\n'
 
     coffee:
