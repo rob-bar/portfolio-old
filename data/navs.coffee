@@ -1,5 +1,4 @@
 mongoose = require 'mongoose'
-mongoose.connect "mongodb://localhost/portfolio"
 nav = null
 
 exports.data =

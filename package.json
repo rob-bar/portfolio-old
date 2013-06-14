@@ -13,6 +13,7 @@
     "express": "3.1.0",
     "jade": "*",
     "mongoose": "*",
+    "async": "*",
     "grunt": "~0.4.1",
     "nodemon": "*",
     "underscore": "*",
