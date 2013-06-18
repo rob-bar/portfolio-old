@@ -1,16 +1,15 @@
 block header
 	header
 		nav
-			ul#navs
+			ul#nav
 				each nav in navs
 					li
 						span.hov
-							a(class="#{nav.name.toLowerCase()}", href="/#{nav.url}")
-								span.visuallyhidden= nav.name
+							a(class="#{nav.name.toLowerCase()}", href="#{nav.url}")= nav.name
 						span.nor
-							a(class="#{nav.name.toLowerCase()}", href="/#{nav.url}")
-								span.visuallyhidden= nav.name
-
+							a(class="#{nav.name.toLowerCase()}", href="#{nav.url}")= nav.name
+			//- span
+			//- 	| 2013 &copy; All righrts reserved
 			ul#social
 				each social in socials
 					li

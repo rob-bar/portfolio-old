@@ -20,15 +20,25 @@ $nav_100: #dadada
 $nav_hov_0: #090909
 $nav_hov_100: #272727
 
+//widths
+$large: 310px
+$rect: 150px
+$height: 150px
+
 /* ====================================================================================================== */
 /* INITS & FONTS
 /* ====================================================================================================== */
+//inits
 +all-socials-sprites
 +all-socials-hover-sprites
 +h5bp-normalize
 +h5bp-helpers
 
-// +font-face("NAME", font-files("FILENAME.woff","FILENAME.ttf","FILENAME.otf","FILENAME.svg"),"FILENAME.eot")
+//fonts
++font-face("chunk5", font-files("chunkfive.woff","chunkfive.ttf","chunkfive.otf","chunkfive.svg"),"chunkfive.eot")
++font-face("exl", font-files("existence-light.woff","existence-light.ttf","existence-light.otf","existence-light.svg"),"existence-light.eot")
++font-face("osb", font-files("OpenSans-Bold.woff","OpenSans-Bold.ttf","OpenSans-Bold.otf","OpenSans-Bold.svg"),"OpenSans-Bold.eot")
++font-face("osl", font-files("OpenSans-Light.woff","OpenSans-Light.ttf","OpenSans-Light.otf","OpenSans-Light.svg"),"OpenSans-Light.eot")
 
 /* ====================================================================================================== */
 /* MIXINS
@@ -39,6 +49,13 @@ $nav_hov_100: #272727
 
 @mixin bgpos($width, $height, $row, $col)
 	background-position: (-$col * $width) (-$row * $height)
+
+@mixin typo($font, $size, $color, $weight: normal)
+	font-weight: $weight
+	font-family: $font, Arial, Helvetica
+	font-size: $size
+	color: $color
+
 .unselectable
 	-moz-user-select: -moz-none
 	-khtml-user-select: none
@@ -65,29 +82,30 @@ body
 	@extend .fontsmoothing
 	+background(image-url('layout/pat.png'), linear-gradient(center top, $bg_0, $bg_100))
 
-
 	nav
 		width: 100%
 		height: 55px
-		+box-shadow(rgba(0, 0, 0, 0.7) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset)
-		+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
 		overflow: hidden
 		position: relative
+		+box-shadow(rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset)
+		+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
 
 		ul
 			margin: 0 10px
 			padding: 0
 			list-style-type: none
 
-			&#social
+			&#nav
 				position: absolute
-				right: 0
+				left: 0
+				top: 0
 
 				li
 					float: left
-					+rect(55px, 55px)
 					border-left: 1px solid #fafafa
 					border-right: 1px solid #d0d0d0
+					margin: 0
+					padding: 0
 
 					&:hover
 						span.hov
@@ -96,24 +114,98 @@ body
 							top: 55px
 
 					span.hov
-						+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_0, $nav_hov_100))
 						position: absolute
-						top: -55px
+						top: -56px
+						+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_0, $nav_hov_100))
+
+						a
+							color: #FFF
+							+text-shadow(rgba(0, 0, 0, 0.8) 0 2px 1px)
 
 					span.nor
 						position: relative
 						top: 0px
 
 					span
-						+ceaser-transition($easeOutExpo, all, 600ms)
+						+ceaser-transition($easeOutExpo, all, 500ms)
+
+						a
+							margin: 0
+							padding: 4px 15px 6px
+							display: block
+							color: #000
+							text-decoration: none
+							text-transform: uppercase
+							+typo("exl", 32px, #000)
+
+
+			&#social
+				position: absolute
+				right: 0
+
+				li
+					float: left
+					border-left: 1px solid #fafafa
+					border-right: 1px solid #d0d0d0
+					+rect(55px, 55px)
+
+					&:hover
+						span.hov
+							top: 0px
+						span.nor
+							top: 55px
+
+					span.hov
+						position: absolute
+						top: -55px
+						+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_0, $nav_hov_100))
+
+					span.nor
+						position: relative
+						top: 0px
+
+					span
+						+ceaser-transition($easeOutExpo, all, 500ms)
+
 						a
 							display: block
 							+rect(55px, 55px)
 
+	#main
+		margin: 15px 0 0 0
 
+		.item
+			margin: 10px 0 0 10px
 
+		.rect
+			.shade
+				position: absolute
+				bottom: -14px
+				width: 100%
 
+		.large
+			.shade
+				position: absolute
+				bottom: -16px
+				width: 100%
 
+		#me
+			.baloon
+				position: relative
+				+rect($large, $height)
+
+				.norm
+					+rect($large, $height)
+					+border-radius(3px)
+					+background(image-url('layout/pat.png'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf))
+					background-color: #FFF
+
+					.arrow
+						position: absolute
+					h1
+						margin: 0
+					p
+						margin: 0
 /* ====================================================================================================== */
 /* PAGES
 /* ====================================================================================================== */

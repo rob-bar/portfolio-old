@@ -1,10 +1,10 @@
-config = require '../config/config.coffee'
 async = require 'async'
 mongoose = require 'mongoose'
-mongoose.connect "mongodb://localhost/portfolio"
-
+config = require '../config/config.coffee'
 socials = require '../data/socials.coffee'
 navs = require '../data/navs.coffee'
+
+mongoose.connect "mongodb://localhost/portfolio"
 
 exports.other =
 	index: (req, res) ->
@@ -15,12 +15,13 @@ exports.other =
 
 		async.series
 			socials: (callback) ->
-				socials.data.all (docs) ->
+				socials.data.actives (docs) ->
 					callback(null, docs)
 			navs: (callback) ->
-				navs.data.all (docs) ->
+				navs.data.actives (docs) ->
 					callback(null, docs)
 			, (err, results) ->
 				results.title = "My portfolio"
+				results.grav = url
 				res.render "pages/index", results
 		@

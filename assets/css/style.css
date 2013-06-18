@@ -420,10 +420,30 @@ table {
 .clearfix {
   *zoom: 1; }
 
+@font-face {
+  font-family: "chunk5";
+  src: url('../font/chunkfive.eot');
+  src: url('../font/chunkfive.eot?#iefix') format('eot'), url('../font/chunkfive.woff') format('woff'), url('../font/chunkfive.ttf') format('truetype'), url('../font/chunkfive.otf') format('opentype'), url('../font/chunkfive.svg') format('svg'); }
+
+@font-face {
+  font-family: "exl";
+  src: url('../font/existence-light.eot');
+  src: url('../font/existence-light.eot?#iefix') format('eot'), url('../font/existence-light.woff') format('woff'), url('../font/existence-light.ttf') format('truetype'), url('../font/existence-light.otf') format('opentype'), url('../font/existence-light.svg') format('svg'); }
+
+@font-face {
+  font-family: "osb";
+  src: url('../font/OpenSans-Bold.eot');
+  src: url('../font/OpenSans-Bold.eot?#iefix') format('eot'), url('../font/OpenSans-Bold.woff') format('woff'), url('../font/OpenSans-Bold.ttf') format('truetype'), url('../font/OpenSans-Bold.otf') format('opentype'), url('../font/OpenSans-Bold.svg') format('svg'); }
+
+@font-face {
+  font-family: "osl";
+  src: url('../font/OpenSans-Light.eot');
+  src: url('../font/OpenSans-Light.eot?#iefix') format('eot'), url('../font/OpenSans-Light.woff') format('woff'), url('../font/OpenSans-Light.ttf') format('truetype'), url('../font/OpenSans-Light.otf') format('opentype'), url('../font/OpenSans-Light.svg') format('svg'); }
+
 /* ====================================================================================================== */
 /* MIXINS */
 /* ====================================================================================================== */
-/* line 42, style.sass */
+/* line 59, style.sass */
 .unselectable {
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -431,11 +451,11 @@ table {
   -o-user-select: none;
   user-select: none; }
 
-/* line 49, style.sass */
+/* line 66, style.sass */
 *:active, *:hover, *:focus {
   outline: 0 !important; }
 
-/* line 52, style.sass */
+/* line 69, style.sass */
 .fontsmoothing, body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -445,78 +465,177 @@ table {
 /* ====================================================================================================== */
 /* GENERAL */
 /* ====================================================================================================== */
-/* line 61, style.sass */
+/* line 78, style.sass */
 body, html {
   height: 100%; }
 
-/* line 64, style.sass */
+/* line 81, style.sass */
 body {
   background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #293742), color-stop(100%, #192026));
   background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, #293742, #192026);
   background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #293742, #192026);
   background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #293742, #192026);
   background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #293742, #192026); }
-  /* line 69, style.sass */
+  /* line 85, style.sass */
   body nav {
     width: 100%;
     height: 55px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
-    -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
-    box-shadow: rgba(0, 0, 0, 0.7) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
+    overflow: hidden;
+    position: relative;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
+    -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
+    box-shadow: rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
     background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefdfd), color-stop(100%, #dadada));
     background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, #fefdfd, #dadada);
     background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #fefdfd, #dadada);
     background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #fefdfd, #dadada);
-    background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #fefdfd, #dadada);
-    overflow: hidden;
-    position: relative; }
-    /* line 77, style.sass */
+    background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #fefdfd, #dadada); }
+    /* line 93, style.sass */
     body nav ul {
       margin: 0 10px;
       padding: 0;
       list-style-type: none; }
-      /* line 82, style.sass */
-      body nav ul#social {
+      /* line 98, style.sass */
+      body nav ul#nav {
         position: absolute;
-        right: 0; }
-        /* line 86, style.sass */
-        body nav ul#social li {
+        left: 0;
+        top: 0; }
+        /* line 103, style.sass */
+        body nav ul#nav li {
           float: left;
-          width: 55px;
-          height: 55px;
           border-left: 1px solid #fafafa;
-          border-right: 1px solid #d0d0d0; }
-          /* line 93, style.sass */
-          body nav ul#social li:hover span.hov {
+          border-right: 1px solid #d0d0d0;
+          margin: 0;
+          padding: 0; }
+          /* line 111, style.sass */
+          body nav ul#nav li:hover span.hov {
             top: 0px; }
-          /* line 95, style.sass */
-          body nav ul#social li:hover span.nor {
+          /* line 113, style.sass */
+          body nav ul#nav li:hover span.nor {
             top: 55px; }
-          /* line 98, style.sass */
-          body nav ul#social li span.hov {
+          /* line 116, style.sass */
+          body nav ul#nav li span.hov {
+            position: absolute;
+            top: -56px;
             background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #090909), color-stop(100%, #272727));
             background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, #090909, #272727);
             background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #090909, #272727);
             background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #090909, #272727);
-            background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #090909, #272727);
+            background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #090909, #272727); }
+            /* line 121, style.sass */
+            body nav ul#nav li span.hov a {
+              color: white;
+              text-shadow: rgba(0, 0, 0, 0.8) 0 2px 1px; }
+          /* line 125, style.sass */
+          body nav ul#nav li span.nor {
+            position: relative;
+            top: 0px; }
+          /* line 129, style.sass */
+          body nav ul#nav li span {
+            -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+            /* line 132, style.sass */
+            body nav ul#nav li span a {
+              margin: 0;
+              padding: 4px 15px 6px;
+              display: block;
+              color: black;
+              text-decoration: none;
+              text-transform: uppercase;
+              font-weight: normal;
+              font-family: "exl", Arial, Helvetica;
+              font-size: 32px;
+              color: black; }
+      /* line 142, style.sass */
+      body nav ul#social {
+        position: absolute;
+        right: 0; }
+        /* line 146, style.sass */
+        body nav ul#social li {
+          float: left;
+          border-left: 1px solid #fafafa;
+          border-right: 1px solid #d0d0d0;
+          width: 55px;
+          height: 55px; }
+          /* line 153, style.sass */
+          body nav ul#social li:hover span.hov {
+            top: 0px; }
+          /* line 155, style.sass */
+          body nav ul#social li:hover span.nor {
+            top: 55px; }
+          /* line 158, style.sass */
+          body nav ul#social li span.hov {
             position: absolute;
-            top: -55px; }
-          /* line 103, style.sass */
+            top: -55px;
+            background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #090909), color-stop(100%, #272727));
+            background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, #090909, #272727);
+            background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #090909, #272727);
+            background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #090909, #272727);
+            background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #090909, #272727); }
+          /* line 163, style.sass */
           body nav ul#social li span.nor {
             position: relative;
             top: 0px; }
-          /* line 107, style.sass */
+          /* line 167, style.sass */
           body nav ul#social li span {
-            -webkit-transition: all 600ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
             -webkit-transition-delay: 0ms;
-            -moz-transition: all 600ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-            -o-transition: all 600ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-            transition: all 600ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 109, style.sass */
+            -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+            /* line 170, style.sass */
             body nav ul#social li span a {
               display: block;
               width: 55px;
               height: 55px; }
+  /* line 174, style.sass */
+  body #main {
+    margin: 15px 0 0 0; }
+    /* line 177, style.sass */
+    body #main .item {
+      margin: 10px 0 0 10px; }
+    /* line 181, style.sass */
+    body #main .rect .shade {
+      position: absolute;
+      bottom: -14px;
+      width: 100%; }
+    /* line 187, style.sass */
+    body #main .large .shade {
+      position: absolute;
+      bottom: -16px;
+      width: 100%; }
+    /* line 193, style.sass */
+    body #main #me .baloon {
+      position: relative;
+      width: 310px;
+      height: 150px; }
+      /* line 197, style.sass */
+      body #main #me .baloon .norm {
+        width: 310px;
+        height: 150px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px;
+        background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, #dfdfdf));
+        background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
+        background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
+        background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
+        background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
+        background-color: white; }
+        /* line 203, style.sass */
+        body #main #me .baloon .norm .arrow {
+          position: absolute; }
+        /* line 205, style.sass */
+        body #main #me .baloon .norm h1 {
+          margin: 0; }
+        /* line 207, style.sass */
+        body #main #me .baloon .norm p {
+          margin: 0; }
 
 /* ====================================================================================================== */
 /* PAGES */

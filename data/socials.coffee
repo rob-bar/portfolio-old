@@ -11,7 +11,12 @@ exports.data =
 		if social is null
 			social = mongoose.model('Socials', new mongoose.Schema(schema))
 
-	all:(callback) ->
+	all: (callback) ->
 		@model()
 		social.find {}, (err, docs) ->
+			callback(docs)
+
+	actives: (callback) ->
+		@model()
+		social.find {is_active: true}, (err, docs) ->
 			callback(docs)

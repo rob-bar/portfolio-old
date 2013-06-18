@@ -11,7 +11,12 @@ exports.data =
 		if nav is null
 			nav = mongoose.model('Navs', new mongoose.Schema(schema))
 
-	all:(callback) ->
+	all: (callback) ->
 		@model()
 		nav.find {}, (err, docs) ->
+			callback(docs)
+
+	actives: (callback) ->
+		@model()
+		nav.find {is_active: true}, (err, docs) ->
 			callback(docs)
