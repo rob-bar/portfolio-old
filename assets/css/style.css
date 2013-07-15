@@ -462,21 +462,41 @@ table {
   -ms-font-smoothing: antialiased;
   font-smoothing: antialiased; }
 
+/* line 75, style.sass */
+.largeshade, body #main .large .shade, body #main .large .rect .shade, body #main .rect .large .shade {
+  position: absolute;
+  bottom: -16px;
+  left: 0px;
+  width: 100%; }
+
+/* line 81, style.sass */
+.shade, body #main .rect .shade {
+  position: absolute;
+  bottom: -14px;
+  left: 0px;
+  width: 100%; }
+
+/* line 87, style.sass */
+.shaded, body #main #me .baloon .norm, body #main #me .baloon .hov {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px; }
+
 /* ====================================================================================================== */
 /* GENERAL */
 /* ====================================================================================================== */
-/* line 78, style.sass */
+/* line 92, style.sass */
 body, html {
   height: 100%; }
 
-/* line 81, style.sass */
+/* line 95, style.sass */
 body {
   background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #293742), color-stop(100%, #192026));
   background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, #293742, #192026);
   background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #293742, #192026);
   background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #293742, #192026);
   background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #293742, #192026); }
-  /* line 85, style.sass */
+  /* line 99, style.sass */
   body nav {
     width: 100%;
     height: 55px;
@@ -490,30 +510,30 @@ body {
     background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #fefdfd, #dadada);
     background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #fefdfd, #dadada);
     background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #fefdfd, #dadada); }
-    /* line 93, style.sass */
+    /* line 107, style.sass */
     body nav ul {
       margin: 0 10px;
       padding: 0;
       list-style-type: none; }
-      /* line 98, style.sass */
+      /* line 112, style.sass */
       body nav ul#nav {
         position: absolute;
         left: 0;
         top: 0; }
-        /* line 103, style.sass */
+        /* line 117, style.sass */
         body nav ul#nav li {
           float: left;
           border-left: 1px solid #fafafa;
           border-right: 1px solid #d0d0d0;
           margin: 0;
           padding: 0; }
-          /* line 111, style.sass */
+          /* line 125, style.sass */
           body nav ul#nav li:hover span.hov {
             top: 0px; }
-          /* line 113, style.sass */
+          /* line 127, style.sass */
           body nav ul#nav li:hover span.nor {
             top: 55px; }
-          /* line 116, style.sass */
+          /* line 130, style.sass */
           body nav ul#nav li span.hov {
             position: absolute;
             top: -56px;
@@ -522,22 +542,22 @@ body {
             background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #090909, #272727);
             background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #090909, #272727);
             background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #090909, #272727); }
-            /* line 121, style.sass */
+            /* line 135, style.sass */
             body nav ul#nav li span.hov a {
               color: white;
               text-shadow: rgba(0, 0, 0, 0.8) 0 2px 1px; }
-          /* line 125, style.sass */
+          /* line 139, style.sass */
           body nav ul#nav li span.nor {
             position: relative;
             top: 0px; }
-          /* line 129, style.sass */
+          /* line 143, style.sass */
           body nav ul#nav li span {
             -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
             -webkit-transition-delay: 0ms;
             -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 132, style.sass */
+            /* line 146, style.sass */
             body nav ul#nav li span a {
               margin: 0;
               padding: 4px 15px 6px;
@@ -549,24 +569,24 @@ body {
               font-family: "exl", Arial, Helvetica;
               font-size: 32px;
               color: black; }
-      /* line 142, style.sass */
+      /* line 155, style.sass */
       body nav ul#social {
         position: absolute;
         right: 0; }
-        /* line 146, style.sass */
+        /* line 159, style.sass */
         body nav ul#social li {
           float: left;
           border-left: 1px solid #fafafa;
           border-right: 1px solid #d0d0d0;
           width: 55px;
           height: 55px; }
-          /* line 153, style.sass */
+          /* line 166, style.sass */
           body nav ul#social li:hover span.hov {
             top: 0px; }
-          /* line 155, style.sass */
+          /* line 168, style.sass */
           body nav ul#social li:hover span.nor {
             top: 55px; }
-          /* line 158, style.sass */
+          /* line 171, style.sass */
           body nav ul#social li span.hov {
             position: absolute;
             top: -55px;
@@ -575,67 +595,110 @@ body {
             background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #090909, #272727);
             background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #090909, #272727);
             background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #090909, #272727); }
-          /* line 163, style.sass */
+          /* line 176, style.sass */
           body nav ul#social li span.nor {
             position: relative;
             top: 0px; }
-          /* line 167, style.sass */
+          /* line 180, style.sass */
           body nav ul#social li span {
             -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
             -webkit-transition-delay: 0ms;
             -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 170, style.sass */
+            /* line 183, style.sass */
             body nav ul#social li span a {
               display: block;
               width: 55px;
               height: 55px; }
-  /* line 174, style.sass */
+  /* line 187, style.sass */
   body #main {
-    margin: 15px 0 0 0; }
-    /* line 177, style.sass */
+    margin: 5px 0 0 0; }
+    /* line 190, style.sass */
     body #main .item {
-      margin: 10px 0 0 10px; }
-    /* line 181, style.sass */
-    body #main .rect .shade {
-      position: absolute;
-      bottom: -14px;
-      width: 100%; }
-    /* line 187, style.sass */
-    body #main .large .shade {
-      position: absolute;
-      bottom: -16px;
-      width: 100%; }
-    /* line 193, style.sass */
+      margin: 10px 0 0 10px;
+      float: left;
+      position: relative; }
+    /* line 204, style.sass */
+    body #main #me .pic {
+      z-index: 1;
+      background-color: white;
+      width: 150px;
+      height: 150px; }
+    /* line 209, style.sass */
     body #main #me .baloon {
+      z-index: 2;
       position: relative;
       width: 310px;
       height: 150px; }
-      /* line 197, style.sass */
+      /* line 214, style.sass */
       body #main #me .baloon .norm {
-        width: 310px;
-        height: 150px;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
-        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 30px;
+        width: 250px;
+        height: 90px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
         background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, #dfdfdf));
         background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
         background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
         background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
         background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
         background-color: white; }
-        /* line 203, style.sass */
+        /* line 226, style.sass */
         body #main #me .baloon .norm .arrow {
-          position: absolute; }
-        /* line 205, style.sass */
-        body #main #me .baloon .norm h1 {
-          margin: 0; }
-        /* line 207, style.sass */
-        body #main #me .baloon .norm p {
-          margin: 0; }
+          position: absolute;
+          right: -16px;
+          top: 20px; }
+      /* line 231, style.sass */
+      body #main #me .baloon .hov {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 40px 70px;
+        width: 170px;
+        height: 70px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(62, 171, 233, 0)), color-stop(100%, #0077bb));
+        background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
+        background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
+        background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
+        background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
+        background-color: #3eabe9; }
+        /* line 245, style.sass */
+        body #main #me .baloon .hov .arrow {
+          position: absolute;
+          right: -16px;
+          top: 100px; }
+      /* line 251, style.sass */
+      body #main #me .baloon > div h1 {
+        margin: 0;
+        font-weight: normal;
+        font-family: "chunk5", Arial, Helvetica;
+        font-size: 30px;
+        color: black;
+        line-height: 1em; }
+      /* line 256, style.sass */
+      body #main #me .baloon > div p {
+        margin: 0.15em 0;
+        font-weight: normal;
+        font-family: "osl", Arial, Helvetica;
+        font-size: 20px;
+        color: black; }
+        /* line 260, style.sass */
+        body #main #me .baloon > div p a {
+          color: black;
+          text-decoration: none; }
 
 /* ====================================================================================================== */
 /* PAGES */

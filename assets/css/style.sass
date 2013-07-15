@@ -72,6 +72,20 @@ $height: 150px
 	-ms-font-smoothing: antialiased
 	font-smoothing: antialiased
 
+.largeshade
+	position: absolute
+	bottom: -16px
+	left: 0px
+	width: 100%
+
+.shade
+	position: absolute
+	bottom: -14px
+	left: 0px
+	width: 100%
+
+.shaded
+	+box-shadow(rgba(0, 0, 0, .4) 0 0 4px 0px)
 /* ====================================================================================================== */
 /* GENERAL
 /* ====================================================================================================== */
@@ -138,7 +152,6 @@ body
 							text-transform: uppercase
 							+typo("exl", 32px, #000)
 
-
 			&#social
 				position: absolute
 				right: 0
@@ -172,40 +185,82 @@ body
 							+rect(55px, 55px)
 
 	#main
-		margin: 15px 0 0 0
+		margin: 5px 0 0 0
 
 		.item
 			margin: 10px 0 0 10px
+			float: left
+			position: relative
 
 		.rect
 			.shade
-				position: absolute
-				bottom: -14px
-				width: 100%
+				@extend .shade
 
 		.large
 			.shade
-				position: absolute
-				bottom: -16px
-				width: 100%
+				@extend .largeshade
 
 		#me
+			.pic
+				z-index: 1
+				background-color: #FFF
+				+rect($rect, $rect)
+
 			.baloon
+				z-index: 2
 				position: relative
 				+rect($large, $height)
 
 				.norm
-					+rect($large, $height)
-					+border-radius(3px)
+					@extend .shaded
+					position: absolute
+					top: 0
+					left: 0
+					$pad: 30px
+					padding: $pad
+					+rect($large - ($pad * 2), $height - ($pad * 2))
+					+border-radius(5px)
 					+background(image-url('layout/pat.png'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf))
 					background-color: #FFF
 
 					.arrow
 						position: absolute
+						right: -16px
+						top: 20px
+
+				.hov
+					@extend .shaded
+					display: none
+					position: absolute
+					top: 0
+					left: 0
+					$pad: 40px
+					$padhor: 70px
+					padding: $pad $padhor
+					+rect($large - ($padhor * 2), $height - ($pad * 2))
+					+border-radius(5px)
+					+background(image-url('layout/pat.png'), linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb))
+					background-color: #3eabe9
+
+					.arrow
+						position: absolute
+						right: -16px
+						top: 100px
+
+				> div
 					h1
 						margin: 0
+						+typo("chunk5", 30px, #000)
+						line-height: 1em
+
 					p
-						margin: 0
+						margin: .15em 0
+						+typo("osl", 20px, #000)
+
+						a
+							color: #000
+							text-decoration: none
+
 /* ====================================================================================================== */
 /* PAGES
 /* ====================================================================================================== */
