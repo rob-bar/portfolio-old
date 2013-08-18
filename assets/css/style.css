@@ -537,11 +537,11 @@ body {
           body nav ul#nav li span.hov {
             position: absolute;
             top: -56px;
-            background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #090909), color-stop(100%, #272727));
-            background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, #090909, #272727);
-            background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #090909, #272727);
-            background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #090909, #272727);
-            background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #090909, #272727); }
+            background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #272727), color-stop(100%, #090909));
+            background: url('../img/layout/pat.png?1371111257'), -webkit-linear-gradient(center top, #272727, #090909);
+            background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #272727, #090909);
+            background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #272727, #090909);
+            background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #272727, #090909); }
             /* line 135, style.sass */
             body nav ul#nav li span.hov a {
               color: white;
