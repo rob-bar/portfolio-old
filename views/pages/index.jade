@@ -1,8 +1,18 @@
 extends ../layout
 block content
-	//- ul
-	//- 	li.work
-	//- 	li.twitter
-	//- 	li.repo
-	//- 	li.insta
-	//- 	li.link
+  ul#all
+    each project in projects
+      li.work.item
+        img.shade(src="img/layout/shade-310.png", alt="shade")
+        div.inner
+          img.thumb(src="img/projects/thumbs/#{project.media.thumb}", alt="thumb")
+          span= project.title
+        div.insetshade
+
+    each repo in repos
+      li.repo.rect.item
+        img.shade(src="img/layout/shade-150.png", alt="shade")
+        a(href=repo.html_url, target="_blank")
+          span.repoicon
+          span.githubicon
+          span.visuallyhidden= repo.html_url

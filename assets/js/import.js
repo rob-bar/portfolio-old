@@ -1,41 +1,41 @@
 (function() {
-  var project, tags;
+  var key, project, projects, tag, tags, _i, _len, _ref;
 
-  project = {
-    id: 123456789,
-    title: "first project",
-    type: "Website",
-    likes: 10,
-    launch_date: 12 / 12 / 1212,
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Vivamus vitae erat eu nulla mattis placerat. Nulla consequat interdum dolor bibendum sodales. Fusce at massa sit amet velit posuere sodales vel a lectus. Donec aliquet adipiscing nisl id ullamcorper turpis ornare vitae. Etiam in viverra nisi. Etiam vitae ligula id risus pharetra tristique condimentum ut metus. Praesent auctor massa at sem condimentum suscipit.Nullam ac tincidunt arcu. Sed non tincidunt neque vel sollicitudin orci. Duis scelerisque erat felis id lacinia elit rhoncus nec. Nullam feugiat ipsum a justo malesuada imperdiet. Nam cursus erat tortor a malesuada arcu mollis quis. Donec vestibulum pharetra pharetra. Fusce consectetur turpis eu gravida porttitor. Maecenas sodales vestibulum felis ac tincidunt quam aliquet eu. Quisque quis laoreet est. Pellentesque ullamcorper magna ut eleifend porttitor. Suspendisse euismod sed magna in pulvinar. In in faucibus mauris lobortis semper mi. Pellentesque in nunc feugiat hendrerit nibh vel mollis elit.",
-    is_active: true,
-    media: {
-      thumb: "thumbname.jpg",
-      big: "bignqme.jpg",
-      pictures: true,
-      videos: true,
-      preview: "http://www.google.be"
-    },
-    tags: []
-  };
-
-  project = {
-    id: 123456789,
-    title: "second project",
-    type: "Website",
-    likes: 10,
-    launch_date: 12 / 12 / 1212,
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Vivamus vitae erat eu nulla mattis placerat. Nulla consequat interdum dolor bibendum sodales. Fusce at massa sit amet velit posuere sodales vel a lectus. Donec aliquet adipiscing nisl id ullamcorper turpis ornare vitae. Etiam in viverra nisi. Etiam vitae ligula id risus pharetra tristique condimentum ut metus. Praesent auctor massa at sem condimentum suscipit.Nullam ac tincidunt arcu. Sed non tincidunt neque vel sollicitudin orci. Duis scelerisque erat felis id lacinia elit rhoncus nec. Nullam feugiat ipsum a justo malesuada imperdiet. Nam cursus erat tortor a malesuada arcu mollis quis. Donec vestibulum pharetra pharetra. Fusce consectetur turpis eu gravida porttitor. Maecenas sodales vestibulum felis ac tincidunt quam aliquet eu. Quisque quis laoreet est. Pellentesque ullamcorper magna ut eleifend porttitor. Suspendisse euismod sed magna in pulvinar. In in faucibus mauris lobortis semper mi. Pellentesque in nunc feugiat hendrerit nibh vel mollis elit.",
-    is_active: true,
-    media: {
-      thumb: "thumbname.jpg",
-      big: "bignqme.jpg",
-      pictures: ["http://placekitten.com/200/300", "http://placekitten.com/200/300"],
-      videos: ["www.youtube.com/embed/2PAT1UmlJ-0"],
-      preview: "http://www.google.be"
-    },
-    tags: []
-  };
+  projects = [
+    {
+      title: "Bestnetwork",
+      client: "Proximus",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 3, 22),
+      description: "This project was a very fun one.<br><br>The website was meant to be a teasing website for people who wanted to get to know the Proximus network.For Proximus itself it was important that they could use this website as an entertaining website with some new and fancy things in it.The idea was to work on great content, cartoons, facts and information.So actually it was just a content website, but there was more to it than that.<br><br>The website has a detection build in to serve the mobile or the desktop website based on the browser.the main reason for doing so was the difference between the desktop and the mobile site.As you can see the desktop has a css 3D effect built into (horizontally) and the mobile site has a lazy loading vertical scrolling system.The main reason why we used the m.domain technique instead of going for a responsive website.<br><br>We chose to separate the data with a rest service and to work with Backbone.js on the front-end.This gave us the ability to separate the project better in nicely encapsulated layers.There was another fun feature built in that gave you the ability to control the main menu and items with a remote control (your smartphone).For that we used Socket.io and Node to create rooms between the desktops and the remotes.You should try it out.",
+      is_active: true,
+      media: {
+        thumb: "proximus-bestnetwork.jpg",
+        big: "proximus-bestnetwork.jpg",
+        pictures: [],
+        videos: [],
+        preview: "http://www.bestnetwork.be"
+      },
+      tags: ["php", "coffeescript", "fuelphp", "jquery", "backbone", "handlebars", "grunt", "node", "socket.io", "html5", "css3", "sass", "3d", "website", "mobile site"]
+    }, {
+      title: "Tetris",
+      client: "No client, just for fun",
+      type_id: "game",
+      likes: 0,
+      launch_date: new Date(2012, 4, 20),
+      description: "This was a HTML5 game I developed for fun, to spend my time getting to know Javascript and the HTML5 canvas element.To add in a little challenge I wanted to use the Facebook api to let users connect with their Facebook credentials.Everything, from design to the Facebook api to the Javascript was done by me.<br><br>For now the game is off-line.You might want to come back and play it later,I'm optimizing it and puting it with the rest of my games.",
+      is_active: true,
+      media: {
+        thumb: "own-tetris.jpg",
+        big: "own-tetris.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: ["html5", "css3", "javascript", "jquery", "facebook", "game"]
+    }
+  ];
 
   tags = [
     {
@@ -96,10 +96,10 @@
       name: "as",
       kind: "lang"
     }, {
-      name: "html 5",
+      name: "html5",
       kind: "lang"
     }, {
-      name: "css 3",
+      name: "css3",
       kind: "lang"
     }, {
       name: "sass",
@@ -133,6 +133,30 @@
       kind: "cat"
     }
   ];
+
+  db.tags.drop();
+
+  db.projects.drop();
+
+  for (key in tags) {
+    tag = tags[key];
+    db.tags.insert(tag);
+  }
+
+  for (key in projects) {
+    project = projects[key];
+    project.type_id = db.tags.findOne({
+      "name": project.type_id
+    })._id;
+    _ref = project.tags;
+    for (key = _i = 0, _len = _ref.length; _i < _len; key = ++_i) {
+      tag = _ref[key];
+      project.tags[key] = db.tags.findOne({
+        "name": tag
+      })._id;
+    }
+    db.projects.insert(project);
+  }
 
 }).call(this);
 

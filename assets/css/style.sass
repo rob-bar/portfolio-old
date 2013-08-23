@@ -44,222 +44,259 @@ $height: 150px
 /* MIXINS
 /* ====================================================================================================== */
 @mixin rect($width, $height)
-	width: $width
-	height: $height
+  width: $width
+  height: $height
 
 @mixin bgpos($width, $height, $row, $col)
-	background-position: (-$col * $width) (-$row * $height)
+  background-position: (-$col * $width) (-$row * $height)
 
 @mixin typo($font, $size, $color, $weight: normal)
-	font-weight: $weight
-	font-family: $font, Arial, Helvetica
-	font-size: $size
-	color: $color
+  font-weight: $weight
+  font-family: $font, Arial, Helvetica
+  font-size: $size
+  color: $color
 
 .unselectable
-	-moz-user-select: -moz-none
-	-khtml-user-select: none
-	-webkit-user-select: none
-	-o-user-select: none
-	user-select: none
+  -moz-user-select: -moz-none
+  -khtml-user-select: none
+  -webkit-user-select: none
+  -o-user-select: none
+  user-select: none
 
 *:active, *:hover, *:focus
-	outline: 0 !important
+  outline: 0 !important
 
 .fontsmoothing
-	-webkit-font-smoothing: antialiased
-	-moz-font-smoothing: antialiased
-	-ms-font-smoothing: antialiased
-	font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  -ms-font-smoothing: antialiased
+  font-smoothing: antialiased
 
 .largeshade
-	position: absolute
-	bottom: -16px
-	left: 0px
-	width: 100%
+  position: absolute
+  bottom: -16px
+  left: 0px
+  width: 100%
 
 .shade
-	position: absolute
-	bottom: -14px
-	left: 0px
-	width: 100%
+  position: absolute
+  bottom: -14px
+  left: 0px
+  width: 100%
 
 .shaded
-	+box-shadow(rgba(0, 0, 0, .4) 0 0 4px 0px)
+  +box-shadow(rgba(0, 0, 0, .4) 0 0 4px 0px)
 /* ====================================================================================================== */
 /* GENERAL
 /* ====================================================================================================== */
 body, html
-	height: 100%
+  height: 100%
+menu, ol, ul
+  padding: 0
 
 body
-	@extend .fontsmoothing
-	+background(image-url('layout/pat.png'), linear-gradient(center top, $bg_0, $bg_100))
+  @extend .fontsmoothing
+  +background(image-url('layout/pat.png'), linear-gradient(center top, $bg_0, $bg_100))
 
-	nav
-		width: 100%
-		height: 55px
-		overflow: hidden
-		position: relative
-		+box-shadow(rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset)
-		+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
+  nav
+    width: 100%
+    height: 55px
+    overflow: hidden
+    position: relative
+    +box-shadow(rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset)
+    +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
 
-		ul
-			margin: 0 10px
-			padding: 0
-			list-style-type: none
+    ul
+      margin: 0 10px
+      padding: 0
+      list-style-type: none
 
-			&#nav
-				position: absolute
-				left: 0
-				top: 0
+      &#nav
+        position: absolute
+        left: 0
+        top: 0
 
-				li
-					float: left
-					border-left: 1px solid #fafafa
-					border-right: 1px solid #d0d0d0
-					margin: 0
-					padding: 0
+        li
+          float: left
+          border-left: 1px solid #fafafa
+          border-right: 1px solid #d0d0d0
+          margin: 0
+          padding: 0
 
-					&:hover
-						span.hov
-							top: 0px
-						span.nor
-							top: 55px
+          &:hover
+            span.hov
+              top: 0px
+            span.nor
+              top: 55px
 
-					span.hov
-						position: absolute
-						top: -56px
-						+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_100, $nav_hov_0))
+          span.hov
+            position: absolute
+            top: -56px
+            +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_100, $nav_hov_0))
 
-						a
-							color: #FFF
-							+text-shadow(rgba(0, 0, 0, 0.8) 0 2px 1px)
+            a
+              color: #FFF
+              +text-shadow(rgba(0, 0, 0, 0.8) 0 2px 1px)
 
-					span.nor
-						position: relative
-						top: 0px
+          span.nor
+            position: relative
+            top: 0px
 
-					span
-						+ceaser-transition($easeOutExpo, all, 500ms)
+          span
+            +ceaser-transition($easeOutExpo, all, 500ms)
 
-						a
-							margin: 0
-							padding: 4px 15px 6px
-							display: block
-							color: #000
-							text-decoration: none
-							text-transform: uppercase
-							+typo("exl", 32px, #000)
+            a
+              margin: 0
+              padding: 4px 15px 6px
+              display: block
+              color: #000
+              text-decoration: none
+              text-transform: uppercase
+              +typo("exl", 32px, #000)
 
-			&#social
-				position: absolute
-				right: 0
+      &#social
+        position: absolute
+        right: 0
 
-				li
-					float: left
-					border-left: 1px solid #fafafa
-					border-right: 1px solid #d0d0d0
-					+rect(55px, 55px)
+        li
+          float: left
+          border-left: 1px solid #fafafa
+          border-right: 1px solid #d0d0d0
+          +rect(55px, 55px)
 
-					&:hover
-						span.hov
-							top: 0px
-						span.nor
-							top: 55px
+          &:hover
+            span.hov
+              top: 0px
+            span.nor
+              top: 55px
 
-					span.hov
-						position: absolute
-						top: -55px
-						+background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_0, $nav_hov_100))
+          span.hov
+            position: absolute
+            top: -55px
+            +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_0, $nav_hov_100))
 
-					span.nor
-						position: relative
-						top: 0px
+          span.nor
+            position: relative
+            top: 0px
 
-					span
-						+ceaser-transition($easeOutExpo, all, 500ms)
+          span
+            +ceaser-transition($easeOutExpo, all, 500ms)
 
-						a
-							display: block
-							+rect(55px, 55px)
+            a
+              display: block
+              +rect(55px, 55px)
 
-	#main
-		margin: 5px 0 0 0
+  #main
+    margin: 5px 0 0 0
 
-		.item
-			margin: 10px 0 0 10px
-			float: left
-			position: relative
+    .item
+      margin: 10px 0 0 10px
+      float: left
+      list-style-type: none
+      position: relative
 
-		.rect
-			.shade
-				@extend .shade
+    .rect
+      .shade
+        @extend .shade
 
-		.large
-			.shade
-				@extend .largeshade
+    .large
+      .shade
+        @extend .largeshade
 
-		#me
-			.pic
-				z-index: 1
-				background-color: #FFF
-				+rect($rect, $rect)
+    #me
+      .pic
+        z-index: 1
+        background-color: #FFF
+        +rect($rect, $rect)
 
-			.baloon
-				z-index: 2
-				position: relative
-				+rect($large, $height)
+      .baloon
+        z-index: 2
+        position: relative
+        +rect($large, $height)
 
-				.norm
-					@extend .shaded
-					position: absolute
-					top: 0
-					left: 0
-					$pad: 30px
-					padding: $pad
-					+rect($large - ($pad * 2), $height - ($pad * 2))
-					+border-radius(5px)
-					+background(image-url('layout/pat.png'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf))
-					background-color: #FFF
+        .norm
+          @extend .shaded
+          position: absolute
+          top: 0
+          left: 0
+          $pad: 30px
+          padding: $pad
+          +rect($large - ($pad * 2), $height - ($pad * 2))
+          +border-radius(5px)
+          +background(image-url('layout/pat.png'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf))
+          background-color: #FFF
 
-					.arrow
-						position: absolute
-						right: -16px
-						top: 20px
+          .arrow
+            position: absolute
+            right: -16px
+            top: 20px
 
-				.hov
-					@extend .shaded
-					display: none
-					position: absolute
-					top: 0
-					left: 0
-					$pad: 40px
-					$padhor: 70px
-					padding: $pad $padhor
-					+rect($large - ($padhor * 2), $height - ($pad * 2))
-					+border-radius(5px)
-					+background(image-url('layout/pat.png'), linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb))
-					background-color: #3eabe9
+        .hov
+          @extend .shaded
+          display: none
+          position: absolute
+          top: 0
+          left: 0
+          $pad: 40px
+          $padhor: 70px
+          padding: $pad $padhor
+          +rect($large - ($padhor * 2), $height - ($pad * 2))
+          +border-radius(5px)
+          +background(image-url('layout/pat.png'), linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb))
+          background-color: #3eabe9
 
-					.arrow
-						position: absolute
-						right: -16px
-						top: 100px
+          .arrow
+            position: absolute
+            right: -16px
+            top: 100px
 
-				> div
-					h1
-						margin: 0
-						+typo("chunk5", 30px, #000)
-						line-height: 1em
+        > div
+          h1
+            margin: 0
+            +typo("chunk5", 30px, #000)
+            line-height: 1em
 
-					p
-						margin: .15em 0
-						+typo("osl", 20px, #000)
+          p
+            margin: .15em 0
+            +typo("osl", 20px, #000)
 
-						a
-							color: #000
-							text-decoration: none
+            a
+              color: #000
+              text-decoration: none
+    #all
+      li
+        .shade
+          bottom: -16px
+
+        &.work
+          cursor: pointer
+          @extend .shaded
+          position: relative
+          background-color: #fff
+          +rect($large, $height)
+
+          .inner
+            +rect($large, $height)
+            overflow: hidden
+
+            .thumb
+              position: relative
+              left: -25px
+              top: -25px
+
+          .insetshade
+            position: absolute
+            top: 0
+            left: 0
+            +rect($large, $height)
+            +box-shadow(rgba(0, 0, 0, .3) 0 0 50px 20px inset)
+
+        &.repo
+          background-color: #FFF
+          +rect($rect, $rect)
+          a
+            +rect($rect, $rect)
+            .repoicon
 
 /* ====================================================================================================== */
 /* PAGES

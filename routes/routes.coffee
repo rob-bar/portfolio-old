@@ -3,6 +3,8 @@ mongoose = require 'mongoose'
 config = require '../config/config.coffee'
 socials = require '../data/socials.coffee'
 navs = require '../data/navs.coffee'
+projects = require '../data/projects.coffee'
+github = require '../data/github.coffee'
 
 mongoose.connect "mongodb://localhost/portfolio"
 
@@ -20,7 +22,14 @@ exports.other =
 			navs: (callback) ->
 				navs.data.actives (docs) ->
 					callback(null, docs)
-			, (err, results) ->
+			projects: (callback) ->
+				projects.data.actives (docs) ->
+					callback(null, docs)
+			repos: (callback) ->
+				github.data.all (data) ->
+					callback(null, data)
+				,req
+			(err, results) ->
 				results.title = "My portfolio"
 				results.grav = url
 				res.render "pages/index", results
