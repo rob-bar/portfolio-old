@@ -15,4 +15,18 @@ block content
         a(href=repo.html_url, target="_blank")
           span.repoicon
           span.githubicon
-          span.visuallyhidden= repo.html_url
+          span.repoinfo
+            span
+            = repo.name
+
+    each link in links
+      li.link.rect.item
+        img.shade(src="img/layout/shade-150.png", alt="shade")
+        a(href=link.url, target="_blank")
+          =link.url
+
+    each tweet in tweets
+      li.tweet.rect.item
+        img.shade(src="img/layout/shade-150.png", alt="shade")
+        a(href=tweet.url, target="_blank")
+          =tweet.url

@@ -39,6 +39,7 @@ $height: 150px
 +font-face("exl", font-files("existence-light.woff","existence-light.ttf","existence-light.otf","existence-light.svg"),"existence-light.eot")
 +font-face("osb", font-files("OpenSans-Bold.woff","OpenSans-Bold.ttf","OpenSans-Bold.otf","OpenSans-Bold.svg"),"OpenSans-Bold.eot")
 +font-face("osl", font-files("OpenSans-Light.woff","OpenSans-Light.ttf","OpenSans-Light.otf","OpenSans-Light.svg"),"OpenSans-Light.eot")
++font-face("fut", font-files("FuturaStd-CondensedLight.woff","FuturaStd-CondensedLight.ttf","FuturaStd-CondensedLight.otf","FuturaStd-CondensedLight.svg"),"FuturaStd-CondensedLight.eot")
 
 /* ====================================================================================================== */
 /* MIXINS
@@ -78,6 +79,7 @@ $height: 150px
   left: 0px
   width: 100%
 
+
 .shade
   position: absolute
   bottom: -14px
@@ -91,7 +93,8 @@ $height: 150px
 /* ====================================================================================================== */
 body, html
   height: 100%
-menu, ol, ul
+
+.menu, ol, ul
   padding: 0
 
 body
@@ -143,7 +146,7 @@ body
             top: 0px
 
           span
-            +ceaser-transition($easeOutExpo, all, 500ms)
+            +ceaser-transition(all, 500ms, $easeOutExpo)
 
             a
               margin: 0
@@ -180,7 +183,7 @@ body
             top: 0px
 
           span
-            +ceaser-transition($easeOutExpo, all, 500ms)
+            +ceaser-transition(all, 500ms, $easeOutExpo)
 
             a
               display: block
@@ -194,6 +197,11 @@ body
       float: left
       list-style-type: none
       position: relative
+      +ceaser-transition(all, 300ms, $easeOutExpo)
+
+      &:hover
+        .shade
+          +opacity(.3)
 
     .rect
       .shade
@@ -263,6 +271,7 @@ body
             a
               color: #000
               text-decoration: none
+
     #all
       li
         .shade
@@ -294,9 +303,64 @@ body
         &.repo
           background-color: #FFF
           +rect($rect, $rect)
+
+          .shade
+            bottom: -14px
+
           a
+            $animtime: 400ms
             +rect($rect, $rect)
+            +inline-block
+            position: relative
+            color: #FFF
+            text-decoration: none
+            +typo("fut", 18px, #FFF)
+            overflow: hidden
+            +ceaser-transition(all, $animtime, $easeOutExpo)
+
+            &:hover
+              .repoinfo
+                bottom: 0px
+
+              .repoicon
+                margin: 13px auto 8px
+                +scale(.85,.85)
+                +background(image-url('ui/github/repo-hov.png') top left no-repeat)
+              .githubicon
+                display: none
+
             .repoicon
+              +background(image-url('ui/github/repo.png') top left no-repeat)
+              +rect(75px, 76px)
+              display: block
+              margin: 33px auto 8px
+              +ceaser-transition(all, $animtime, $easeOutExpo)
+
+            .githubicon
+              +background(image-url('ui/github/github.png') top left no-repeat)
+              +rect(25px, 25px)
+              display: block
+              margin: 0 auto
+
+            .repoinfo
+              +rect(100%, 50px)
+              position: absolute
+              bottom: -50px
+              display: block
+              background-color: #333333
+              line-height: 50px
+              word-break: break-all
+              +ceaser-transition(all, $animtime, $easeOutExpo)
+
+              &.smaller
+                font-size: 14px
+
+              span
+                +background(image-url('ui/github/github-white.png') top left no-repeat)
+                +rect(25px, 25px)
+                +inline-block
+                margin: 0 10px
+
 
 /* ====================================================================================================== */
 /* PAGES

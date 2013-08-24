@@ -7,9 +7,13 @@ exports.site =
 		ID: "9205448"
 	github:
 		username: "rob-bar"
+		id: "c4cd01dde7a0f68494c7"
+		secret: "b5cb7e6471399023acaad69ef582157490dfef19"
 	twitter:
 		screenname: "robbiebardijn"
-		hashtag: "sidebite"
+		hashtag: "robbiebardijn"
+		key: "NZnZ9f3H9IfAII4kg4dA"
+		secret: "oLWXJAuxvuUrBhK95xz2jXPORM6PFARvcojVVM43c"
 	deli:
 		username: "robbie_bardijn"
-		hashtag: "sidebite"
+		hashtag: "robbiebardijn"

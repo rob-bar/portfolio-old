@@ -17,6 +17,7 @@
     "grunt": "~0.4.1",
     "nodemon": "*",
     "underscore": "*",
+    "oauth": "*",
     "grunt-contrib-compass": "*",
     "grunt-contrib-coffee": "*",
     "grunt-contrib-jshint": "*",
