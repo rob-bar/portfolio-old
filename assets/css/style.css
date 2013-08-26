@@ -628,29 +628,20 @@ body {
       margin: 10px 0 0 10px;
       float: left;
       list-style-type: none;
-      position: relative;
-      -webkit-transition: all 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-      -webkit-transition-delay: 0ms;
-      -moz-transition: all 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-      -o-transition: all 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-      transition: all 300ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-      /* line 203, style.sass */
-      body #main .item:hover .shade, body #main .item:hover .rect .shade, body #main .rect .item:hover .shade {
-        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
-        opacity: 0.3; }
-    /* line 215, style.sass */
+      position: relative; }
+    /* line 210, style.sass */
     body #main #me .pic {
       z-index: 1;
       background-color: white;
       width: 150px;
       height: 150px; }
-    /* line 220, style.sass */
+    /* line 215, style.sass */
     body #main #me .baloon {
       z-index: 2;
       position: relative;
       width: 310px;
       height: 150px; }
-      /* line 225, style.sass */
+      /* line 220, style.sass */
       body #main #me .baloon .norm {
         position: absolute;
         top: 0;
@@ -669,12 +660,12 @@ body {
         background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
         background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
         background-color: white; }
-        /* line 237, style.sass */
+        /* line 232, style.sass */
         body #main #me .baloon .norm .arrow {
           position: absolute;
           right: -16px;
           top: 20px; }
-      /* line 242, style.sass */
+      /* line 237, style.sass */
       body #main #me .baloon .hov {
         display: none;
         position: absolute;
@@ -694,12 +685,12 @@ body {
         background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
         background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
         background-color: #3eabe9; }
-        /* line 256, style.sass */
+        /* line 251, style.sass */
         body #main #me .baloon .hov .arrow {
           position: absolute;
           right: -16px;
           top: 100px; }
-      /* line 262, style.sass */
+      /* line 257, style.sass */
       body #main #me .baloon > div h1 {
         margin: 0;
         font-weight: normal;
@@ -707,142 +698,292 @@ body {
         font-size: 30px;
         color: black;
         line-height: 1em; }
-      /* line 267, style.sass */
+      /* line 262, style.sass */
       body #main #me .baloon > div p {
         margin: 0.15em 0;
         font-weight: normal;
         font-family: "osl", Arial, Helvetica;
         font-size: 20px;
         color: black; }
-        /* line 271, style.sass */
+        /* line 266, style.sass */
         body #main #me .baloon > div p a {
           color: black;
           text-decoration: none; }
-    /* line 277, style.sass */
-    body #main #all li .shade, body #main #all li .rect .shade, body #main .rect #all li .shade {
-      bottom: -16px; }
-    /* line 280, style.sass */
-    body #main #all li.work {
-      cursor: pointer;
-      position: relative;
-      background-color: white;
-      width: 310px;
-      height: 150px; }
-      /* line 287, style.sass */
-      body #main #all li.work .inner {
-        width: 310px;
-        height: 150px;
-        overflow: hidden; }
-        /* line 291, style.sass */
-        body #main #all li.work .inner .thumb {
-          position: relative;
-          left: -25px;
-          top: -25px; }
-      /* line 296, style.sass */
-      body #main #all li.work .insetshade {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 310px;
-        height: 150px;
-        -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-        -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-        box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset; }
-    /* line 303, style.sass */
-    body #main #all li.repo {
-      background-color: white;
-      width: 150px;
-      height: 150px; }
-      /* line 307, style.sass */
-      body #main #all li.repo .shade, body #main #all li.repo .rect .shade, body #main .rect #all li.repo .shade {
-        bottom: -14px; }
-      /* line 310, style.sass */
-      body #main #all li.repo a {
-        width: 150px;
-        height: 150px;
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: middle;
-        *vertical-align: auto;
-        zoom: 1;
-        *display: inline;
+    /* line 271, style.sass */
+    body #main #all li {
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0); }
+      /* line 274, style.sass */
+      body #main #all li .shade, body #main #all li .rect .shade, body #main .rect #all li .shade {
+        bottom: -16px; }
+      /* line 277, style.sass */
+      body #main #all li.work {
+        cursor: pointer;
         position: relative;
-        color: white;
-        text-decoration: none;
-        font-weight: normal;
-        font-family: "fut", Arial, Helvetica;
-        font-size: 18px;
-        color: white;
-        overflow: hidden;
-        -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-        -webkit-transition-delay: 0ms;
-        -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-        /* line 322, style.sass */
-        body #main #all li.repo a:hover .repoinfo {
-          bottom: 0px; }
-        /* line 325, style.sass */
-        body #main #all li.repo a:hover .repoicon {
-          margin: 13px auto 8px;
-          -webkit-transform: scale(0.85, 0.85);
-          -moz-transform: scale(0.85, 0.85);
-          -ms-transform: scale(0.85, 0.85);
-          -o-transform: scale(0.85, 0.85);
-          transform: scale(0.85, 0.85);
-          background: url('../img/ui/github/repo-hov.png?1377265594') top left no-repeat; }
-        /* line 329, style.sass */
-        body #main #all li.repo a:hover .githubicon {
-          display: none; }
-        /* line 332, style.sass */
-        body #main #all li.repo a .repoicon {
-          background: url('../img/ui/github/repo.png?1376849577') top left no-repeat;
-          width: 75px;
-          height: 76px;
-          display: block;
-          margin: 33px auto 8px;
-          -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-          -webkit-transition-delay: 0ms;
-          -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-        /* line 339, style.sass */
-        body #main #all li.repo a .githubicon {
-          background: url('../img/ui/github/github.png?1376849595') top left no-repeat;
-          width: 25px;
-          height: 25px;
-          display: block;
-          margin: 0 auto; }
-        /* line 345, style.sass */
-        body #main #all li.repo a .repoinfo {
-          width: 100%;
-          height: 50px;
+        background-color: white;
+        width: 310px;
+        height: 150px; }
+        /* line 284, style.sass */
+        body #main #all li.work .inner {
+          width: 310px;
+          height: 150px;
+          overflow: hidden; }
+          /* line 288, style.sass */
+          body #main #all li.work .inner .thumb {
+            position: relative;
+            left: -25px;
+            top: -25px; }
+        /* line 293, style.sass */
+        body #main #all li.work .insetshade {
           position: absolute;
-          bottom: -50px;
-          display: block;
-          background-color: #333333;
-          line-height: 50px;
-          word-break: break-all;
+          top: 0;
+          left: 0;
+          width: 310px;
+          height: 150px;
+          -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+          -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+          box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset; }
+      /* line 300, style.sass */
+      body #main #all li.link {
+        background-color: #db2421;
+        width: 150px;
+        height: 150px; }
+        /* line 304, style.sass */
+        body #main #all li.link .shade, body #main #all li.link .rect .shade, body #main .rect #all li.link .shade {
+          bottom: -14px; }
+        /* line 307, style.sass */
+        body #main #all li.link a {
+          width: 150px;
+          height: 150px;
+          display: -moz-inline-stack;
+          display: inline-block;
+          vertical-align: middle;
+          *vertical-align: auto;
+          zoom: 1;
+          *display: inline;
+          position: relative;
+          text-decoration: none;
+          font-weight: normal;
+          font-family: "fut", Arial, Helvetica;
+          font-size: 18px;
+          color: #454545;
+          overflow: hidden;
+          -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+          -webkit-transition-delay: 0ms;
+          -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+          -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+          -webkit-backface-visibility: false;
+          -moz-backface-visibility: false;
+          -ms-backface-visibility: false;
+          -o-backface-visibility: false;
+          backface-visibility: false; }
+          /* line 318, style.sass */
+          body #main #all li.link a:hover .deliinfo {
+            -webkit-transform: translate(-75px, 75px) rotate(45deg);
+            -moz-transform: translate(-75px, 75px) rotate(45deg);
+            -ms-transform: translate(-75px, 75px) rotate(45deg);
+            -o-transform: translate(-75px, 75px) rotate(45deg);
+            transform: translate(-75px, 75px) rotate(45deg); }
+          /* line 320, style.sass */
+          body #main #all li.link a:hover .deliicon {
+            -webkit-transform: translate(20px, -20px) scale(0.75);
+            -moz-transform: translate(20px, -20px) scale(0.75);
+            -ms-transform: translate(20px, -20px) scale(0.75);
+            -o-transform: translate(20px, -20px) scale(0.75);
+            transform: translate(20px, -20px) scale(0.75); }
+          /* line 323, style.sass */
+          body #main #all li.link a .deliinfo {
+            width: 213px;
+            height: 208px;
+            background-color: white;
+            -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+            -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            padding: 5px 0 0 0;
+            margin: -31px 0 0 -31px;
+            -webkit-transform: translate(-160px, 160px) rotate(45deg);
+            -moz-transform: translate(-160px, 160px) rotate(45deg);
+            -ms-transform: translate(-160px, 160px) rotate(45deg);
+            -o-transform: translate(-160px, 160px) rotate(45deg);
+            transform: translate(-160px, 160px) rotate(45deg);
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+          /* line 337, style.sass */
+          body #main #all li.link a .deliicon {
+            background: url('../img/ui/delicious/link.png?1377352965') top left no-repeat;
+            width: 87px;
+            height: 86px;
+            display: block;
+            margin: 33px auto 8px;
+            -webkit-transform-origin: top right;
+            -moz-transform-origin: top right;
+            -ms-transform-origin: top right;
+            -o-transform-origin: top right;
+            transform-origin: top right;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+      /* line 345, style.sass */
+      body #main #all li.tweet {
+        background-color: #138bd1;
+        width: 150px;
+        height: 150px; }
+        /* line 349, style.sass */
+        body #main #all li.tweet .shade, body #main #all li.tweet .rect .shade, body #main .rect #all li.tweet .shade {
+          bottom: -14px; }
+        /* line 352, style.sass */
+        body #main #all li.tweet a {
+          width: 150px;
+          height: 150px;
+          display: -moz-inline-stack;
+          display: inline-block;
+          vertical-align: middle;
+          *vertical-align: auto;
+          zoom: 1;
+          *display: inline;
+          position: relative;
+          text-decoration: none;
+          font-weight: normal;
+          font-family: "fut", Arial, Helvetica;
+          font-size: 18px;
+          color: #454545;
+          overflow: hidden;
           -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
           -webkit-transition-delay: 0ms;
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 355, style.sass */
-          body #main #all li.repo a .repoinfo.smaller {
-            font-size: 14px; }
-          /* line 358, style.sass */
-          body #main #all li.repo a .repoinfo span {
-            background: url('../img/ui/github/github-white.png?1376849691') top left no-repeat;
+          /* line 362, style.sass */
+          body #main #all li.tweet a:hover {
+            background-color: #0f83c6; }
+            /* line 364, style.sass */
+            body #main #all li.tweet a:hover .tweeticon {
+              -webkit-transform: scale(0.9, 0.9);
+              -moz-transform: scale(0.9, 0.9);
+              -ms-transform: scale(0.9, 0.9);
+              -o-transform: scale(0.9, 0.9);
+              transform: scale(0.9, 0.9);
+              background: url('../img/ui/twitter/tweet-hov.png?1377355689') top left no-repeat; }
+          /* line 369, style.sass */
+          body #main #all li.tweet a .tweeticon {
+            background: url('../img/ui/twitter/tweet.png?1377354688') top left no-repeat;
+            width: 90px;
+            height: 73px;
+            display: block;
+            margin: 38px auto 8px;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+      /* line 376, style.sass */
+      body #main #all li.repo {
+        background-color: white;
+        width: 150px;
+        height: 150px; }
+        /* line 380, style.sass */
+        body #main #all li.repo .shade, body #main #all li.repo .rect .shade, body #main .rect #all li.repo .shade {
+          bottom: -14px; }
+        /* line 383, style.sass */
+        body #main #all li.repo a {
+          width: 150px;
+          height: 150px;
+          display: -moz-inline-stack;
+          display: inline-block;
+          vertical-align: middle;
+          *vertical-align: auto;
+          zoom: 1;
+          *display: inline;
+          position: relative;
+          text-decoration: none;
+          font-weight: normal;
+          font-family: "fut", Arial, Helvetica;
+          font-size: 18px;
+          color: white;
+          overflow: hidden;
+          -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+          -webkit-transition-delay: 0ms;
+          -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+          -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+          /* line 394, style.sass */
+          body #main #all li.repo a:hover .repoinfo {
+            bottom: 0px; }
+          /* line 397, style.sass */
+          body #main #all li.repo a:hover .repoicon {
+            margin: 13px auto 8px;
+            -webkit-transform: scale(0.85, 0.85);
+            -moz-transform: scale(0.85, 0.85);
+            -ms-transform: scale(0.85, 0.85);
+            -o-transform: scale(0.85, 0.85);
+            transform: scale(0.85, 0.85);
+            background: url('../img/ui/github/repo-hov.png?1377265594') top left no-repeat; }
+          /* line 401, style.sass */
+          body #main #all li.repo a:hover .githubicon {
+            display: none; }
+          /* line 404, style.sass */
+          body #main #all li.repo a .repoicon {
+            background: url('../img/ui/github/repo.png?1376849577') top left no-repeat;
+            width: 75px;
+            height: 76px;
+            display: block;
+            margin: 33px auto 8px;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+          /* line 411, style.sass */
+          body #main #all li.repo a .githubicon {
+            background: url('../img/ui/github/github.png?1376849595') top left no-repeat;
             width: 25px;
             height: 25px;
-            display: -moz-inline-stack;
-            display: inline-block;
-            vertical-align: middle;
-            *vertical-align: auto;
-            zoom: 1;
-            *display: inline;
-            margin: 0 10px; }
+            display: block;
+            margin: 0 auto; }
+          /* line 417, style.sass */
+          body #main #all li.repo a .repoinfo {
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            bottom: -50px;
+            display: block;
+            background-color: #333333;
+            line-height: 50px;
+            word-break: break-all;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+            /* line 427, style.sass */
+            body #main #all li.repo a .repoinfo.smaller {
+              font-size: 14px; }
+            /* line 430, style.sass */
+            body #main #all li.repo a .repoinfo span {
+              background: url('../img/ui/github/github-white.png?1376849691') top left no-repeat;
+              width: 25px;
+              height: 25px;
+              display: -moz-inline-stack;
+              display: inline-block;
+              vertical-align: middle;
+              *vertical-align: auto;
+              zoom: 1;
+              *display: inline;
+              margin: 0 10px; }
 
 /* ====================================================================================================== */
 /* PAGES */
