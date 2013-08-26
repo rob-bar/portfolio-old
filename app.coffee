@@ -6,6 +6,7 @@ app = do express
 mongoose = require "mongoose"
 
 app.configure ->
+
 	app.set 'port', 8088
 	app.set 'title', 'Portfolio'
 	app.set 'views', __dirname + '/views'
@@ -25,6 +26,6 @@ app.configure 'development', ->
 # ROUTES
 app.get '/', routes.other.index
 
-http.createServer(app).listen(app.get('port'), "node.portfolio", ()->
+http.createServer(app).listen(app.get('port'), "robbiebardijn.be", ()->
 	console.log "Express server listening on port " + app.get('port')
 )
