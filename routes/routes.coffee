@@ -32,7 +32,6 @@ exports.other =
           callback(null, data)
         ,req
       links: (callback) ->
-        console.log delicious
         delicious.data.all (data) ->
           callback(null, data)
         ,req

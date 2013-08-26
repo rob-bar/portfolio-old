@@ -19,6 +19,7 @@ exports.data =
   all: (callback, req) ->
     @options['user-agent'] = req.get('user-agent')
     @options.path = "/v2/json/#{config.site.deli.username}?count=100"
+
     h.help.request @options, (data)->
       callback data
 

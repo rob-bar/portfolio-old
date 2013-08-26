@@ -1,7 +1,7 @@
 https = require('https')
 http = require('http')
 config = require('./config.coffee')
-OAuth2 = require('OAuth').OAuth2
+OAuth2 = require('oauth').OAuth2
 
 exports.help =
 	oauth2: new OAuth2(config.site.twitter.key, config.site.twitter.secret, 'https://api.twitter.com/', null, 'oauth2/token', null)
