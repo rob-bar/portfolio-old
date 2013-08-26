@@ -22,9 +22,7 @@ exports.data =
       @options.path = "/1.1/statuses/user_timeline.json?include_entities=true&include_rts=1&screen_name=#{config.site.twitter.screenname}&count=200"
       @options.headers.Authorization = "Bearer #{access_token}"
 
-      console.log @options
       h.help.securerequest @options, (data)->
-        console.log data
         callback data
 
   tag: (callback, req) ->
@@ -38,5 +36,4 @@ exports.data =
           for hashtag in tweet.entities.hashtags when hashtag.text is req.params.tag
             return true
           return false
-        console.log data
         callback data
