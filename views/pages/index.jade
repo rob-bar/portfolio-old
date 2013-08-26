@@ -22,11 +22,13 @@ block content
     each link in links
       li.link.rect.item
         img.shade(src="img/layout/shade-150.png", alt="shade")
-        a(href=link.url, target="_blank")
-          =link.url
+        a(href=link.u, target="_blank")
+          span.deliicon
+          span.deliinfo= link.d
 
     each tweet in tweets
       li.tweet.rect.item
         img.shade(src="img/layout/shade-150.png", alt="shade")
-        a(href=tweet.url, target="_blank")
-          =tweet.url
+        a(href="http://twitter.com/robbiebardijn/status/#{tweet.id_str}", target="_blank")
+          span.tweeticon
+          span.visuallyhidden=tweet.text
