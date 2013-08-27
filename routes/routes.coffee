@@ -1,20 +1,20 @@
-async = require 'async'
-mongoose = require 'mongoose'
-config = require '../config/config.coffee'
-socials = require '../data/socials.coffee'
-navs = require '../data/navs.coffee'
-projects = require '../data/projects.coffee'
-github = require '../data/github.coffee'
-delicious = require '../data/delicious.coffee'
-twitter = require '../data/twitter.coffee'
+async = require "async"
+mongoose = require "mongoose"
+config = require "../config/config.coffee"
+socials = require "../data/socials.coffee"
+navs = require "../data/navs.coffee"
+projects = require "../data/projects.coffee"
+github = require "../data/github.coffee"
+delicious = require "../data/delicious.coffee"
+twitter = require "../data/twitter.coffee"
 
 mongoose.connect "mongodb://localhost/portfolio"
 
 exports.other =
   index: (req, res) ->
-    crypto = require('crypto')
-    md5 = crypto.createHash('md5')
-    url = md5.update(config.site.grav.email).digest('hex')
+    crypto = require "crypto"
+    md5 = crypto.createHash "md5"
+    url = md5.update(config.site.grav.email).digest "hex"
     url = config.site.grav.url.replace /hash/, url
 
     async.series

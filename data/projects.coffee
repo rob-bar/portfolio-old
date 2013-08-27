@@ -1,4 +1,4 @@
-mongoose = require 'mongoose'
+mongoose = require "mongoose"
 project = null
 
 exports.data =
@@ -18,15 +18,12 @@ exports.data =
         videos: Array
         preview: String
 
-    if project is null
-      project = mongoose.model('Projects', new mongoose.Schema(schema))
+    if project is null then project = mongoose.model "Projects", new mongoose.Schema schema
 
   all: (callback) ->
     @model()
-    project.find {}, (err, docs) ->
-      callback(docs)
+    project.find {}, (err, docs) -> callback docs
 
   actives: (callback) ->
     @model()
-    project.find {is_active: true}, (err, docs) ->
-      callback(docs)
+    project.find {is_active: true}, (err, docs) -> callback docs
