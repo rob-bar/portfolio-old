@@ -275,27 +275,77 @@ body
           bottom: -16px
 
         &.work
-          cursor: pointer
           @extend .shaded
+          cursor: pointer
           position: relative
           background-color: #fff
           +rect($large, $height)
 
+          &:hover
+            .inner .thumb
+              +scale(.9)
+            .inner .likes
+              bottom: -25px
+              left: -25px
+            .insetshade
+              +box-shadow(rgba(0, 0, 0, .1) 0 0 10px 20px inset)
+
           .inner
             +rect($large, $height)
             overflow: hidden
+            position: relative
 
             .thumb
               position: relative
-              left: -25px
-              top: -25px
+              +ceaser-transition(all, 5s, $easeOutCubic)
+              margin: -25px 0 0 -25px
 
-          .insetshade
-            position: absolute
-            top: 0
-            left: 0
-            +rect($large, $height)
-            +box-shadow(rgba(0, 0, 0, .3) 0 0 50px 20px inset)
+            .likes
+              +rect(50px, 50px)
+              background-color: #FFF
+              position: absolute
+              bottom: -50px
+              left: -50px
+              +rotate(45deg)
+              text-align: center
+              +box-shadow(0 0 5px 0 rgba(0, 0, 0, 0.4))
+              +ceaser-transition(all, 400ms, $easeOutExpo)
+
+              &.liked
+                background-color: #FFF
+                bottom: -25px
+                left: -25px
+
+                .heart
+                  +sprite-position(3,1,14px,13px)
+
+                &:hover
+                  background-color: #FFF
+                  bottom: -25px
+                  left: -25px
+
+                  .heart
+                    +sprite-position(3,1,14px,13px)
+
+              &:hover
+                background-color: #000
+                .heart
+                  +sprite-position(2,1,14px,13px)
+
+              .heart
+                margin: 5px 0
+                +rotate(-45deg)
+                +rect(14px, 13px)
+                +background(image-url('ui/heart.png') top left no-repeat)
+                +inline-block
+
+            .insetshade
+              position: absolute
+              top: 0
+              left: 0
+              +rect($large, $height)
+              +box-shadow(rgba(0, 0, 0, .3) 0 0 50px 20px inset)
+              +ceaser-transition(all, 400ms, $easeOutExpo)
 
         &.link
           background-color: #db2421
@@ -314,6 +364,7 @@ body
             overflow: hidden
             +ceaser-transition(all, $animtime, $easeOutExpo)
             +backface-visibility(false)
+
             &:hover
               .deliinfo
                 +transform(translate(-75px, 75px) rotate(45deg))

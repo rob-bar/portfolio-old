@@ -1,15 +1,18 @@
 (function() {
   $(function() {
+    var site;
+    site = {
+      mousesover: true
+    };
     _.each($(".repoinfo"), function(repo) {
       if ($(repo).text().length > 18) {
         return $(repo).addClass("smaller");
       }
     });
-    return $(".work").mousemove(function(e) {
-      var pos, relX, relY;
-      pos = $(e.currentTarget).offset();
-      relX = e.pageX - pos.left;
-      return relY = e.pageY - pos.top;
+    return $('.likes').click(function(e) {
+      e.preventDefault();
+      console.log("clicked");
+      return $(e.currentTarget).addClass("liked");
     });
   });
 
