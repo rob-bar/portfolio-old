@@ -8,11 +8,13 @@ block header
 							a(class="#{nav.name.toLowerCase()}", href="#{nav.url}")= nav.name
 						span.nor
 							a(class="#{nav.name.toLowerCase()}", href="#{nav.url}")= nav.name
-			//- span
-			//- 	| 2013 &copy; All righrts reserved
+
 			ul#social
+				li
+					p
+						| 2013 &copy; All righrts reserved
 				each social in socials
-					li
+					li.icon
 						span.hov
 							a(class="socials-hover-#{social.name.toLowerCase()} socials-hover-sprite", href="#{social.url}")
 								span.visuallyhidden= social.name

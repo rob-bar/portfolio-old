@@ -11,7 +11,6 @@
     });
     return $('.likes').click(function(e) {
       e.preventDefault();
-      console.log("clicked");
       return $(e.currentTarget).addClass("liked");
     });
   });

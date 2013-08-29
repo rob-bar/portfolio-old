@@ -584,19 +584,29 @@ body {
         right: 0; }
         /* line 164, style.sass */
         body nav ul#social li {
+          float: left; }
+          /* line 166, style.sass */
+          body nav ul#social li p {
+            margin: 19px 15px;
+            font-weight: normal;
+            font-family: "osl", Arial, Helvetica;
+            font-size: 13px;
+            color: #203e3e; }
+        /* line 169, style.sass */
+        body nav ul#social li.icon {
           float: left;
           border-left: 1px solid #fafafa;
           border-right: 1px solid #d0d0d0;
           width: 55px;
           height: 55px; }
-          /* line 171, style.sass */
-          body nav ul#social li:hover span.hov {
-            top: 0px; }
-          /* line 173, style.sass */
-          body nav ul#social li:hover span.nor {
-            top: 55px; }
           /* line 176, style.sass */
-          body nav ul#social li span.hov {
+          body nav ul#social li.icon:hover span.hov {
+            top: 0px; }
+          /* line 178, style.sass */
+          body nav ul#social li.icon:hover span.nor {
+            top: 55px; }
+          /* line 181, style.sass */
+          body nav ul#social li.icon span.hov {
             position: absolute;
             top: -55px;
             background: url('../img/layout/pat.png?1371111257'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #090909), color-stop(100%, #272727));
@@ -604,44 +614,44 @@ body {
             background: url('../img/layout/pat.png?1371111257'), -moz-linear-gradient(center top, #090909, #272727);
             background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, #090909, #272727);
             background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, #090909, #272727); }
-          /* line 181, style.sass */
-          body nav ul#social li span.nor {
+          /* line 186, style.sass */
+          body nav ul#social li.icon span.nor {
             position: relative;
             top: 0px; }
-          /* line 185, style.sass */
-          body nav ul#social li span {
+          /* line 190, style.sass */
+          body nav ul#social li.icon span {
             -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
             -webkit-transition-delay: 0ms;
             -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 188, style.sass */
-            body nav ul#social li span a {
+            /* line 193, style.sass */
+            body nav ul#social li.icon span a {
               display: block;
               width: 55px;
               height: 55px; }
-  /* line 192, style.sass */
+  /* line 197, style.sass */
   body #main {
     margin: 5px 0 0 0; }
-    /* line 195, style.sass */
+    /* line 200, style.sass */
     body #main .item {
       margin: 10px 0 0 10px;
       float: left;
       list-style-type: none;
       position: relative; }
-    /* line 210, style.sass */
+    /* line 215, style.sass */
     body #main #me .pic {
       z-index: 1;
       background-color: white;
       width: 150px;
       height: 150px; }
-    /* line 215, style.sass */
+    /* line 220, style.sass */
     body #main #me .baloon {
       z-index: 2;
       position: relative;
       width: 310px;
       height: 150px; }
-      /* line 220, style.sass */
+      /* line 225, style.sass */
       body #main #me .baloon .norm {
         position: absolute;
         top: 0;
@@ -660,12 +670,12 @@ body {
         background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
         background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
         background-color: white; }
-        /* line 232, style.sass */
+        /* line 237, style.sass */
         body #main #me .baloon .norm .arrow {
           position: absolute;
           right: -16px;
           top: 20px; }
-      /* line 237, style.sass */
+      /* line 242, style.sass */
       body #main #me .baloon .hov {
         display: none;
         position: absolute;
@@ -685,12 +695,12 @@ body {
         background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
         background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
         background-color: #3eabe9; }
-        /* line 251, style.sass */
+        /* line 256, style.sass */
         body #main #me .baloon .hov .arrow {
           position: absolute;
           right: -16px;
           top: 100px; }
-      /* line 257, style.sass */
+      /* line 262, style.sass */
       body #main #me .baloon > div h1 {
         margin: 0;
         font-weight: normal;
@@ -698,57 +708,57 @@ body {
         font-size: 30px;
         color: black;
         line-height: 1em; }
-      /* line 262, style.sass */
+      /* line 267, style.sass */
       body #main #me .baloon > div p {
         margin: 0.15em 0;
         font-weight: normal;
         font-family: "osl", Arial, Helvetica;
         font-size: 20px;
         color: black; }
-        /* line 266, style.sass */
+        /* line 271, style.sass */
         body #main #me .baloon > div p a {
           color: black;
           text-decoration: none; }
-    /* line 271, style.sass */
+    /* line 276, style.sass */
     body #main #all li {
       -webkit-transform: translate3d(0, 0, 0);
       -moz-transform: translate3d(0, 0, 0);
       -ms-transform: translate3d(0, 0, 0);
       -o-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
-      /* line 274, style.sass */
+      /* line 279, style.sass */
       body #main #all li .shade, body #main #all li .rect .shade, body #main .rect #all li .shade {
         bottom: -16px; }
-      /* line 277, style.sass */
+      /* line 282, style.sass */
       body #main #all li.work {
         cursor: pointer;
         position: relative;
         background-color: white;
         width: 310px;
         height: 150px; }
-        /* line 285, style.sass */
+        /* line 290, style.sass */
         body #main #all li.work:hover .inner .thumb {
           -webkit-transform: scale(0.9, 0.9);
           -moz-transform: scale(0.9, 0.9);
           -ms-transform: scale(0.9, 0.9);
           -o-transform: scale(0.9, 0.9);
           transform: scale(0.9, 0.9); }
-        /* line 287, style.sass */
+        /* line 292, style.sass */
         body #main #all li.work:hover .inner .likes {
           bottom: -25px;
           left: -25px; }
-        /* line 290, style.sass */
+        /* line 295, style.sass */
         body #main #all li.work:hover .insetshade {
           -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 20px inset;
           -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 20px inset;
           box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 20px inset; }
-        /* line 293, style.sass */
+        /* line 298, style.sass */
         body #main #all li.work .inner {
           width: 310px;
           height: 150px;
           overflow: hidden;
           position: relative; }
-          /* line 298, style.sass */
+          /* line 303, style.sass */
           body #main #all li.work .inner .thumb {
             position: relative;
             -webkit-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -757,7 +767,7 @@ body {
             -o-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
             transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
             margin: -25px 0 0 -25px; }
-          /* line 303, style.sass */
+          /* line 308, style.sass */
           body #main #all li.work .inner .likes {
             width: 50px;
             height: 50px;
@@ -779,29 +789,29 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 314, style.sass */
+            /* line 319, style.sass */
             body #main #all li.work .inner .likes.liked {
               background-color: white;
               bottom: -25px;
               left: -25px; }
-              /* line 319, style.sass */
+              /* line 324, style.sass */
               body #main #all li.work .inner .likes.liked .heart {
                 background-position: -28px 0px; }
-              /* line 322, style.sass */
+              /* line 327, style.sass */
               body #main #all li.work .inner .likes.liked:hover {
                 background-color: white;
                 bottom: -25px;
                 left: -25px; }
-                /* line 327, style.sass */
+                /* line 332, style.sass */
                 body #main #all li.work .inner .likes.liked:hover .heart {
                   background-position: -28px 0px; }
-            /* line 330, style.sass */
+            /* line 335, style.sass */
             body #main #all li.work .inner .likes:hover {
               background-color: black; }
-              /* line 332, style.sass */
+              /* line 337, style.sass */
               body #main #all li.work .inner .likes:hover .heart {
                 background-position: -14px 0px; }
-            /* line 335, style.sass */
+            /* line 340, style.sass */
             body #main #all li.work .inner .likes .heart {
               margin: 5px 0;
               -webkit-transform: rotate(-45deg);
@@ -818,7 +828,7 @@ body {
               *vertical-align: auto;
               zoom: 1;
               *display: inline; }
-          /* line 342, style.sass */
+          /* line 347, style.sass */
           body #main #all li.work .inner .insetshade {
             position: absolute;
             top: 0;
@@ -833,15 +843,15 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-      /* line 350, style.sass */
+      /* line 355, style.sass */
       body #main #all li.link {
         background-color: #db2421;
         width: 150px;
         height: 150px; }
-        /* line 354, style.sass */
+        /* line 359, style.sass */
         body #main #all li.link .shade, body #main #all li.link .rect .shade, body #main .rect #all li.link .shade {
           bottom: -14px; }
-        /* line 357, style.sass */
+        /* line 362, style.sass */
         body #main #all li.link a {
           width: 150px;
           height: 150px;
@@ -868,21 +878,21 @@ body {
           -ms-backface-visibility: false;
           -o-backface-visibility: false;
           backface-visibility: false; }
-          /* line 369, style.sass */
+          /* line 374, style.sass */
           body #main #all li.link a:hover .deliinfo {
             -webkit-transform: translate(-75px, 75px) rotate(45deg);
             -moz-transform: translate(-75px, 75px) rotate(45deg);
             -ms-transform: translate(-75px, 75px) rotate(45deg);
             -o-transform: translate(-75px, 75px) rotate(45deg);
             transform: translate(-75px, 75px) rotate(45deg); }
-          /* line 371, style.sass */
+          /* line 376, style.sass */
           body #main #all li.link a:hover .deliicon {
             -webkit-transform: translate(20px, -20px) scale(0.75);
             -moz-transform: translate(20px, -20px) scale(0.75);
             -ms-transform: translate(20px, -20px) scale(0.75);
             -o-transform: translate(20px, -20px) scale(0.75);
             transform: translate(20px, -20px) scale(0.75); }
-          /* line 374, style.sass */
+          /* line 379, style.sass */
           body #main #all li.link a .deliinfo {
             width: 213px;
             height: 208px;
@@ -907,7 +917,7 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 388, style.sass */
+          /* line 393, style.sass */
           body #main #all li.link a .deliicon {
             background: url('../img/ui/delicious/link.png?1377352965') top left no-repeat;
             width: 87px;
@@ -924,15 +934,15 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-      /* line 396, style.sass */
+      /* line 401, style.sass */
       body #main #all li.tweet {
         background-color: #138bd1;
         width: 150px;
         height: 150px; }
-        /* line 400, style.sass */
+        /* line 405, style.sass */
         body #main #all li.tweet .shade, body #main #all li.tweet .rect .shade, body #main .rect #all li.tweet .shade {
           bottom: -14px; }
-        /* line 403, style.sass */
+        /* line 408, style.sass */
         body #main #all li.tweet a {
           width: 150px;
           height: 150px;
@@ -954,10 +964,10 @@ body {
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 413, style.sass */
+          /* line 418, style.sass */
           body #main #all li.tweet a:hover {
             background-color: #0f83c6; }
-            /* line 415, style.sass */
+            /* line 420, style.sass */
             body #main #all li.tweet a:hover .tweeticon {
               -webkit-transform: scale(0.9, 0.9);
               -moz-transform: scale(0.9, 0.9);
@@ -965,7 +975,7 @@ body {
               -o-transform: scale(0.9, 0.9);
               transform: scale(0.9, 0.9);
               background: url('../img/ui/twitter/tweet-hov.png?1377355689') top left no-repeat; }
-          /* line 420, style.sass */
+          /* line 425, style.sass */
           body #main #all li.tweet a .tweeticon {
             background: url('../img/ui/twitter/tweet.png?1377354688') top left no-repeat;
             width: 90px;
@@ -977,15 +987,15 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-      /* line 427, style.sass */
+      /* line 432, style.sass */
       body #main #all li.repo {
         background-color: white;
         width: 150px;
         height: 150px; }
-        /* line 431, style.sass */
+        /* line 436, style.sass */
         body #main #all li.repo .shade, body #main #all li.repo .rect .shade, body #main .rect #all li.repo .shade {
           bottom: -14px; }
-        /* line 434, style.sass */
+        /* line 439, style.sass */
         body #main #all li.repo a {
           width: 150px;
           height: 150px;
@@ -1007,10 +1017,10 @@ body {
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 445, style.sass */
+          /* line 450, style.sass */
           body #main #all li.repo a:hover .repoinfo {
             bottom: 0px; }
-          /* line 448, style.sass */
+          /* line 453, style.sass */
           body #main #all li.repo a:hover .repoicon {
             margin: 13px auto 8px;
             -webkit-transform: scale(0.85, 0.85);
@@ -1019,10 +1029,10 @@ body {
             -o-transform: scale(0.85, 0.85);
             transform: scale(0.85, 0.85);
             background: url('../img/ui/github/repo-hov.png?1377265594') top left no-repeat; }
-          /* line 452, style.sass */
+          /* line 457, style.sass */
           body #main #all li.repo a:hover .githubicon {
             display: none; }
-          /* line 455, style.sass */
+          /* line 460, style.sass */
           body #main #all li.repo a .repoicon {
             background: url('../img/ui/github/repo.png?1376849577') top left no-repeat;
             width: 75px;
@@ -1034,14 +1044,14 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 462, style.sass */
+          /* line 467, style.sass */
           body #main #all li.repo a .githubicon {
             background: url('../img/ui/github/github.png?1376849595') top left no-repeat;
             width: 25px;
             height: 25px;
             display: block;
             margin: 0 auto; }
-          /* line 468, style.sass */
+          /* line 473, style.sass */
           body #main #all li.repo a .repoinfo {
             width: 100%;
             height: 50px;
@@ -1056,10 +1066,10 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 478, style.sass */
+            /* line 483, style.sass */
             body #main #all li.repo a .repoinfo.smaller {
               font-size: 14px; }
-            /* line 481, style.sass */
+            /* line 486, style.sass */
             body #main #all li.repo a .repoinfo span {
               background: url('../img/ui/github/github-white.png?1376849691') top left no-repeat;
               width: 25px;

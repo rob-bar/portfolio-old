@@ -8,5 +8,4 @@ $ ->
 
   $('.likes').click (e) ->
     e.preventDefault()
-    console.log "clicked"
     $(e.currentTarget).addClass "liked"
