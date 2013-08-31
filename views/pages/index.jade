@@ -10,26 +10,26 @@ block content
           div.likes.normal
             a(href="#",class="heart")
 
-    //- each repo in repos
-    //-   li.repo.rect.item
-    //-     img.shade(src="img/layout/shade-150.png", alt="shade")
-    //-     a(href=repo.html_url, target="_blank")
-    //-       span.repoicon
-    //-       span.githubicon
-    //-       span.repoinfo
-    //-         span
-    //-         = repo.name
+    each repo in repos
+      li.repo.rect.item
+        img.shade(src="img/layout/shade-150.png", alt="shade")
+        a(href=repo.html_url, target="_blank")
+          span.repoicon
+          span.githubicon
+          span.repoinfo
+            span
+            = repo.name
 
-    //- each link in links
-    //-   li.link.rect.item
-    //-     img.shade(src="img/layout/shade-150.png", alt="shade")
-    //-     a(href=link.u, target="_blank")
-    //-       span.deliicon
-    //-       span.deliinfo= link.d
+    each link in links
+      li.link.rect.item
+        img.shade(src="img/layout/shade-150.png", alt="shade")
+        a(href=link.u, target="_blank")
+          span.deliicon
+          span.deliinfo= link.d
 
-    //- each tweet in tweets
-    //-   li.tweet.rect.item
-    //-     img.shade(src="img/layout/shade-150.png", alt="shade")
-    //-     a(href="http://twitter.com/robbiebardijn/status/#{tweet.id_str}", target="_blank")
-    //-       span.tweeticon
-    //-       span.visuallyhidden=tweet.text
+    each tweet in tweets
+      li.tweet.rect.item
+        img.shade(src="img/layout/shade-150.png", alt="shade")
+        a(href="http://twitter.com/robbiebardijn/status/#{tweet.id_str}", target="_blank")
+          span.tweeticon
+          span.visuallyhidden=tweet.text

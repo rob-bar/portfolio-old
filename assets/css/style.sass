@@ -289,11 +289,13 @@ body
           &:hover
             .inner .thumb
               +scale(.9)
+
             .inner .likes
               bottom: -25px
               left: -25px
-            .insetshade
-              +box-shadow(rgba(0, 0, 0, .1) 0 0 10px 20px inset)
+
+            .inner .insetshade
+              +box-shadow(rgba(0, 0, 0, .1) 0 0 30px 20px inset)
 
           .inner
             +rect($large, $height)
@@ -304,6 +306,14 @@ body
               position: relative
               +ceaser-transition(all, 5s, $easeOutCubic)
               margin: -25px 0 0 -25px
+
+            .insetshade
+              position: absolute
+              top: 0
+              left: 0
+              +rect($large, $height)
+              +box-shadow(rgba(0, 0, 0, .3) 0 0 50px 20px inset)
+              +ceaser-transition(all, 400ms, $easeOutExpo)
 
             .likes
               +rect(50px, 50px)
@@ -343,14 +353,6 @@ body
                 +rect(14px, 13px)
                 +background(image-url('ui/heart.png') top left no-repeat)
                 +inline-block
-
-            .insetshade
-              position: absolute
-              top: 0
-              left: 0
-              +rect($large, $height)
-              +box-shadow(rgba(0, 0, 0, .3) 0 0 50px 20px inset)
-              +ceaser-transition(all, 400ms, $easeOutExpo)
 
         &.link
           background-color: #db2421

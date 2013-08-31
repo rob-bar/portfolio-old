@@ -34,6 +34,294 @@
         preview: ""
       },
       tags: ["html5", "css3", "javascript", "jquery", "facebook", "game"]
+    }, {
+      title: "Spectre facebook website",
+      client: "Hp",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2012, 5, 12),
+      description: "This was a project that had a huge flow, I think about 20 pages.The project was a teasing website for people who wanted to buy a new laptop.The goal was to let people subscribe for a date with an hp specter laptop.When you registered and filled in the correct answers you could go to one of the resellers stores in your neighborhood to win a brand new Hp spectre.The website itself was build on limonade php and connected with the Facebook SDK.The design was made by Guillaume Janne, slick and beautiful.My goal was to work with fade in fade out animations between the questions,to give it a little touch.The most difficult part, from a technical point of view was the like gate which was integrated somewhere in the middle of the flow which is irregular for Fb applications.I had lots of fun on the project. It allowed me to polish up my Facebook skills.",
+      is_active: true,
+      media: {
+        thumb: "hp-spectre.jpg",
+        big: "hp-spectre.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: ["php", "javascript", "facebook", "html5", "less", "jquery"]
+    }, {
+      title: "Canvas Snake",
+      client: "No client, just for fun",
+      type_id: "game",
+      likes: 0,
+      launch_date: new Date(2012, 2, 5),
+      description: "I wanted to get the to know the html5 canvas element better.So I build a couple of games in that technology.Canvas snake was one of them, the reason why I chose for snake was because I wanted to make a game that was not to easy to make but also not to difficult.I think I learned a big part of Javascript skills by making the game.The most difficult part was making the body with all the right turns and images, the rest was just good timing and fruit generation.Another thing that was not so simple was the drop shadow on the snake.I'm glad I made this project. Home you enjoy playing the game.Feel free play,share or submit your score.",
+      is_active: true,
+      media: {
+        thumb: "own-snake.jpg",
+        big: "own-snake.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: ["game", "canvas", "javascript", "php", "css3", "html5"]
+    }, {
+      title: "Dress like jason",
+      client: "Warner",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2009, 6, 25),
+      description: "Jason derulo",
+      is_active: true,
+      media: {
+        thumb: "warner-dresslikejason.jpg",
+        big: "warner-dresslikejason.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: ["flash", "as", "php"]
+    }, {
+      title: "Asteroids",
+      client: "",
+      type_id: "game",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "own-asteroids.jpg",
+        big: "own-asteroids.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Polygone DN",
+      client: "",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "polygone-dn.jpg",
+        big: "polygone-dn.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Ta tronche sur un abribus",
+      client: "",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "allotelecom-tatronche.jpg",
+        big: "allotelecom-tatronche.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Viage launch",
+      client: "",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "viage-viage.jpg",
+        big: "viage-viage.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Polygone Newyear",
+      client: "",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "polygone-newyear.jpg",
+        big: "polygone-newyear.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Drive-E",
+      client: "",
+      type_id: "b2b website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "scansource-drivee.jpg",
+        big: "scansource-drivee.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Cecemel Winteractie",
+      client: "",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "cecemel-winteraction.jpg",
+        big: "cecemel-winteraction.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Stalion BSF",
+      client: "",
+      type_id: "video",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "stalion-bsf.jpg",
+        big: "stalion-bsf.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Sappicup",
+      client: "Sappi",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "sappi-sappicup.jpg",
+        big: "sappi-sappicup.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Volvo v40 Landingpage",
+      client: "",
+      type_id: "landing page",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "volvo-v40landing.jpg",
+        big: "volvo-v40landing.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Autosalon",
+      client: "",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "febiac-autosalon.jpg",
+        big: "febiac-autosalon.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Eco cheques",
+      client: "",
+      type_id: "game",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "cheques-game.jpg",
+        big: "cheques-game.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Grill aux bois",
+      client: "",
+      type_id: "website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "gob-chaud.jpg",
+        big: "gob-chaud.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Mercedes freemind site",
+      client: "",
+      type_id: "responsive site",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "mercedes-freemind.jpg",
+        big: "mercedes-freemind.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
+    }, {
+      title: "Rainhunters",
+      client: "",
+      type_id: "b2b website",
+      likes: 0,
+      launch_date: new Date(2013, 11, 12),
+      description: "",
+      is_active: true,
+      media: {
+        thumb: "champion-rainhunters.jpg",
+        big: "champion-rainhunters.jpg",
+        pictures: [],
+        videos: [],
+        preview: ""
+      },
+      tags: []
     }
   ];
 
@@ -148,12 +436,14 @@
     project.type_id = db.tags.findOne({
       "name": project.type_id
     })._id;
-    _ref = project.tags;
-    for (key = _i = 0, _len = _ref.length; _i < _len; key = ++_i) {
-      tag = _ref[key];
-      project.tags[key] = db.tags.findOne({
-        "name": tag
-      })._id;
+    if (project.tags.length > 1) {
+      _ref = project.tags;
+      for (key = _i = 0, _len = _ref.length; _i < _len; key = ++_i) {
+        tag = _ref[key];
+        project.tags[key] = db.tags.findOne({
+          "name": tag
+        })._id;
+      }
     }
     db.projects.insert(project);
   }

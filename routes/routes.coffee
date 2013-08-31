@@ -27,18 +27,18 @@ exports.other =
       projects: (callback) ->
         projects.data.actives (docs) ->
           callback(null, docs)
-      # repos: (callback) ->
-      #   github.data.all (data) ->
-      #     callback(null, data)
-      #   ,req
-      # links: (callback) ->
-      #   delicious.data.all (data) ->
-      #     callback(null, data)
-      #   ,req
-      # tweets: (callback) ->
-      #   twitter.data.all (data) ->
-      #     callback(null, data)
-      #   ,req
+      repos: (callback) ->
+        github.data.all (data) ->
+          callback(null, data)
+        ,req
+      links: (callback) ->
+        delicious.data.all (data) ->
+          callback(null, data)
+        ,req
+      tweets: (callback) ->
+        twitter.data.all (data) ->
+          callback(null, data)
+        ,req
       (err, results) ->
         results.title = "My portfolio"
         results.grav = url

@@ -743,22 +743,22 @@ body {
           -ms-transform: scale(0.9, 0.9);
           -o-transform: scale(0.9, 0.9);
           transform: scale(0.9, 0.9); }
-        /* line 292, style.sass */
+        /* line 293, style.sass */
         body #main #all li.work:hover .inner .likes {
           bottom: -25px;
           left: -25px; }
-        /* line 295, style.sass */
-        body #main #all li.work:hover .insetshade {
-          -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 20px inset;
-          -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 20px inset;
-          box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px 20px inset; }
-        /* line 298, style.sass */
+        /* line 297, style.sass */
+        body #main #all li.work:hover .inner .insetshade {
+          -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
+          -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
+          box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset; }
+        /* line 300, style.sass */
         body #main #all li.work .inner {
           width: 310px;
           height: 150px;
           overflow: hidden;
           position: relative; }
-          /* line 303, style.sass */
+          /* line 305, style.sass */
           body #main #all li.work .inner .thumb {
             position: relative;
             -webkit-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -767,7 +767,22 @@ body {
             -o-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
             transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
             margin: -25px 0 0 -25px; }
-          /* line 308, style.sass */
+          /* line 310, style.sass */
+          body #main #all li.work .inner .insetshade {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 310px;
+            height: 150px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+            -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+            box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+          /* line 318, style.sass */
           body #main #all li.work .inner .likes {
             width: 50px;
             height: 50px;
@@ -789,29 +804,29 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 319, style.sass */
+            /* line 329, style.sass */
             body #main #all li.work .inner .likes.liked {
               background-color: white;
               bottom: -25px;
               left: -25px; }
-              /* line 324, style.sass */
+              /* line 334, style.sass */
               body #main #all li.work .inner .likes.liked .heart {
                 background-position: -28px 0px; }
-              /* line 327, style.sass */
+              /* line 337, style.sass */
               body #main #all li.work .inner .likes.liked:hover {
                 background-color: white;
                 bottom: -25px;
                 left: -25px; }
-                /* line 332, style.sass */
+                /* line 342, style.sass */
                 body #main #all li.work .inner .likes.liked:hover .heart {
                   background-position: -28px 0px; }
-            /* line 335, style.sass */
+            /* line 345, style.sass */
             body #main #all li.work .inner .likes:hover {
               background-color: black; }
-              /* line 337, style.sass */
+              /* line 347, style.sass */
               body #main #all li.work .inner .likes:hover .heart {
                 background-position: -14px 0px; }
-            /* line 340, style.sass */
+            /* line 350, style.sass */
             body #main #all li.work .inner .likes .heart {
               margin: 5px 0;
               -webkit-transform: rotate(-45deg);
@@ -828,30 +843,15 @@ body {
               *vertical-align: auto;
               zoom: 1;
               *display: inline; }
-          /* line 347, style.sass */
-          body #main #all li.work .inner .insetshade {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 310px;
-            height: 150px;
-            -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-            -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-            box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-            -webkit-transition-delay: 0ms;
-            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-      /* line 355, style.sass */
+      /* line 357, style.sass */
       body #main #all li.link {
         background-color: #db2421;
         width: 150px;
         height: 150px; }
-        /* line 359, style.sass */
+        /* line 361, style.sass */
         body #main #all li.link .shade, body #main #all li.link .rect .shade, body #main .rect #all li.link .shade {
           bottom: -14px; }
-        /* line 362, style.sass */
+        /* line 364, style.sass */
         body #main #all li.link a {
           width: 150px;
           height: 150px;
@@ -878,21 +878,21 @@ body {
           -ms-backface-visibility: false;
           -o-backface-visibility: false;
           backface-visibility: false; }
-          /* line 374, style.sass */
+          /* line 376, style.sass */
           body #main #all li.link a:hover .deliinfo {
             -webkit-transform: translate(-75px, 75px) rotate(45deg);
             -moz-transform: translate(-75px, 75px) rotate(45deg);
             -ms-transform: translate(-75px, 75px) rotate(45deg);
             -o-transform: translate(-75px, 75px) rotate(45deg);
             transform: translate(-75px, 75px) rotate(45deg); }
-          /* line 376, style.sass */
+          /* line 378, style.sass */
           body #main #all li.link a:hover .deliicon {
             -webkit-transform: translate(20px, -20px) scale(0.75);
             -moz-transform: translate(20px, -20px) scale(0.75);
             -ms-transform: translate(20px, -20px) scale(0.75);
             -o-transform: translate(20px, -20px) scale(0.75);
             transform: translate(20px, -20px) scale(0.75); }
-          /* line 379, style.sass */
+          /* line 381, style.sass */
           body #main #all li.link a .deliinfo {
             width: 213px;
             height: 208px;
@@ -917,7 +917,7 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 393, style.sass */
+          /* line 395, style.sass */
           body #main #all li.link a .deliicon {
             background: url('../img/ui/delicious/link.png?1377352965') top left no-repeat;
             width: 87px;
@@ -934,15 +934,15 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-      /* line 401, style.sass */
+      /* line 403, style.sass */
       body #main #all li.tweet {
         background-color: #138bd1;
         width: 150px;
         height: 150px; }
-        /* line 405, style.sass */
+        /* line 407, style.sass */
         body #main #all li.tweet .shade, body #main #all li.tweet .rect .shade, body #main .rect #all li.tweet .shade {
           bottom: -14px; }
-        /* line 408, style.sass */
+        /* line 410, style.sass */
         body #main #all li.tweet a {
           width: 150px;
           height: 150px;
@@ -964,10 +964,10 @@ body {
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 418, style.sass */
+          /* line 420, style.sass */
           body #main #all li.tweet a:hover {
             background-color: #0f83c6; }
-            /* line 420, style.sass */
+            /* line 422, style.sass */
             body #main #all li.tweet a:hover .tweeticon {
               -webkit-transform: scale(0.9, 0.9);
               -moz-transform: scale(0.9, 0.9);
@@ -975,7 +975,7 @@ body {
               -o-transform: scale(0.9, 0.9);
               transform: scale(0.9, 0.9);
               background: url('../img/ui/twitter/tweet-hov.png?1377355689') top left no-repeat; }
-          /* line 425, style.sass */
+          /* line 427, style.sass */
           body #main #all li.tweet a .tweeticon {
             background: url('../img/ui/twitter/tweet.png?1377354688') top left no-repeat;
             width: 90px;
@@ -987,15 +987,15 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-      /* line 432, style.sass */
+      /* line 434, style.sass */
       body #main #all li.repo {
         background-color: white;
         width: 150px;
         height: 150px; }
-        /* line 436, style.sass */
+        /* line 438, style.sass */
         body #main #all li.repo .shade, body #main #all li.repo .rect .shade, body #main .rect #all li.repo .shade {
           bottom: -14px; }
-        /* line 439, style.sass */
+        /* line 441, style.sass */
         body #main #all li.repo a {
           width: 150px;
           height: 150px;
@@ -1017,10 +1017,10 @@ body {
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 450, style.sass */
+          /* line 452, style.sass */
           body #main #all li.repo a:hover .repoinfo {
             bottom: 0px; }
-          /* line 453, style.sass */
+          /* line 455, style.sass */
           body #main #all li.repo a:hover .repoicon {
             margin: 13px auto 8px;
             -webkit-transform: scale(0.85, 0.85);
@@ -1029,10 +1029,10 @@ body {
             -o-transform: scale(0.85, 0.85);
             transform: scale(0.85, 0.85);
             background: url('../img/ui/github/repo-hov.png?1377265594') top left no-repeat; }
-          /* line 457, style.sass */
+          /* line 459, style.sass */
           body #main #all li.repo a:hover .githubicon {
             display: none; }
-          /* line 460, style.sass */
+          /* line 462, style.sass */
           body #main #all li.repo a .repoicon {
             background: url('../img/ui/github/repo.png?1376849577') top left no-repeat;
             width: 75px;
@@ -1044,14 +1044,14 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 467, style.sass */
+          /* line 469, style.sass */
           body #main #all li.repo a .githubicon {
             background: url('../img/ui/github/github.png?1376849595') top left no-repeat;
             width: 25px;
             height: 25px;
             display: block;
             margin: 0 auto; }
-          /* line 473, style.sass */
+          /* line 475, style.sass */
           body #main #all li.repo a .repoinfo {
             width: 100%;
             height: 50px;
@@ -1066,10 +1066,10 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 483, style.sass */
+            /* line 485, style.sass */
             body #main #all li.repo a .repoinfo.smaller {
               font-size: 14px; }
-            /* line 486, style.sass */
+            /* line 488, style.sass */
             body #main #all li.repo a .repoinfo span {
               background: url('../img/ui/github/github-white.png?1376849691') top left no-repeat;
               width: 25px;
