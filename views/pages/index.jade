@@ -33,3 +33,10 @@ block content
         a(href="http://twitter.com/robbiebardijn/status/#{tweet.id_str}", target="_blank")
           span.tweeticon
           span.visuallyhidden=tweet.text
+
+    each pic in pics
+      li.pic.rect.item
+        img.shade(src="img/layout/shade-150.png", alt="shade")
+        a(href="#", target="_blank")
+          if pic.images
+            img(src=pic.images.thumbnail.url, alt="test")

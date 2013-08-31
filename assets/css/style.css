@@ -988,14 +988,17 @@ body {
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
       /* line 434, style.sass */
+      body #main #all li.pic .shade, body #main #all li.pic .rect .shade, body #main .rect #all li.pic .shade {
+        bottom: -10px; }
+      /* line 436, style.sass */
       body #main #all li.repo {
         background-color: white;
         width: 150px;
         height: 150px; }
-        /* line 438, style.sass */
+        /* line 440, style.sass */
         body #main #all li.repo .shade, body #main #all li.repo .rect .shade, body #main .rect #all li.repo .shade {
           bottom: -14px; }
-        /* line 441, style.sass */
+        /* line 443, style.sass */
         body #main #all li.repo a {
           width: 150px;
           height: 150px;
@@ -1017,10 +1020,10 @@ body {
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 452, style.sass */
+          /* line 454, style.sass */
           body #main #all li.repo a:hover .repoinfo {
             bottom: 0px; }
-          /* line 455, style.sass */
+          /* line 457, style.sass */
           body #main #all li.repo a:hover .repoicon {
             margin: 13px auto 8px;
             -webkit-transform: scale(0.85, 0.85);
@@ -1029,10 +1032,10 @@ body {
             -o-transform: scale(0.85, 0.85);
             transform: scale(0.85, 0.85);
             background: url('../img/ui/github/repo-hov.png?1377265594') top left no-repeat; }
-          /* line 459, style.sass */
+          /* line 461, style.sass */
           body #main #all li.repo a:hover .githubicon {
             display: none; }
-          /* line 462, style.sass */
+          /* line 464, style.sass */
           body #main #all li.repo a .repoicon {
             background: url('../img/ui/github/repo.png?1376849577') top left no-repeat;
             width: 75px;
@@ -1044,14 +1047,14 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 469, style.sass */
+          /* line 471, style.sass */
           body #main #all li.repo a .githubicon {
             background: url('../img/ui/github/github.png?1376849595') top left no-repeat;
             width: 25px;
             height: 25px;
             display: block;
             margin: 0 auto; }
-          /* line 475, style.sass */
+          /* line 477, style.sass */
           body #main #all li.repo a .repoinfo {
             width: 100%;
             height: 50px;
@@ -1066,10 +1069,10 @@ body {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 485, style.sass */
+            /* line 487, style.sass */
             body #main #all li.repo a .repoinfo.smaller {
               font-size: 14px; }
-            /* line 488, style.sass */
+            /* line 490, style.sass */
             body #main #all li.repo a .repoinfo span {
               background: url('../img/ui/github/github-white.png?1376849691') top left no-repeat;
               width: 25px;

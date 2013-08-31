@@ -7,6 +7,7 @@ projects = require "../data/projects.coffee"
 github = require "../data/github.coffee"
 delicious = require "../data/delicious.coffee"
 twitter = require "../data/twitter.coffee"
+instagram = require "../data/instagram.coffee"
 
 mongoose.connect "mongodb://localhost/portfolio"
 
@@ -38,6 +39,10 @@ exports.other =
       tweets: (callback) ->
         twitter.data.all (data) ->
           callback(null, data)
+        ,req
+      pics: (callback) ->
+        instagram.data.all (data) ->
+          callback(null, data.data)
         ,req
       (err, results) ->
         results.title = "My portfolio"
