@@ -4,6 +4,8 @@ path = require "path"
 http = require "http"
 config = require "./config/config.coffee"
 
+process.env.NODE_ENV = config.site.mode
+
 app = do express
 mongoose = require "mongoose"
 
@@ -20,9 +22,13 @@ app.configure ->
   @
 
 app.configure 'development', ->
-  app.use express.errorHandler()
+  app.use express.errorHandler dumpExceptions: true, showStack: true
+  config.site.host = "local.#{config.site.host}"
   @
 
+app.configure 'production', ->
+  app.use express.errorHandler()
+  @
 # ROUTES
 app.get '/', routes.other.index
 

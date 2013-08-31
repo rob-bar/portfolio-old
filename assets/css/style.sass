@@ -175,8 +175,8 @@ body
 
             p
               position: relative
+              left: 0
               margin: 19px 15px
-              left: 200px
               +typo('osl', 13px, #203e3e)
               +ceaser-transition(all, 500ms, $easeOutExpo)
 
@@ -523,5 +523,6 @@ body
 /* MEDIA QUERIES
 /* ====================================================================================================== */
 +max-screen(1370px)
-  body nav ul#social li p
+  body nav ul#social li.footer p
+
     left: 200px

@@ -596,8 +596,8 @@ body nav {
           /* line 176, style.sass */
           body nav ul#social li.footer p {
             position: relative;
+            left: 0;
             margin: 19px 15px;
-            left: 200px;
             font-weight: normal;
             font-family: "osl", Arial, Helvetica;
             font-size: 13px;
@@ -1114,5 +1114,5 @@ body #main {
 /* ====================================================================================================== */
 @media screen and (max-width: 1370px) {
   /* line 526, style.sass */
-  body nav ul#social li p {
+  body nav ul#social li.footer p {
     left: 200px; } }

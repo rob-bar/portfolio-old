@@ -1,5 +1,6 @@
 exports.site =
   port: 8088
+  mode: "development"
   title: "Portfolio"
   host: "robbiebardijn.be"
   grav:
