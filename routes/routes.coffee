@@ -49,3 +49,43 @@ exports.other =
         results.grav = url
         res.render "pages/index", results
     @
+
+exports.rest =
+  works: (req, res) ->
+    projects.data.actives (works) ->
+      res.json works
+      res.end()
+
+  socials: (req, res) ->
+    socials.data.actives (socials) ->
+      res.json socials
+      res.end()
+
+  navs: (req, res) ->
+    navs.data.actives (navs) ->
+      res.json navs
+      res.end()
+
+  repos: (req, res) ->
+    github.data.all (data) ->
+      res.json data
+      res.end()
+    ,req
+
+  links: (req, res) ->
+    delicious.data.all (data) ->
+      res.json data
+      res.end()
+    ,req
+
+  tweets: (req, res) ->
+    twitter.data.all (data) ->
+      res.json data
+      res.end()
+    ,req
+
+  pics: (req, res) ->
+    instagram.data.all (data) ->
+      res.json data.data
+      res.end()
+    ,req
