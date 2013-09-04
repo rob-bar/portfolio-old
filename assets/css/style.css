@@ -482,7 +482,7 @@ table {
   width: 100%; }
 
 /* line 90, style.sass */
-.shaded, body #main #me .baloon .norm, body #main #me .baloon .hov, body #main #all li.work {
+.shaded, body #main #me .cv, body #main #me .baloon .norm, body #main #me .baloon .hov, body #main #all li.work {
   -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px;
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px; }
@@ -650,30 +650,102 @@ body #main {
   z-index: 5;
   position: absolute;
   top: 55px;
+  height: 100%;
   margin: 5px 0 0 0; }
-  /* line 217, style.sass */
+  /* line 218, style.sass */
   body #main .item {
     margin: 10px 0 0 10px;
     float: left;
     list-style-type: none;
     position: relative; }
-  /* line 232, style.sass */
+  /* line 233, style.sass */
   body #main #me .pic {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     z-index: 1;
     background-color: white;
     width: 150px;
     height: 150px; }
-  /* line 237, style.sass */
+  /* line 239, style.sass */
+  body #main #me .cv {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    width: 150px;
+    height: 150px;
+    z-index: 3; }
+    /* line 245, style.sass */
+    body #main #me .cv a {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      text-decoration: none;
+      background-color: #3d3d3d; }
+      /* line 255, style.sass */
+      body #main #me .cv a:hover .linkicon {
+        background: url('../img/ui/cv-link-hov.png?1378278094') top left no-repeat;
+        -webkit-transform: scale(0.85, 0.85);
+        -moz-transform: scale(0.85, 0.85);
+        -ms-transform: scale(0.85, 0.85);
+        -o-transform: scale(0.85, 0.85);
+        transform: scale(0.85, 0.85);
+        margin: 30px auto 5px; }
+      /* line 260, style.sass */
+      body #main #me .cv a:hover .text {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1; }
+      /* line 263, style.sass */
+      body #main #me .cv a .linkicon {
+        background: url('../img/ui/cv-link.png?1378278023') top left no-repeat;
+        width: 83px;
+        height: 75px;
+        display: block;
+        margin: 38px auto 5px;
+        -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        -webkit-transition-delay: 0ms;
+        -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+        -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+        transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+      /* line 270, style.sass */
+      body #main #me .cv a .text {
+        font-weight: normal;
+        font-family: "fut", Arial, Helvetica;
+        font-size: 18px;
+        color: #141414;
+        text-align: center;
+        display: block;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        -webkit-transition-delay: 0ms;
+        -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+        -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+        transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+  /* line 278, style.sass */
   body #main #me .baloon {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     z-index: 2;
     position: relative;
     width: 310px;
     height: 150px; }
-    /* line 242, style.sass */
+    /* line 284, style.sass */
     body #main #me .baloon .norm {
       position: absolute;
       top: 0;
       left: 0;
+      display: none;
       padding: 30px;
       width: 250px;
       height: 90px;
@@ -688,14 +760,13 @@ body #main {
       background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
       background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf);
       background-color: white; }
-      /* line 254, style.sass */
+      /* line 297, style.sass */
       body #main #me .baloon .norm .arrow {
         position: absolute;
         right: -16px;
         top: 20px; }
-    /* line 259, style.sass */
+    /* line 302, style.sass */
     body #main #me .baloon .hov {
-      display: none;
       position: absolute;
       top: 0;
       left: 0;
@@ -713,12 +784,12 @@ body #main {
       background: url('../img/layout/pat.png?1371111257'), -o-linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
       background: url('../img/layout/pat.png?1371111257'), linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb);
       background-color: #3eabe9; }
-      /* line 273, style.sass */
+      /* line 316, style.sass */
       body #main #me .baloon .hov .arrow {
         position: absolute;
         right: -16px;
         top: 100px; }
-    /* line 279, style.sass */
+    /* line 322, style.sass */
     body #main #me .baloon > div h1 {
       margin: 0;
       font-weight: normal;
@@ -726,382 +797,416 @@ body #main {
       font-size: 30px;
       color: black;
       line-height: 1em; }
-    /* line 284, style.sass */
+    /* line 327, style.sass */
     body #main #me .baloon > div p {
       margin: 0.15em 0;
       font-weight: normal;
       font-family: "osl", Arial, Helvetica;
       font-size: 20px;
       color: black; }
-      /* line 288, style.sass */
+      /* line 331, style.sass */
       body #main #me .baloon > div p a {
         color: black;
         text-decoration: none; }
-  /* line 293, style.sass */
-  body #main #all li {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
-    /* line 296, style.sass */
-    body #main #all li .shade, body #main #all li .rect .shade, body #main .rect #all li .shade {
-      bottom: -16px; }
-    /* line 299, style.sass */
-    body #main #all li.work {
-      cursor: pointer;
-      position: relative;
-      background-color: white;
-      width: 310px;
-      height: 150px; }
-      /* line 307, style.sass */
-      body #main #all li.work:hover .inner .thumb {
-        -webkit-transform: scale(0.9, 0.9);
-        -moz-transform: scale(0.9, 0.9);
-        -ms-transform: scale(0.9, 0.9);
-        -o-transform: scale(0.9, 0.9);
-        transform: scale(0.9, 0.9); }
-      /* line 310, style.sass */
-      body #main #all li.work:hover .inner .likes {
-        bottom: -25px;
-        left: -25px; }
-      /* line 314, style.sass */
-      body #main #all li.work:hover .inner .insetshade {
-        -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
-        -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
-        box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset; }
-      /* line 317, style.sass */
-      body #main #all li.work .inner {
+  /* line 335, style.sass */
+  body #main #all {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    -o-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    height: 100%; }
+    /* line 341, style.sass */
+    body #main #all li {
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0); }
+      /* line 344, style.sass */
+      body #main #all li .shade, body #main #all li .rect .shade, body #main .rect #all li .shade {
+        bottom: -16px; }
+      /* line 347, style.sass */
+      body #main #all li.work {
+        cursor: pointer;
+        position: relative;
+        background-color: white;
         width: 310px;
         height: 150px;
-        overflow: hidden;
-        position: relative; }
-        /* line 322, style.sass */
-        body #main #all li.work .inner .thumb {
-          position: relative;
-          -webkit-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-          -webkit-transition-delay: 0ms;
-          -moz-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
-          -o-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
-          transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
-          margin: -25px 0 0 -25px; }
-        /* line 327, style.sass */
-        body #main #all li.work .inner .insetshade {
-          position: absolute;
-          top: 0;
-          left: 0;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1;
+        -webkit-transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        -webkit-transition-delay: 0ms;
+        -moz-transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+        -o-transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+        transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+        /* line 356, style.sass */
+        body #main #all li.work.inback {
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+          opacity: 0.5;
+          -webkit-transform: translate3d(0, 0, -150px);
+          -moz-transform: translate3d(0, 0, -150px);
+          -ms-transform: translate3d(0, 0, -150px);
+          -o-transform: translate3d(0, 0, -150px);
+          transform: translate3d(0, 0, -150px); }
+        /* line 361, style.sass */
+        body #main #all li.work:hover .inner .thumb {
+          -webkit-transform: scale(0.9, 0.9);
+          -moz-transform: scale(0.9, 0.9);
+          -ms-transform: scale(0.9, 0.9);
+          -o-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9); }
+        /* line 364, style.sass */
+        body #main #all li.work:hover .inner .likes {
+          bottom: -25px;
+          left: -25px; }
+        /* line 368, style.sass */
+        body #main #all li.work:hover .inner .insetshade {
+          -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
+          -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
+          box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset; }
+        /* line 371, style.sass */
+        body #main #all li.work .inner {
           width: 310px;
           height: 150px;
-          -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-          -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-          box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-          -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-          -webkit-transition-delay: 0ms;
-          -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-        /* line 335, style.sass */
-        body #main #all li.work .inner .likes {
-          width: 50px;
-          height: 50px;
-          background-color: white;
-          position: absolute;
-          bottom: -50px;
-          left: -50px;
-          -webkit-transform: rotate(45deg);
-          -moz-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          -o-transform: rotate(45deg);
-          transform: rotate(45deg);
-          text-align: center;
-          -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
-          -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
-          -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-          -webkit-transition-delay: 0ms;
-          -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 346, style.sass */
-          body #main #all li.work .inner .likes.liked {
+          overflow: hidden;
+          position: relative; }
+          /* line 376, style.sass */
+          body #main #all li.work .inner .thumb {
+            position: relative;
+            -webkit-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
+            -o-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
+            transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
+            margin: -25px 0 0 -25px; }
+          /* line 381, style.sass */
+          body #main #all li.work .inner .insetshade {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 310px;
+            height: 150px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+            -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+            box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+          /* line 389, style.sass */
+          body #main #all li.work .inner .likes {
+            width: 50px;
+            height: 50px;
             background-color: white;
-            bottom: -25px;
-            left: -25px; }
-            /* line 351, style.sass */
-            body #main #all li.work .inner .likes.liked .heart {
-              background-position: -28px 0px; }
-            /* line 354, style.sass */
-            body #main #all li.work .inner .likes.liked:hover {
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            text-align: center;
+            -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+            /* line 400, style.sass */
+            body #main #all li.work .inner .likes.liked {
               background-color: white;
               bottom: -25px;
               left: -25px; }
-              /* line 359, style.sass */
-              body #main #all li.work .inner .likes.liked:hover .heart {
+              /* line 405, style.sass */
+              body #main #all li.work .inner .likes.liked .heart {
                 background-position: -28px 0px; }
-          /* line 362, style.sass */
-          body #main #all li.work .inner .likes:hover {
-            background-color: black; }
-            /* line 364, style.sass */
-            body #main #all li.work .inner .likes:hover .heart {
-              background-position: -14px 0px; }
-          /* line 367, style.sass */
-          body #main #all li.work .inner .likes .heart {
-            margin: 5px 0;
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-            -o-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-            width: 14px;
-            height: 13px;
-            background: url('../img/ui/heart.png?1377708900') top left no-repeat;
-            display: -moz-inline-stack;
-            display: inline-block;
-            vertical-align: middle;
-            *vertical-align: auto;
-            zoom: 1;
-            *display: inline; }
-    /* line 374, style.sass */
-    body #main #all li.link {
-      background-color: #db2421;
-      width: 150px;
-      height: 150px; }
-      /* line 378, style.sass */
-      body #main #all li.link .shade, body #main #all li.link .rect .shade, body #main .rect #all li.link .shade {
-        bottom: -14px; }
-      /* line 381, style.sass */
-      body #main #all li.link a {
+              /* line 408, style.sass */
+              body #main #all li.work .inner .likes.liked:hover {
+                background-color: white;
+                bottom: -25px;
+                left: -25px; }
+                /* line 413, style.sass */
+                body #main #all li.work .inner .likes.liked:hover .heart {
+                  background-position: -28px 0px; }
+            /* line 416, style.sass */
+            body #main #all li.work .inner .likes:hover {
+              background-color: black; }
+              /* line 418, style.sass */
+              body #main #all li.work .inner .likes:hover .heart {
+                background-position: -14px 0px; }
+            /* line 421, style.sass */
+            body #main #all li.work .inner .likes .heart {
+              margin: 5px 0;
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+              width: 14px;
+              height: 13px;
+              background: url('../img/ui/heart.png?1377708900') top left no-repeat;
+              display: -moz-inline-stack;
+              display: inline-block;
+              vertical-align: middle;
+              *vertical-align: auto;
+              zoom: 1;
+              *display: inline; }
+      /* line 428, style.sass */
+      body #main #all li.link {
+        background-color: #db2421;
         width: 150px;
-        height: 150px;
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: middle;
-        *vertical-align: auto;
-        zoom: 1;
-        *display: inline;
-        position: relative;
-        text-decoration: none;
-        font-weight: normal;
-        font-family: "fut", Arial, Helvetica;
-        font-size: 18px;
-        color: #454545;
-        overflow: hidden;
-        -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-        -webkit-transition-delay: 0ms;
-        -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        -webkit-backface-visibility: false;
-        -moz-backface-visibility: false;
-        -ms-backface-visibility: false;
-        -o-backface-visibility: false;
-        backface-visibility: false; }
-        /* line 393, style.sass */
-        body #main #all li.link a:hover .deliinfo {
-          -webkit-transform: translate(-75px, 75px) rotate(45deg);
-          -moz-transform: translate(-75px, 75px) rotate(45deg);
-          -ms-transform: translate(-75px, 75px) rotate(45deg);
-          -o-transform: translate(-75px, 75px) rotate(45deg);
-          transform: translate(-75px, 75px) rotate(45deg); }
-        /* line 395, style.sass */
-        body #main #all li.link a:hover .deliicon {
-          -webkit-transform: translate(20px, -20px) scale(0.75);
-          -moz-transform: translate(20px, -20px) scale(0.75);
-          -ms-transform: translate(20px, -20px) scale(0.75);
-          -o-transform: translate(20px, -20px) scale(0.75);
-          transform: translate(20px, -20px) scale(0.75); }
-        /* line 398, style.sass */
-        body #main #all li.link a .deliinfo {
-          width: 213px;
-          height: 208px;
-          background-color: white;
-          -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
-          -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          text-align: center;
-          padding: 5px 0 0 0;
-          margin: -31px 0 0 -31px;
-          -webkit-transform: translate(-160px, 160px) rotate(45deg);
-          -moz-transform: translate(-160px, 160px) rotate(45deg);
-          -ms-transform: translate(-160px, 160px) rotate(45deg);
-          -o-transform: translate(-160px, 160px) rotate(45deg);
-          transform: translate(-160px, 160px) rotate(45deg);
+        height: 150px; }
+        /* line 432, style.sass */
+        body #main #all li.link .shade, body #main #all li.link .rect .shade, body #main .rect #all li.link .shade {
+          bottom: -14px; }
+        /* line 435, style.sass */
+        body #main #all li.link a {
+          width: 150px;
+          height: 150px;
+          display: -moz-inline-stack;
+          display: inline-block;
+          vertical-align: middle;
+          *vertical-align: auto;
+          zoom: 1;
+          *display: inline;
+          position: relative;
+          text-decoration: none;
+          font-weight: normal;
+          font-family: "fut", Arial, Helvetica;
+          font-size: 18px;
+          color: #454545;
+          overflow: hidden;
           -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
           -webkit-transition-delay: 0ms;
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-        /* line 412, style.sass */
-        body #main #all li.link a .deliicon {
-          background: url('../img/ui/delicious/link.png?1377352965') top left no-repeat;
-          width: 87px;
-          height: 86px;
-          display: block;
-          margin: 33px auto 8px;
-          -webkit-transform-origin: top right;
-          -moz-transform-origin: top right;
-          -ms-transform-origin: top right;
-          -o-transform-origin: top right;
-          transform-origin: top right;
-          -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-          -webkit-transition-delay: 0ms;
-          -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-    /* line 420, style.sass */
-    body #main #all li.tweet {
-      background-color: #138bd1;
-      width: 150px;
-      height: 150px; }
-      /* line 424, style.sass */
-      body #main #all li.tweet .shade, body #main #all li.tweet .rect .shade, body #main .rect #all li.tweet .shade {
-        bottom: -14px; }
-      /* line 427, style.sass */
-      body #main #all li.tweet a {
+          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+          -webkit-backface-visibility: false;
+          -moz-backface-visibility: false;
+          -ms-backface-visibility: false;
+          -o-backface-visibility: false;
+          backface-visibility: false; }
+          /* line 447, style.sass */
+          body #main #all li.link a:hover .deliinfo {
+            -webkit-transform: translate(-75px, 75px) rotate(45deg);
+            -moz-transform: translate(-75px, 75px) rotate(45deg);
+            -ms-transform: translate(-75px, 75px) rotate(45deg);
+            -o-transform: translate(-75px, 75px) rotate(45deg);
+            transform: translate(-75px, 75px) rotate(45deg); }
+          /* line 449, style.sass */
+          body #main #all li.link a:hover .deliicon {
+            -webkit-transform: translate(20px, -20px) scale(0.75);
+            -moz-transform: translate(20px, -20px) scale(0.75);
+            -ms-transform: translate(20px, -20px) scale(0.75);
+            -o-transform: translate(20px, -20px) scale(0.75);
+            transform: translate(20px, -20px) scale(0.75); }
+          /* line 452, style.sass */
+          body #main #all li.link a .deliinfo {
+            width: 213px;
+            height: 208px;
+            background-color: white;
+            -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+            -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            padding: 5px 0 0 0;
+            margin: -31px 0 0 -31px;
+            -webkit-transform: translate(-160px, 160px) rotate(45deg);
+            -moz-transform: translate(-160px, 160px) rotate(45deg);
+            -ms-transform: translate(-160px, 160px) rotate(45deg);
+            -o-transform: translate(-160px, 160px) rotate(45deg);
+            transform: translate(-160px, 160px) rotate(45deg);
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+          /* line 466, style.sass */
+          body #main #all li.link a .deliicon {
+            background: url('../img/ui/delicious/link.png?1377352965') top left no-repeat;
+            width: 87px;
+            height: 86px;
+            display: block;
+            margin: 33px auto 8px;
+            -webkit-transform-origin: top right;
+            -moz-transform-origin: top right;
+            -ms-transform-origin: top right;
+            -o-transform-origin: top right;
+            transform-origin: top right;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+      /* line 474, style.sass */
+      body #main #all li.tweet {
+        background-color: #138bd1;
         width: 150px;
-        height: 150px;
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: middle;
-        *vertical-align: auto;
-        zoom: 1;
-        *display: inline;
-        position: relative;
-        text-decoration: none;
-        font-weight: normal;
-        font-family: "fut", Arial, Helvetica;
-        font-size: 18px;
-        color: #454545;
-        overflow: hidden;
-        -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-        -webkit-transition-delay: 0ms;
-        -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-        /* line 437, style.sass */
-        body #main #all li.tweet a:hover {
-          background-color: #0f83c6; }
-          /* line 439, style.sass */
-          body #main #all li.tweet a:hover .tweeticon {
-            -webkit-transform: scale(0.9, 0.9);
-            -moz-transform: scale(0.9, 0.9);
-            -ms-transform: scale(0.9, 0.9);
-            -o-transform: scale(0.9, 0.9);
-            transform: scale(0.9, 0.9);
-            background: url('../img/ui/twitter/tweet-hov.png?1377355689') top left no-repeat; }
-        /* line 444, style.sass */
-        body #main #all li.tweet a .tweeticon {
-          background: url('../img/ui/twitter/tweet.png?1377354688') top left no-repeat;
-          width: 90px;
-          height: 73px;
-          display: block;
-          margin: 38px auto 8px;
-          -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-          -webkit-transition-delay: 0ms;
-          -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-          transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-    /* line 451, style.sass */
-    body #main #all li.pic .shade, body #main #all li.pic .rect .shade, body #main .rect #all li.pic .shade {
-      bottom: -10px; }
-    /* line 453, style.sass */
-    body #main #all li.repo {
-      background-color: white;
-      width: 150px;
-      height: 150px; }
-      /* line 457, style.sass */
-      body #main #all li.repo .shade, body #main #all li.repo .rect .shade, body #main .rect #all li.repo .shade {
-        bottom: -14px; }
-      /* line 460, style.sass */
-      body #main #all li.repo a {
-        width: 150px;
-        height: 150px;
-        display: -moz-inline-stack;
-        display: inline-block;
-        vertical-align: middle;
-        *vertical-align: auto;
-        zoom: 1;
-        *display: inline;
-        position: relative;
-        text-decoration: none;
-        font-weight: normal;
-        font-family: "fut", Arial, Helvetica;
-        font-size: 18px;
-        color: white;
-        overflow: hidden;
-        -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-        -webkit-transition-delay: 0ms;
-        -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-        transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-        /* line 471, style.sass */
-        body #main #all li.repo a:hover .repoinfo {
-          bottom: 0px; }
-        /* line 474, style.sass */
-        body #main #all li.repo a:hover .repoicon {
-          margin: 13px auto 8px;
-          -webkit-transform: scale(0.85, 0.85);
-          -moz-transform: scale(0.85, 0.85);
-          -ms-transform: scale(0.85, 0.85);
-          -o-transform: scale(0.85, 0.85);
-          transform: scale(0.85, 0.85);
-          background: url('../img/ui/github/repo-hov.png?1377265594') top left no-repeat; }
+        height: 150px; }
         /* line 478, style.sass */
-        body #main #all li.repo a:hover .githubicon {
-          display: none; }
+        body #main #all li.tweet .shade, body #main #all li.tweet .rect .shade, body #main .rect #all li.tweet .shade {
+          bottom: -14px; }
         /* line 481, style.sass */
-        body #main #all li.repo a .repoicon {
-          background: url('../img/ui/github/repo.png?1376849577') top left no-repeat;
-          width: 75px;
-          height: 76px;
-          display: block;
-          margin: 33px auto 8px;
+        body #main #all li.tweet a {
+          width: 150px;
+          height: 150px;
+          display: -moz-inline-stack;
+          display: inline-block;
+          vertical-align: middle;
+          *vertical-align: auto;
+          zoom: 1;
+          *display: inline;
+          position: relative;
+          text-decoration: none;
+          font-weight: normal;
+          font-family: "fut", Arial, Helvetica;
+          font-size: 18px;
+          color: #454545;
+          overflow: hidden;
           -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
           -webkit-transition-delay: 0ms;
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-        /* line 488, style.sass */
-        body #main #all li.repo a .githubicon {
-          background: url('../img/ui/github/github.png?1376849595') top left no-repeat;
-          width: 25px;
-          height: 25px;
-          display: block;
-          margin: 0 auto; }
-        /* line 494, style.sass */
-        body #main #all li.repo a .repoinfo {
-          width: 100%;
-          height: 50px;
-          position: absolute;
-          bottom: -50px;
-          display: block;
-          background-color: #333333;
-          line-height: 50px;
-          word-break: break-all;
+          /* line 491, style.sass */
+          body #main #all li.tweet a:hover {
+            background-color: #0f83c6; }
+            /* line 493, style.sass */
+            body #main #all li.tweet a:hover .tweeticon {
+              -webkit-transform: scale(0.9, 0.9);
+              -moz-transform: scale(0.9, 0.9);
+              -ms-transform: scale(0.9, 0.9);
+              -o-transform: scale(0.9, 0.9);
+              transform: scale(0.9, 0.9);
+              background: url('../img/ui/twitter/tweet-hov.png?1377355689') top left no-repeat; }
+          /* line 498, style.sass */
+          body #main #all li.tweet a .tweeticon {
+            background: url('../img/ui/twitter/tweet.png?1377354688') top left no-repeat;
+            width: 90px;
+            height: 73px;
+            display: block;
+            margin: 38px auto 8px;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+      /* line 505, style.sass */
+      body #main #all li.pic .shade, body #main #all li.pic .rect .shade, body #main .rect #all li.pic .shade {
+        bottom: -10px; }
+      /* line 508, style.sass */
+      body #main #all li.repo {
+        background-color: white;
+        width: 150px;
+        height: 150px; }
+        /* line 512, style.sass */
+        body #main #all li.repo .shade, body #main #all li.repo .rect .shade, body #main .rect #all li.repo .shade {
+          bottom: -14px; }
+        /* line 515, style.sass */
+        body #main #all li.repo a {
+          width: 150px;
+          height: 150px;
+          display: -moz-inline-stack;
+          display: inline-block;
+          vertical-align: middle;
+          *vertical-align: auto;
+          zoom: 1;
+          *display: inline;
+          position: relative;
+          text-decoration: none;
+          font-weight: normal;
+          font-family: "fut", Arial, Helvetica;
+          font-size: 18px;
+          color: white;
+          overflow: hidden;
           -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
           -webkit-transition-delay: 0ms;
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 504, style.sass */
-          body #main #all li.repo a .repoinfo.smaller {
-            font-size: 14px; }
-          /* line 507, style.sass */
-          body #main #all li.repo a .repoinfo span {
-            background: url('../img/ui/github/github-white.png?1376849691') top left no-repeat;
+          /* line 526, style.sass */
+          body #main #all li.repo a:hover .repoinfo {
+            bottom: 0px; }
+          /* line 529, style.sass */
+          body #main #all li.repo a:hover .repoicon {
+            margin: 13px auto 8px;
+            -webkit-transform: scale(0.85, 0.85);
+            -moz-transform: scale(0.85, 0.85);
+            -ms-transform: scale(0.85, 0.85);
+            -o-transform: scale(0.85, 0.85);
+            transform: scale(0.85, 0.85);
+            background: url('../img/ui/github/repo-hov.png?1377265594') top left no-repeat; }
+          /* line 534, style.sass */
+          body #main #all li.repo a:hover .githubicon {
+            display: none; }
+          /* line 537, style.sass */
+          body #main #all li.repo a .repoicon {
+            background: url('../img/ui/github/repo.png?1376849577') top left no-repeat;
+            width: 75px;
+            height: 76px;
+            display: block;
+            margin: 33px auto 8px;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+          /* line 544, style.sass */
+          body #main #all li.repo a .githubicon {
+            background: url('../img/ui/github/github.png?1376849595') top left no-repeat;
             width: 25px;
             height: 25px;
-            display: -moz-inline-stack;
-            display: inline-block;
-            vertical-align: middle;
-            *vertical-align: auto;
-            zoom: 1;
-            *display: inline;
-            margin: 0 10px; }
+            display: block;
+            margin: 0 auto; }
+          /* line 550, style.sass */
+          body #main #all li.repo a .repoinfo {
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            bottom: -50px;
+            display: block;
+            background-color: #333333;
+            line-height: 50px;
+            word-break: break-all;
+            -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -webkit-transition-delay: 0ms;
+            -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+            transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
+            /* line 560, style.sass */
+            body #main #all li.repo a .repoinfo.smaller {
+              font-size: 14px; }
+            /* line 563, style.sass */
+            body #main #all li.repo a .repoinfo span {
+              background: url('../img/ui/github/github-white.png?1376849691') top left no-repeat;
+              width: 25px;
+              height: 25px;
+              display: -moz-inline-stack;
+              display: inline-block;
+              vertical-align: middle;
+              *vertical-align: auto;
+              zoom: 1;
+              *display: inline;
+              margin: 0 10px; }
 
 /* ====================================================================================================== */
 /* PAGES */
@@ -1113,6 +1218,6 @@ body #main {
 /* MEDIA QUERIES */
 /* ====================================================================================================== */
 @media screen and (max-width: 1370px) {
-  /* line 526, style.sass */
+  /* line 582, style.sass */
   body nav ul#social li.footer p {
     left: 200px; } }
