@@ -37,5 +37,8 @@ app.get '/', routes.other.index
 app.get '/rest/:collection', (req, res) ->
   routes.rest[req.params.collection](req, res)
 
+# CV LINK
+app.get '/downloads/curriculumvitea.pdf', routes.other.cv
+
 http.createServer(app).listen config.site.port, config.site.host, ->
   console.log "#{config.site.title} listening on port #{config.site.port}"

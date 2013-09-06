@@ -8,9 +8,10 @@ github = require "../data/github.coffee"
 delicious = require "../data/delicious.coffee"
 twitter = require "../data/twitter.coffee"
 instagram = require "../data/instagram.coffee"
+analytics = require "../data/analytics.coffee"
 
 mongoose.connect "mongodb://localhost/portfolio"
-
+cnt = 0
 exports.other =
   index: (req, res) ->
     crypto = require "crypto"
@@ -49,6 +50,12 @@ exports.other =
         results.grav = url
         res.render "pages/index", results
     @
+
+  cv: (req, res, next) ->
+    res.header "Accept-Ranges", "none"
+    analytics.data.add_cv_link_click (str) ->
+      console.log str
+    next()
 
 exports.rest =
   works: (req, res) ->
