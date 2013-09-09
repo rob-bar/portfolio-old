@@ -21,15 +21,15 @@ module.exports = (grunt) ->
 
     coffee:
       app:
-        expand: true,
-        cwd: 'assets/coffee',
-        src: ['*.coffee','**/*.coffee'],
-        dest: 'assets/js',
-        ext: '.js'
-        options:
-          sourceMap: true
+        files: [
+          expand: true
+          preserve_dirs: true
           bare: false
-          join: true
+          cwd: 'assets/coffee'
+          src: ['**/*.coffee']
+          dest: 'assets/js'
+          ext: '.js'
+        ]
 
     jshint:
       app:
