@@ -27,7 +27,7 @@ exports.other =
         navs.data.actives (docs) ->
           callback(null, docs)
       projects: (callback) ->
-        projects.data.actives (docs) ->
+        projects.data.sorted (docs) ->
           callback(null, docs)
       # repos: (callback) ->
       #   github.data.all (data) ->
@@ -48,14 +48,19 @@ exports.other =
       (err, results) ->
         results.title = "My portfolio"
         results.grav = url
+
+        # NOT ON ITS PLACE HERE
+        if config.site.mode is "production"
+          results.ga = config.site.ga
+        else
+          results.ga = config.site.fake_ga
         res.render "pages/index", results
     @
 
   cv: (req, res, next) ->
     res.header "Accept-Ranges", "none"
     analytics.data.add_cv_link_click (str) ->
-      console.log str
-    next()
+      next()
 
 exports.rest =
   works: (req, res) ->

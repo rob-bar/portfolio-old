@@ -3,6 +3,8 @@ exports.site =
   mode: "development"
   title: "Portfolio"
   host: "robbiebardijn.be"
+  ga: "UA-27483596-1"
+  fake_ga: "UA-xxxxxxxx-x"
   grav:
     email: "robbie.bardijn@gmail.com"
     url: "http://www.gravatar.com/avatar/hash.jpg?s=150"

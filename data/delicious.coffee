@@ -21,7 +21,14 @@ exports.data =
     @options.path = "/v2/json/#{config.site.deli.username}?count=100"
     h.help.request @options, (data) -> callback data
 
-  tag: (callback, req) ->
+  tag: (callback, tag, req) ->
     @options['user-agent'] = req.get "user-agent"
-    @options.path = "/v2/json/#{config.site.deli.username}/#{req.params.tag}?count=100"
-    h.help.request @options, (data) -> callback data
+    @options.path = "/v2/json/#{config.site.deli.username}/#{tag}?count=100"
+    h.help.request @options, (data) ->
+
+      picked = _.pluckMany(filtered, ['d', 'u', 't', 'dt'])
+      map = ["title", "url", "tags", "created_at"]
+      _.each picked, (value, key, list) ->
+        list[key] = _.object(map,_.values value)
+      console.log picked
+      callback picked

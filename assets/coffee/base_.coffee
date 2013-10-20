@@ -17,6 +17,7 @@ $ ->
         setTimeout =>
           $(@).addClass "inback"
         , $(@).offset().top * 0.75
+
     else
       $('#all li').each () ->
         setTimeout =>

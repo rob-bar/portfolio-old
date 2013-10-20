@@ -6,7 +6,7 @@ define ['backbone','underscore','jquery', 'router', 'site'],
     # Backbone.emulateJSON = true
     # Backbone.emulateHTTP = true
 
-    _.each $(".repoinfo"), (repo)->
+    _.each $(".repoinfo"), (repo) ->
       if $(repo).text().length > 18
         $(repo).addClass "smaller"
 

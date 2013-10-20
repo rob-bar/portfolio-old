@@ -6,9 +6,12 @@ require.config
     underscore: 'vendor/underscore'
     backbone: 'vendor/backbone'
     async: 'vendor/async'
+    blade: ''
   shim:
     underscore:
       exports: "_"
+    blade:
+      exports: "blade"
     backbone:
       deps: ['underscore', 'jquery']
       exports: 'Backbone'
