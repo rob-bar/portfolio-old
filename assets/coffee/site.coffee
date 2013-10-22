@@ -1,6 +1,6 @@
 define ['module','underscore','backbone'],
 (module, _, Backbone) ->
-  site=
+  site =
     config:
       mousesover: true
     vent: _.extend {}, Backbone.Events

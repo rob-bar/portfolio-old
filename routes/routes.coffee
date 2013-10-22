@@ -29,22 +29,22 @@ exports.other =
       projects: (callback) ->
         projects.data.sorted (docs) ->
           callback(null, docs)
-      # repos: (callback) ->
-      #   github.data.all (data) ->
-      #     callback(null, data)
-      #   ,req
-      # links: (callback) ->
-      #   delicious.data.all (data) ->
-      #     callback(null, data)
-      #   ,req
-      # tweets: (callback) ->
-      #   twitter.data.all (data) ->
-      #     callback(null, data)
-      #   ,req
-      # pics: (callback) ->
-      #   instagram.data.all (data) ->
-      #     callback(null, data.data)
-      #   ,req
+      repos: (callback) ->
+        github.data.all (data) ->
+          callback(null, data)
+        ,req
+      links: (callback) ->
+        delicious.data.all (data) ->
+          callback(null, data)
+        ,req
+      tweets: (callback) ->
+        twitter.data.all (data) ->
+          callback(null, data)
+        ,req
+      pics: (callback) ->
+        instagram.data.all (data) ->
+          callback(null, data.data)
+        ,req
       (err, results) ->
         results.title = "My portfolio"
         results.grav = url

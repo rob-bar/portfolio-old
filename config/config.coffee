@@ -9,7 +9,7 @@ exports.site =
     email: "robbie.bardijn@gmail.com"
     url: "http://www.gravatar.com/avatar/hash.jpg?s=150"
   instagram:
-    token: "9205448.ab103e5.40f43201df12427bb276eff4d2ca7348"
+    token: "9205448.03c4c76.742ad313a36540a090a1f383c7549ba0"
     ID: "9205448"
   github:
     username: "rob-bar"

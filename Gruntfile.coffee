@@ -31,47 +31,79 @@ module.exports = (grunt) ->
           ext: '.js'
         ]
 
+    requirejs:
+      compile:
+        options:
+          mainConfigFile: 'assets/js/build.js'
+          baseUrl: "assets/js"
+          name: "base"
+          include: ['templates', 'build']
+          insertRequire: ['templates']
+          out: 'assets/js/base.min.js'
+          preserveLicenseComments: false
+
     jshint:
       app:
         options:
-          sub: true
           boss: true
           expr: true
           eqnull: true
         files:
-          src: ['assets/js/base.js', 'app.js']
+          src: 'assets/js/*.js'
 
-    concat:
-      options:
-        stripBanners: true
+    imagemin:
       dist:
-        src: '<%= vendorlibs %>',
-        dest: 'assets/js/app.js'
-
-    uglify:
-      app:
         options:
-          sourceMap: 'assets/js/app.js.map' # the sourcemap
+          optimizationLevel: 3
+        files: [
+            expand: true,
+            cwd: "assets/img/"
+            src: "**/*.{png,jpg,jpeg}"
+            dest: "assets/img/"
+        ]
+
+    jade:
+      compile:
+        options:
+          compileDebug: false
+          client: true
+          amd: true
         files:
-          'assets/js/app.min.js': ['assets/js/app.js']
+          "assets/templates/templates.js": ["assets/templates/*.jade"]
+
 
     watch:
+      options:
+        atBegin: true
+        interrupt: true
+        spawn: false
       app:
         files: ['assets/coffee/**/*.coffee']
-        tasks: ['coffee:app']
-      server:
-        files: ['assets/server/app.coffee']
-        tasks: ['coffee:server']
+        tasks: ['coffee']
       sass:
         files: ['assets/css/**/*.sass']
         tasks: ['compass']
       scss:
         files: ['assets/css/**/*.scss']
         tasks: ['compass']
+      jade:
+        files: ['assets/templates/**/*.jade']
+        tasks: ['jade']
 
-  # Server task.
-  grunt.registerTask 'server', ['coffee:server', 'jshint']
   # Default task.
-  grunt.registerTask 'default', ['compass', 'coffee:app', 'jshint']
+  grunt.registerTask 'default', [
+    'compass'
+    'coffee'
+    'jshint'
+    'jade'
+  ]
+
   # deploy
-  grunt.registerTask 'deploy', ['compass', 'coffee:app', 'jshint', 'concat', 'uglify']
+  grunt.registerTask 'deploy', [
+    'compass'
+    'coffee'
+    'jshint'
+    'jade'
+    'imagemin'
+    'requirejs'
+  ]
