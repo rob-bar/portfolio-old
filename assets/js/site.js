@@ -3,6 +3,7 @@
     var site;
     site = {
       config: {
+        rest: "rest",
         mousesover: true
       },
       vent: _.extend({}, Backbone.Events)

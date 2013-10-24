@@ -21,6 +21,8 @@
         return this.bind('route', helper.track_page);
       };
 
+      AppRouter.prototype.index = function() {};
+
       AppRouter.prototype.before = function() {};
 
       AppRouter.prototype.after = function() {};

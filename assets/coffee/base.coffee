@@ -1,29 +1,30 @@
-define ['backbone','underscore','jquery', 'router', 'site'],
-(Backbone, _, $, AppRouter, site) ->
+define ['backbone','underscore', 'jquery', 'site'],
+(Backbone, _, $, site) ->
 
   $ ->
     site.router = new AppRouter()
-    # Backbone.emulateJSON = true
     # Backbone.emulateHTTP = true
+    # Backbone.emulateJSON = true
 
-    _.each $(".repoinfo"), (repo) ->
-      if $(repo).text().length > 18
-        $(repo).addClass "smaller"
 
-    $('.likes').click (e) ->
-      e.preventDefault()
-      $(e.currentTarget).addClass "liked"
+    # _.each $(".repoinfo"), (repo) ->
+    #   if $(repo).text().length > 18
+    #     $(repo).addClass "smaller"
 
-    $('.work').click (e) ->
-      e.preventDefault()
-      unless $('#all li').eq(0).hasClass "inback"
-        $('#all li').each () ->
-          setTimeout =>
-            $(@).addClass "inback"
-          , $(@).offset().top * 0.75
-      else
-        $('#all li').each () ->
-          setTimeout =>
-            $(@).removeClass "inback"
-          , $(@).offset().top * 0.75
+    # $('.likes').click (e) ->
+    #   e.preventDefault()
+    #   $(e.currentTarget).addClass "liked"
+
+    # $('.work').click (e) ->
+    #   e.preventDefault()
+    #   unless $('#all li').eq(0).hasClass "inback"
+    #     $('#all li').each () ->
+    #       setTimeout =>
+    #         $(@).addClass "inback"
+    #       , $(@).offset().top * 0.75
+    #   else
+    #     $('#all li').each () ->
+    #       setTimeout =>
+    #         $(@).removeClass "inback"
+    #       , $(@).offset().top * 0.75
 

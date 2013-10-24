@@ -5,9 +5,12 @@ define [
 ],
 (module, Backbone, helper) ->
   class Repo extends Backbone.View
-    attributes: {}
+    tagName: "li"
+    className: "repo rect item"
     events: {}
     initialize: ->
+
     render: ->
+      helper.get_template("repo")(@model)
 
   module.exports = Repo

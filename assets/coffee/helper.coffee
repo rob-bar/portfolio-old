@@ -2,7 +2,8 @@ define ['module', 'jquery', 'backbone'],
 (module, $, Backbone) ->
 
   helper =
-    get_template: (name) ->
+    get_template: (name, data) ->
+      return JST["assets/templates/#{name}"](data)
 
     track_page: ->
       _gaq = window._gaq || []

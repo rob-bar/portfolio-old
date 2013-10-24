@@ -1,7 +1,7 @@
 (function() {
   require.config({
     deps: ['base'],
-    baseUrl: "/js/",
+    baseUrl: "/assets/js/",
     paths: {
       jquery: 'vendor/jquery',
       underscore: 'vendor/underscore',

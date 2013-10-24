@@ -23,28 +23,11 @@ exports.other =
       socials: (callback) ->
         socials.data.actives (docs) ->
           callback(null, docs)
+
       navs: (callback) ->
         navs.data.actives (docs) ->
           callback(null, docs)
-      projects: (callback) ->
-        projects.data.sorted (docs) ->
-          callback(null, docs)
-      repos: (callback) ->
-        github.data.all (data) ->
-          callback(null, data)
-        ,req
-      links: (callback) ->
-        delicious.data.all (data) ->
-          callback(null, data)
-        ,req
-      tweets: (callback) ->
-        twitter.data.all (data) ->
-          callback(null, data)
-        ,req
-      pics: (callback) ->
-        instagram.data.all (data) ->
-          callback(null, data.data)
-        ,req
+
       (err, results) ->
         results.title = "My portfolio"
         results.grav = url
@@ -54,6 +37,7 @@ exports.other =
           results.ga = config.site.ga
         else
           results.ga = config.site.fake_ga
+
         res.render "pages/index", results
     @
 

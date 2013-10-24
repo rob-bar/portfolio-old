@@ -34,8 +34,8 @@ module.exports = (grunt) ->
     requirejs:
       compile:
         options:
-          mainConfigFile: 'assets/js/build.js'
-          baseUrl: "assets/js"
+          mainConfigFile: '/assets/js/build.js'
+          baseUrl: "/assets/js"
           name: "base"
           include: ['templates', 'build']
           insertRequire: ['templates']
@@ -48,8 +48,9 @@ module.exports = (grunt) ->
           boss: true
           expr: true
           eqnull: true
+          browser: true
         files:
-          src: 'assets/js/*.js'
+          src: 'assets/js/base.min.js'
 
     imagemin:
       dist:
@@ -94,7 +95,6 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', [
     'compass'
     'coffee'
-    'jshint'
     'jade'
   ]
 

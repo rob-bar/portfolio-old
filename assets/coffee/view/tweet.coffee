@@ -5,9 +5,12 @@ define [
 ],
 (module, Backbone, helper) ->
   class Tweet extends Backbone.View
-    attributes: {}
+    tagName: "li"
+    className: "tweet rect item"
     events: {}
     initialize: ->
+
     render: ->
+      helper.get_template("tweet")(@model)
 
   module.exports = Tweet
