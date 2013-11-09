@@ -12,13 +12,17 @@
         return _ref;
       }
 
-      Repo.prototype.attributes = {};
+      Repo.prototype.tagName = "li";
+
+      Repo.prototype.className = "repo rect item";
 
       Repo.prototype.events = {};
 
       Repo.prototype.initialize = function() {};
 
-      Repo.prototype.render = function() {};
+      Repo.prototype.render = function() {
+        return helper.get_template("repo")(this.model);
+      };
 
       return Repo;
 

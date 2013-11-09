@@ -12,13 +12,17 @@
         return _ref;
       }
 
-      Tweet.prototype.attributes = {};
+      Tweet.prototype.tagName = "li";
+
+      Tweet.prototype.className = "tweet rect item";
 
       Tweet.prototype.events = {};
 
       Tweet.prototype.initialize = function() {};
 
-      Tweet.prototype.render = function() {};
+      Tweet.prototype.render = function() {
+        return helper.get_template("tweet")(this.model);
+      };
 
       return Tweet;
 

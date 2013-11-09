@@ -9,8 +9,6 @@ define [
     className: "tweet rect item"
     events: {}
     initialize: ->
-
-    render: ->
-      helper.get_template("tweet")(@model)
+    render: -> helper.get_template("tweet")(@model)
 
   module.exports = Tweet

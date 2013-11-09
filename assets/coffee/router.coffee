@@ -2,27 +2,35 @@ define [
   'module'
   'backbone'
   'helper'
+  'view/main'
 ],
-(module, Backbone, helper) ->
+(module, Backbone, helper, MainView) ->
 
   class AppRouter extends Backbone.Router
     routes:
       "route:before": "before"
       "route:after": "after"
+      "": "index"
 
     initialize: ->
       @bind 'route', helper.track_page
+      @listenTo(@, 'route:before', @before)
+      @listenTo(@, 'route:after', @after)
 
     # ======================================================================================================
     # ROUTES
     # ======================================================================================================
     index: ->
+      @main
 
     # ======================================================================================================
     # BEFORE @ AFTER
     # ======================================================================================================
-    before: () ->
-      # console.log "BEFORE"
+    before: ->
+      # console.log "before"
+      unless @main?
+        @main = new MainView()
+        $("#main").append @main.$el
 
     after: ->
       # console.log "AFTER"

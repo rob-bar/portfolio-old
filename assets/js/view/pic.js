@@ -12,13 +12,17 @@
         return _ref;
       }
 
-      Pic.prototype.attributes = {};
+      Pic.prototype.tagName = "li";
+
+      Pic.prototype.className = "pic rect item";
 
       Pic.prototype.events = {};
 
       Pic.prototype.initialize = function() {};
 
-      Pic.prototype.render = function() {};
+      Pic.prototype.render = function() {
+        return helper.get_template("pic")(this.model);
+      };
 
       return Pic;
 

@@ -1,11 +1,11 @@
-define ['backbone','underscore', 'jquery', 'site'],
-(Backbone, _, $, site) ->
+define ['backbone','underscore', 'jquery', 'site', 'router'],
+(Backbone, _, $, site, AppRouter) ->
 
   $ ->
     site.router = new AppRouter()
     # Backbone.emulateHTTP = true
     # Backbone.emulateJSON = true
-
+    Backbone.history.start pushState: true
 
     # _.each $(".repoinfo"), (repo) ->
     #   if $(repo).text().length > 18

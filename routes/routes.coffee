@@ -14,11 +14,6 @@ mongoose.connect "mongodb://localhost/portfolio"
 cnt = 0
 exports.other =
   index: (req, res) ->
-    crypto = require "crypto"
-    md5 = crypto.createHash "md5"
-    url = md5.update(config.site.grav.email).digest "hex"
-    url = config.site.grav.url.replace /hash/, url
-
     async.series
       socials: (callback) ->
         socials.data.actives (docs) ->
@@ -30,7 +25,6 @@ exports.other =
 
       (err, results) ->
         results.title = "My portfolio"
-        results.grav = url
 
         # NOT ON ITS PLACE HERE
         if config.site.mode is "production"
@@ -47,6 +41,14 @@ exports.other =
       next()
 
 exports.rest =
+  grav: (req, res) ->
+    crypto = require "crypto"
+    md5 = crypto.createHash "md5"
+    url = md5.update(config.site.grav.email).digest "hex"
+    url = config.site.grav.url.replace /hash/, url
+    res.json url
+    res.end()
+
   works: (req, res) ->
     projects.data.actives (works) ->
       res.json works

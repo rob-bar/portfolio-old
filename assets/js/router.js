@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['module', 'backbone', 'helper'], function(module, Backbone, helper) {
+  define(['module', 'backbone', 'helper', 'view/main'], function(module, Backbone, helper, MainView) {
     var AppRouter, _ref;
     AppRouter = (function(_super) {
       __extends(AppRouter, _super);
@@ -14,16 +14,26 @@
 
       AppRouter.prototype.routes = {
         "route:before": "before",
-        "route:after": "after"
+        "route:after": "after",
+        "": "index"
       };
 
       AppRouter.prototype.initialize = function() {
-        return this.bind('route', helper.track_page);
+        this.bind('route', helper.track_page);
+        this.listenTo(this, 'route:before', this.before);
+        return this.listenTo(this, 'route:after', this.after);
       };
 
-      AppRouter.prototype.index = function() {};
+      AppRouter.prototype.index = function() {
+        return this.main;
+      };
 
-      AppRouter.prototype.before = function() {};
+      AppRouter.prototype.before = function() {
+        if (this.main == null) {
+          this.main = new MainView();
+          return $("#main").append(this.main.$el);
+        }
+      };
 
       AppRouter.prototype.after = function() {};
 

@@ -12,13 +12,17 @@
         return _ref;
       }
 
-      Link.prototype.attributes = {};
+      Link.prototype.tagName = "li";
+
+      Link.prototype.className = "link rect item";
 
       Link.prototype.events = {};
 
       Link.prototype.initialize = function() {};
 
-      Link.prototype.render = function() {};
+      Link.prototype.render = function() {
+        return helper.get_template("link")(this.model);
+      };
 
       return Link;
 

@@ -12,21 +12,21 @@
         return _ref;
       }
 
-      Project.prototype.tagName = "li";
-
-      Project.prototype.className = "work item";
-
-      Project.prototype.events = {};
-
-      Project.prototype.initialize = function() {};
-
-      Project.prototype.render = function() {
-        return helper.get_template("project")(this.model);
+      Project.prototype.defaults = {
+        title: "Unknown title",
+        client: "Unknown client",
+        type_id: 0,
+        likes: 0,
+        launch_date: new date(),
+        description: "Unknown description",
+        is_active: false,
+        media: {},
+        tags: []
       };
 
       return Project;
 
-    })(Backbone.View);
+    })(Backbone.Model);
     return module.exports = Project;
   });
 

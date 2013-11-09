@@ -1,8 +1,10 @@
 (function() {
-  define(['module', 'jquery', 'backbone'], function(module, $, Backbone) {
+  define(['module', 'jquery', 'backbone', '../templates/templates'], function(module, $, Backbone) {
     var helper;
     helper = {
-      get_template: function(name) {},
+      get_template: function(name, data) {
+        return JST["assets/templates/" + name](data);
+      },
       track_page: function() {
         var frag, _gaq;
         _gaq = window._gaq || [];

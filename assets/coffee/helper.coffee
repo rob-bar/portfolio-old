@@ -1,4 +1,4 @@
-define ['module', 'jquery', 'backbone'],
+define ['module', 'jquery', 'backbone', '../templates/templates'],
 (module, $, Backbone) ->
 
   helper =

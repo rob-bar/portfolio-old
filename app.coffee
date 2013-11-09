@@ -32,6 +32,7 @@ app.configure 'production', ->
 
 # ROUTES
 app.get '/', routes.other.index
+app.get '/test', routes.other.index
 
 # REST
 app.get '/rest/:collection', (req, res) ->
