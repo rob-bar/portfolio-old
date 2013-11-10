@@ -1,10 +1,10 @@
 projects = [
   {
-  title: "Bestnetwork"
+  name: "Bestnetwork"
   client: "Proximus"
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 3, 22)
+  created_at: new Date(2013, 3, 22)
   description: "This project was a very fun one.<br><br>
 The website was meant to be a teasing website for people who wanted to get to know the Proximus network.
 For Proximus itself it was important that they could use this website as an entertaining website with some new and fancy things in it.
@@ -29,11 +29,11 @@ You should try it out."
   tags: ["php", "coffeescript", "fuelphp", "jquery", "backbone", "handlebars", "grunt", "node", "socket.io", "html5", "css3", "sass", "3d", "website", "mobile site"]
   }
   {
-  title: "Tetris"
+  name: "Tetris"
   client: "No client, just for fun"
   type_id: "game"
   likes: 0
-  launch_date: new Date(2012, 4, 20)
+  created_at: new Date(2012, 4, 20)
   description: "This was a HTML5 game I developed for fun, to spend my time getting to know Javascript and the HTML5 canvas element.
 To add in a little challenge I wanted to use the Facebook api to let users connect with their Facebook credentials.
 Everything, from design to the Facebook api to the Javascript was done by me.<br><br>
@@ -51,11 +51,11 @@ I'm optimizing it and puting it with the rest of my games.
   tags: ["html5", "css3", "javascript", "jquery", "facebook", "game"]
   }
   {
-  title: "Spectre facebook website"
+  name: "Spectre facebook website"
   client: "Hp"
   type_id: "website"
   likes: 0
-  launch_date: new Date(2012, 5, 12)
+  created_at: new Date(2012, 5, 12)
   description: "This was a project that had a huge flow, I think about 20 pages.
 The project was a teasing website for people who wanted to buy a new laptop.
 The goal was to let people subscribe for a date with an hp specter laptop.
@@ -76,11 +76,11 @@ I had lots of fun on the project. It allowed me to polish up my Facebook skills.
   tags: ["php", "javascript", "facebook", "html5", "less", "jquery"]
   }
   {
-  title: "Canvas Snake"
+  name: "Canvas Snake"
   client: "No client, just for fun"
   type_id: "game"
   likes: 0
-  launch_date: new Date(2012, 2, 5)
+  created_at: new Date(2012, 2, 5)
   description: "I wanted to get the to know the html5 canvas element better.
 So I build a couple of games in that technology.
 Canvas snake was one of them, the reason why I chose for snake was because I wanted to make a game that was not to easy to make but also not to difficult.
@@ -99,11 +99,11 @@ Feel free play,share or submit your score."
   tags: ["game", "canvas", "javascript", "php", "css3", "html5"]
   }
   {
-  title: "Dress like jason"
+  name: "Dress like jason"
   client: "Warner"
   type_id: "website"
   likes: 0
-  launch_date: new Date(2009, 6, 25)
+  created_at: new Date(2009, 6, 25)
   description: "Jason derulo"
   is_active: true
   media:
@@ -115,11 +115,11 @@ Feel free play,share or submit your score."
   tags: ["flash", "as", "php"]
   }
   {
-  title: "Asteroids"
+  name: "Asteroids"
   client: ""
   type_id: "game"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -131,11 +131,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Polygone DN"
+  name: "Polygone DN"
   client: ""
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -147,11 +147,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Ta tronche sur un abribus"
+  name: "Ta tronche sur un abribus"
   client: ""
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -163,11 +163,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Viage launch"
+  name: "Viage launch"
   client: ""
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -179,11 +179,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Polygone Newyear"
+  name: "Polygone Newyear"
   client: ""
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -195,11 +195,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Drive-E"
+  name: "Drive-E"
   client: ""
   type_id: "b2b website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -211,11 +211,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Cecemel Winteractie"
+  name: "Cecemel Winteractie"
   client: ""
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -227,11 +227,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Stalion BSF"
+  name: "Stalion BSF"
   client: ""
   type_id: "video"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -243,11 +243,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Sappicup"
+  name: "Sappicup"
   client: "Sappi"
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -259,11 +259,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Volvo v40 Landingpage"
+  name: "Volvo v40 Landingpage"
   client: ""
   type_id: "landing page"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -275,11 +275,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Autosalon"
+  name: "Autosalon"
   client: ""
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -291,11 +291,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Eco cheques"
+  name: "Eco cheques"
   client: ""
   type_id: "game"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -307,11 +307,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Grill aux bois"
+  name: "Grill aux bois"
   client: ""
   type_id: "website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -323,11 +323,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Mercedes freemind site"
+  name: "Mercedes freemind site"
   client: ""
   type_id: "responsive site"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:
@@ -339,11 +339,11 @@ Feel free play,share or submit your score."
   tags: []
   }
   {
-  title: "Rainhunters"
+  name: "Rainhunters"
   client: ""
   type_id: "b2b website"
   likes: 0
-  launch_date: new Date(2013, 11, 12)
+  created_at: new Date(2013, 11, 12)
   description: ""
   is_active: true
   media:

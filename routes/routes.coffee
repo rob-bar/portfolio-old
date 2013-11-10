@@ -9,6 +9,7 @@ delicious = require "../data/delicious.coffee"
 twitter = require "../data/twitter.coffee"
 instagram = require "../data/instagram.coffee"
 analytics = require "../data/analytics.coffee"
+_ = require "underscore"
 
 mongoose.connect "mongodb://localhost/portfolio"
 cnt = 0
@@ -49,6 +50,38 @@ exports.rest =
     res.json url
     res.end()
 
+  all: (req, res) ->
+    async.series
+      works: (callback) ->
+        projects.data.actives (works) ->
+          callback(null, works)
+        , req
+
+      repos: (callback) ->
+        github.data.all (repos) ->
+          callback(null, repos)
+        , req
+
+      pics: (callback) ->
+        instagram.data.tag (pics) ->
+          callback(null, pics)
+        , config.site.tag, req
+
+      tweets: (callback) ->
+        twitter.data.tag (tweets) ->
+          callback(null, tweets)
+        , config.site.tag, req
+
+      links: (callback) ->
+        instagram.data.tag (links) ->
+          callback(null, links)
+        , config.site.tag, req
+
+      (err, results) ->
+        results = _.union results.works, results.repos, results.pics, results.tweets, results.links
+        res.json results
+        res.end()
+
   works: (req, res) ->
     projects.data.actives (works) ->
       res.json works
@@ -68,13 +101,13 @@ exports.rest =
     github.data.all (data) ->
       res.json data
       res.end()
-    ,req
+    , req
 
   links: (req, res) ->
-    delicious.data.all (data) ->
+    delicious.data.tag (data) ->
       res.json data
       res.end()
-    ,req
+    , config.site.deli.hashtag, req
 
   tweets: (req, res) ->
     twitter.data.all (data) ->
@@ -84,6 +117,26 @@ exports.rest =
 
   pics: (req, res) ->
     instagram.data.all (data) ->
-      res.json data.data
+      res.json data
       res.end()
     ,req
+
+  # BYTAG
+  tagged:
+    links: (req, tag, res) ->
+      delicious.data.tag (data) ->
+        res.json data
+        res.end()
+      , tag, req
+
+    tweets: (req, tag, res) ->
+      twitter.data.tag (data) ->
+        res.json data
+        res.end()
+      , tag, req
+
+    pics: (req, tag, res) ->
+      instagram.data.tag (data) ->
+        res.json data
+        res.end()
+      , tag, req

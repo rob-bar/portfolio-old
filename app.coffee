@@ -38,6 +38,9 @@ app.get '/test', routes.other.index
 app.get '/rest/:collection', (req, res) ->
   routes.rest[req.params.collection](req, res)
 
+app.get '/rest/:tag/:collection', (req, res) ->
+  routes.rest.tagged[req.params.collection](req, req.params.tag, res)
+
 # CV LINK
 app.get '/downloads/curriculumvitea.pdf', routes.other.cv
 

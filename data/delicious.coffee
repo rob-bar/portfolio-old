@@ -26,9 +26,8 @@ exports.data =
     @options.path = "/v2/json/#{config.site.deli.username}/#{tag}?count=100"
     h.help.request @options, (data) ->
 
-      picked = _.pluckMany(filtered, ['d', 'u', 't', 'dt'])
-      map = ["title", "url", "tags", "created_at"]
+      picked = _.pluckMany(data, ['d', 'u', 'n', 't', 'dt'])
+      map = ["name", "url", "description", "tags", "created_at"]
       _.each picked, (value, key, list) ->
         list[key] = _.object(map,_.values value)
-      console.log picked
       callback picked

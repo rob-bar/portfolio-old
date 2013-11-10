@@ -5,6 +5,7 @@ exports.site =
   host: "robbiebardijn.be"
   ga: "UA-27483596-1"
   fake_ga: "UA-xxxxxxxx-x"
+  tag: "RobbieBardijn"
   grav:
     email: "robbie.bardijn@gmail.com"
     url: "http://www.gravatar.com/avatar/hash.jpg?s=150"
@@ -17,9 +18,9 @@ exports.site =
     secret: "b5cb7e6471399023acaad69ef582157490dfef19"
   twitter:
     screenname: "robbiebardijn"
-    hashtag: "robbiebardijn"
+    hashtag: "RobbieBardijn"
     key: "NZnZ9f3H9IfAII4kg4dA"
     secret: "oLWXJAuxvuUrBhK95xz2jXPORM6PFARvcojVVM43c"
   deli:
     username: "robbie_bardijn"
-    hashtag: "robbiebardijn"
+    hashtag: "RobbieBardijn"

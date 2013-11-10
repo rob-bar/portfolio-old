@@ -19,9 +19,19 @@ exports.data =
   all: (callback, req) ->
     @options['user-agent'] = req.get "user-agent"
     @options.path = "/v1/users/#{config.site.instagram.ID}/media/recent/?access_token=#{config.site.instagram.token}&count=-1"
-    h.help.securerequest @options, (data) -> callback data
+    h.help.securerequest @options, (data) -> callback data.data
 
   tag: (callback, tag, req) ->
     @options['user-agent'] = req.get "user-agent"
-    @options.path = "/v1/tags/#{tag}/media/recent/?access_token=#{config.site.instagram.token}&count=-1"
-    h.help.securerequest @options, (data) -> callback data
+    @options.path = "/v1/users/#{config.site.instagram.ID}/media/recent/?access_token=#{config.site.instagram.token}&count=-1"
+
+    h.help.securerequest @options, (data) ->
+      data = _.filter data.data, (pic) ->
+        if pic.comments?
+          for comment in pic.comments.data when comment.text is "##{tag}"
+            return true
+        for mytag in pic.tags when mytag is tag
+          return true
+        return false
+      callback data
+
