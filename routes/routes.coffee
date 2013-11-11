@@ -10,6 +10,7 @@ twitter = require "../data/twitter.coffee"
 instagram = require "../data/instagram.coffee"
 analytics = require "../data/analytics.coffee"
 _ = require "underscore"
+moment = require "moment"
 
 mongoose.connect "mongodb://localhost/portfolio"
 cnt = 0
@@ -73,12 +74,14 @@ exports.rest =
         , config.site.tag, req
 
       links: (callback) ->
-        instagram.data.tag (links) ->
+        delicious.data.tag (links) ->
           callback(null, links)
         , config.site.tag, req
 
       (err, results) ->
         results = _.union results.works, results.repos, results.pics, results.tweets, results.links
+        results = _.sortBy results, (result) -> moment(result.created_at).valueOf()
+        results = results.reverse()
         res.json results
         res.end()
 
@@ -104,10 +107,10 @@ exports.rest =
     , req
 
   links: (req, res) ->
-    delicious.data.tag (data) ->
+    delicious.data.all (data) ->
       res.json data
       res.end()
-    , config.site.deli.hashtag, req
+    , req
 
   tweets: (req, res) ->
     twitter.data.all (data) ->

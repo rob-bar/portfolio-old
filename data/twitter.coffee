@@ -1,13 +1,7 @@
 config = require "../config/config.coffee"
 h = require "../config/helper.coffee"
 _ = require "underscore"
-
-_.pluckMany = (obj, keys) ->
-  return _.map obj, (value) ->
-    mapped = {}
-    _.each keys, (key, index, list) ->
-      mapped[key] = value[key]
-    return mapped
+moment = require "moment"
 
 exports.data =
   options:
@@ -31,15 +25,19 @@ exports.data =
 
       h.help.securerequest @options, (data) ->
         data = _.filter data, (tweet) ->
-          _.extend tweet, {"name": "Robbie Bardijn"}
           for hashtag in tweet.entities.hashtags when hashtag.text is tag
             return true
           return false
 
-        picked = _.pluckMany(data, ['id', 'name', 'text', 'entities', 'created_at'])
-        map = ["id", "name", "description", "tags", "created_at"]
-        _.each picked, (value, key, list) ->
-          list[key] = _.object(map,_.values value)
+        # MAPPING
+        _.each data, (tweet, key, list) ->
+          newtweet =
+            "kind": "tweet"
+            "id": tweet.id
+            "name": tweet.name
+            "description": tweet.text
+            "tags": tweet.entities
+            "created_at": moment tweet.created_at
+          list[key] = newtweet
 
-
-        callback picked
+        callback data

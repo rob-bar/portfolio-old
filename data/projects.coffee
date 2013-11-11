@@ -8,7 +8,8 @@ exports.data =
       client: { type: String, lowercase: true, trim: true }
       type_id: mongoose.Schema.Types.ObjectId
       likes: { type: Number, min: 0, default: 0 }
-      launch_date: { type: Date, default: Date.now }
+      created_at: { type: Date, default: Date.now }
+      type: { type: String, default: "work" }
       description: String
       is_active: Boolean
       media:
