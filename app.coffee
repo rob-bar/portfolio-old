@@ -14,9 +14,14 @@ app.configure ->
   app.set 'title', config.site.title
   app.set 'views', __dirname + '/views'
   app.set 'view engine', 'jade'
+
   app.use express.logger 'dev'
   app.use express.bodyParser()
   app.use express.methodOverride()
+
+  app.use express.cookieParser('Key')
+  app.use express.session()
+
   app.use app.router
   app.use express.static path.join __dirname, 'assets'
   @
@@ -32,14 +37,17 @@ app.configure 'production', ->
 
 # ROUTES
 app.get '/', routes.other.index
-app.get '/test', routes.other.index
 
 # REST
+app.get '/rest/all/:offset/:limit', (req, res) ->
+  routes.rest.all(req, res)
+
 app.get '/rest/:collection', (req, res) ->
   routes.rest[req.params.collection](req, res)
 
-app.get '/rest/:tag/:collection', (req, res) ->
-  routes.rest.tagged[req.params.collection](req, req.params.tag, res)
+# LOAD
+app.get '/load/:collection', (req, res) ->
+  routes.load[req.params.collection](req, res)
 
 # CV LINK
 app.get '/downloads/curriculumvitea.pdf', routes.other.cv

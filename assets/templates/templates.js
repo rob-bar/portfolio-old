@@ -4,7 +4,7 @@ this["JST"] = this["JST"] || {};
 
 this["JST"]["assets/templates/link"] = function anonymous(locals) {
 var buf = [];
-var locals_ = (locals || {}),link = locals_.link;buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a" + (jade.attrs({ 'href':(link.u), 'target':("_blank") }, {"href":true,"target":true})) + "><span class=\"deliicon\"></span><span class=\"deliinfo\">" + (jade.escape(null == (jade.interp = link.d) ? "" : jade.interp)) + "</span></a>");;return buf.join("");
+var locals_ = (locals || {}),model = locals_.model;buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a" + (jade.attrs({ 'href':(model.url), 'target':("_blank") }, {"href":true,"target":true})) + "><span class=\"deliicon\"></span><span class=\"deliinfo\">" + (jade.escape(null == (jade.interp = model.name) ? "" : jade.interp)) + "</span></a>");;return buf.join("");
 };
 
 this["JST"]["assets/templates/me"] = function anonymous(locals) {
@@ -14,10 +14,10 @@ var locals_ = (locals || {}),grav = locals_.grav;buf.push("<div class=\"baloon i
 
 this["JST"]["assets/templates/pic"] = function anonymous(locals) {
 var buf = [];
-var locals_ = (locals || {}),pic = locals_.pic;buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a href=\"#\" target=\"_blank\">");
-if ( pic.images)
+var locals_ = (locals || {}),images = locals_.images;buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a href=\"#\" target=\"_blank\">");
+if ( images)
 {
-buf.push("<img" + (jade.attrs({ 'src':(pic.images.thumbnail.url), 'alt':("test") }, {"src":true,"alt":true})) + "/>");
+buf.push("<img" + (jade.attrs({ 'src':(images.thumbnail.url), 'alt':("test") }, {"src":true,"alt":true})) + "/>");
 }
 buf.push("</a>");;return buf.join("");
 };
@@ -29,12 +29,12 @@ var locals_ = (locals || {}),project = locals_.project;buf.push("<img src=\"img/
 
 this["JST"]["assets/templates/repo"] = function anonymous(locals) {
 var buf = [];
-var locals_ = (locals || {}),repo = locals_.repo;buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a" + (jade.attrs({ 'href':(repo.html_url), 'target':("_blank") }, {"href":true,"target":true})) + "><span class=\"repoicon\"></span><span class=\"githubicon\"></span><span class=\"repoinfo\"><span>" + (jade.escape(null == (jade.interp = repo.name) ? "" : jade.interp)) + "</span></span></a>");;return buf.join("");
+var locals_ = (locals || {}),url = locals_.url,name = locals_.name;buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a" + (jade.attrs({ 'href':(url), 'target':("_blank") }, {"href":true,"target":true})) + "><span class=\"repoicon\"></span><span class=\"githubicon\"></span><span class=\"repoinfo\"><span>" + (jade.escape(null == (jade.interp = name) ? "" : jade.interp)) + "</span></span></a>");;return buf.join("");
 };
 
 this["JST"]["assets/templates/tweet"] = function anonymous(locals) {
 var buf = [];
-var locals_ = (locals || {}),tweet = locals_.tweet;buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a" + (jade.attrs({ 'href':("http://twitter.com/robbiebardijn/status/" + (tweet.id_str) + ""), 'target':("_blank") }, {"href":true,"target":true})) + "><span class=\"tweeticon\"></span><span class=\"visuallyhidden\">" + (jade.escape(null == (jade.interp = tweet.text) ? "" : jade.interp)) + "</span></a>");;return buf.join("");
+var locals_ = (locals || {}),id = locals_.id,text = locals_.text;buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a" + (jade.attrs({ 'href':("http://twitter.com/robbiebardijn/status/" + (id) + ""), 'target':("_blank") }, {"href":true,"target":true})) + "><span class=\"tweeticon\"></span><span class=\"visuallyhidden\">" + (jade.escape(null == (jade.interp = text) ? "" : jade.interp)) + "</span></a>");;return buf.join("");
 };
 
 return this["JST"];

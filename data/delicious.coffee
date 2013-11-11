@@ -1,9 +1,11 @@
+mongoose = require "mongoose"
 config = require "../config/config.coffee"
 h = require "../config/helper.coffee"
 _ = require "underscore"
+moment = require "moment"
+link = null
 
-exports.data =
-  realdates:
+realdates =
     "Backbone infinite scroll": "23-10-2013"
     "Fetching Backbone Submodels": "23-10-2013"
     "Node Version Manager (NVM)": "14-10-2013"
@@ -38,32 +40,56 @@ exports.data =
     "CanvasLoader": "29-11-2011"
     "oCanvas": "29-11-2011"
 
-  options:
-    host: "feeds.delicious.com"
-    method: "GET"
-    headers:
-      "Content-Type": "application/json"
+exports.data =
+  model: ->
+    schema =
+      kind: { type: String, default: "link" }
+      name: { type: String, lowercase: true, trim: true }
+      description: String
+      url: { type: String, default: "none" }
+      tags: mongoose.Schema.Types.Mixed
+      is_active: { type: Boolean, default: true }
+      created_at: { type: Date, default: Date.now }
 
-  all: (callback, req) ->
-    @options['user-agent'] = req.get "user-agent"
-    @options.path = "/v2/json/#{config.site.deli.username}?count=100"
-    h.help.request @options, (data) -> callback data
+    if link is null then link = mongoose.model "Links", new mongoose.Schema schema
 
-  tag: (callback, tag, req) ->
-    @options['user-agent'] = req.get "user-agent"
-    @options.path = "/v2/json/#{config.site.deli.username}/#{tag}?count=100"
-    realdates = @realdates
-    h.help.request @options, (data) ->
+  all: (callback) ->
+    @model()
+    link.find {}, (err, docs) -> callback docs
 
+  drop: () ->
+    @model()
+    if link.collection?
+      link.collection.drop()
+
+  save: (delilink) ->
+    @model()
+    delilink = new link delilink
+    delilink.save()
+
+  load: (callback, tag, req) ->
+    options =
+      host: "feeds.delicious.com"
+      method: "GET"
+      headers:
+        "Content-Type": "application/json"
+
+    options['user-agent'] = req.get "user-agent"
+    options.path = "/v2/json/#{config.site.deli.username}/#{tag}?count=100"
+
+    h.help.request options, (data) =>
+
+      @drop()
       # MAPPING
       _.each data, (link, key, list) =>
         newlink =
           "kind": "link"
           "name": link.d
-          "url": link.u
           "description": link.n
+          "url": link.u
           "tags": link.t
           "created_at": if _.contains _.keys(realdates), link.d then moment(realdates[link.d], "DD-MM-YYYY") else link.d
+        @save newlink
         list[key] = newlink
 
       callback data

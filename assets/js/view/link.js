@@ -21,7 +21,10 @@
       Link.prototype.initialize = function() {};
 
       Link.prototype.render = function() {
-        return helper.get_template("link")(this.model);
+        this.$el.html(helper.get_template("link", {
+          model: this.model.toJSON()
+        }));
+        return this;
       };
 
       return Link;

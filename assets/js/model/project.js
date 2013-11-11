@@ -17,7 +17,7 @@
         client: "Unknown client",
         type_id: 0,
         likes: 0,
-        launch_date: new date(),
+        created_at: new Date(),
         description: "Unknown description",
         is_active: false,
         media: {},

@@ -9,9 +9,9 @@ exports.data =
       type_id: mongoose.Schema.Types.ObjectId
       likes: { type: Number, min: 0, default: 0 }
       created_at: { type: Date, default: Date.now }
-      type: { type: String, default: "work" }
+      kind: { type: String, default: "work" }
       description: String
-      is_active: Boolean
+      is_active: { type: Boolean, default: true }
       media:
         thumb: String
         big: String

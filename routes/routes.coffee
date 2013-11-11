@@ -14,6 +14,8 @@ moment = require "moment"
 
 mongoose.connect "mongodb://localhost/portfolio"
 cnt = 0
+all = undefined
+
 exports.other =
   index: (req, res) ->
     async.series
@@ -28,7 +30,6 @@ exports.other =
       (err, results) ->
         results.title = "My portfolio"
 
-        # NOT ON ITS PLACE HERE
         if config.site.mode is "production"
           results.ga = config.site.ga
         else
@@ -42,6 +43,29 @@ exports.other =
     analytics.data.add_cv_link_click (str) ->
       next()
 
+# LOADS FOR CRON
+exports.load =
+  tweets: (req, res) ->
+    twitter.data.load (data) ->
+      res.json data
+    , config.site.tag, req
+
+  pics: (req, res) ->
+    instagram.data.load (data) ->
+      res.json data
+    , config.site.tag, req
+
+  repos: (req, res) ->
+    github.data.load (data) ->
+      res.json data
+    , req
+
+  links: (req, res) ->
+    delicious.data.load (data) ->
+      res.json data
+    , config.site.tag, req
+
+# REST API
 exports.rest =
   grav: (req, res) ->
     crypto = require "crypto"
@@ -49,97 +73,81 @@ exports.rest =
     url = md5.update(config.site.grav.email).digest "hex"
     url = config.site.grav.url.replace /hash/, url
     res.json url
-    res.end()
 
   all: (req, res) ->
-    async.series
-      works: (callback) ->
-        projects.data.actives (works) ->
-          callback(null, works)
-        , req
+    offset = req.param "offset"
+    limit = req.param "limit"
 
-      repos: (callback) ->
-        github.data.all (repos) ->
-          callback(null, repos)
-        , req
+    unless req.session.all?
+      async.series
+        works: (callback) ->
+          projects.data.actives (works) ->
+            callback(null, works)
 
-      pics: (callback) ->
-        instagram.data.tag (pics) ->
-          callback(null, pics)
-        , config.site.tag, req
+        repos: (callback) ->
+          github.data.all (repos) ->
+            callback(null, repos)
 
-      tweets: (callback) ->
-        twitter.data.tag (tweets) ->
-          callback(null, tweets)
-        , config.site.tag, req
+        pics: (callback) ->
+          instagram.data.all (pics) ->
+            callback(null, pics)
 
-      links: (callback) ->
-        delicious.data.tag (links) ->
-          callback(null, links)
-        , config.site.tag, req
+        tweets: (callback) ->
+          twitter.data.all (tweets) ->
+            callback(null, tweets)
 
-      (err, results) ->
-        results = _.union results.works, results.repos, results.pics, results.tweets, results.links
-        results = _.sortBy results, (result) -> moment(result.created_at).valueOf()
-        results = results.reverse()
-        res.json results
-        res.end()
+        links: (callback) ->
+          delicious.data.all (links) ->
+            callback(null, links)
+
+        (err, results) ->
+          results = _.union results.works, results.repos, results.pics, results.links
+          results = _.sortBy results, (result) -> moment(result.created_at).valueOf()
+          results = results.reverse()
+
+          # SESSION
+          all = results
+          req.session.all = "results_are_cached"
+
+
+          # PAGINATED OR NOT
+          if offset? and limit?
+            results = results.slice offset, parseInt(offset, 10) + parseInt(limit, 10)
+
+          res.json results
+    else
+      results = all
+
+      # PAGINATED OR NOT
+      if offset? and limit?
+        results = results.slice offset, parseInt(offset, 10) + parseInt(limit, 10)
+
+      res.json results
 
   works: (req, res) ->
     projects.data.actives (works) ->
       res.json works
-      res.end()
 
   socials: (req, res) ->
     socials.data.actives (socials) ->
       res.json socials
-      res.end()
 
   navs: (req, res) ->
     navs.data.actives (navs) ->
       res.json navs
-      res.end()
 
   repos: (req, res) ->
     github.data.all (data) ->
       res.json data
-      res.end()
-    , req
 
   links: (req, res) ->
     delicious.data.all (data) ->
       res.json data
-      res.end()
-    , req
 
   tweets: (req, res) ->
     twitter.data.all (data) ->
       res.json data
-      res.end()
-    ,req
 
   pics: (req, res) ->
     instagram.data.all (data) ->
       res.json data
-      res.end()
-    ,req
-
-  # BYTAG
-  tagged:
-    links: (req, tag, res) ->
-      delicious.data.tag (data) ->
-        res.json data
-        res.end()
-      , tag, req
-
-    tweets: (req, tag, res) ->
-      twitter.data.tag (data) ->
-        res.json data
-        res.end()
-      , tag, req
-
-    pics: (req, tag, res) ->
-      instagram.data.tag (data) ->
-        res.json data
-        res.end()
-      , tag, req

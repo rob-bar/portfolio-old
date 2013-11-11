@@ -6,6 +6,9 @@ exports.site =
   ga: "UA-27483596-1"
   fake_ga: "UA-xxxxxxxx-x"
   tag: "RobbieBardijn"
+  cookie:
+    name: "ROBBIE_BARDIJN_PORTFOLIO"
+    secret: "MyCookieSecret"
   grav:
     email: "robbie.bardijn@gmail.com"
     url: "http://www.gravatar.com/avatar/hash.jpg?s=150"

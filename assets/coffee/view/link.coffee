@@ -10,6 +10,6 @@ define [
     events: {}
     initialize: ->
     render: ->
-      helper.get_template("link")(@model)
-
+      @$el.html helper.get_template("link", {model: @model.toJSON()})
+      @
   module.exports = Link
