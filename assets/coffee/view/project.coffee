@@ -10,6 +10,6 @@ define [
     events: {}
     initialize: ->
     render: ->
-      helper.get_template("project")(@model)
-
+      @$el.html helper.get_template "project", model: @model.toJSON()
+      @
   module.exports = Project

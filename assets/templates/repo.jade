@@ -1,6 +1,7 @@
 img.shade(src="img/layout/shade-150.png", alt="shade")
-a(href=url, target="_blank")
+a(href="#{model.url}", target="_blank")
   span.repoicon
   span.githubicon
   span.repoinfo
-    span= name
+    span
+    =model.name

@@ -21,7 +21,10 @@
       Pic.prototype.initialize = function() {};
 
       Pic.prototype.render = function() {
-        return helper.get_template("pic")(this.model);
+        this.$el.html(helper.get_template("pic", {
+          model: this.model.toJSON()
+        }));
+        return this;
       };
 
       return Pic;

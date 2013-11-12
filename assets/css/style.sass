@@ -505,7 +505,13 @@ body
           .shade
             bottom: -10px
 
+          a
+            +rect($rect, $rect)
+            overflow: hidden
+            +inline-block
+
         &.repo
+          cursor: pointer
           background-color: #FFF
           +rect($rect, $rect)
 
@@ -580,5 +586,4 @@ body
 /* ====================================================================================================== */
 +max-screen(1370px)
   body nav ul#social li.footer p
-
     left: 200px

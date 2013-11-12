@@ -21,7 +21,10 @@
       Repo.prototype.initialize = function() {};
 
       Repo.prototype.render = function() {
-        return helper.get_template("repo")(this.model);
+        this.$el.html(helper.get_template("repo", {
+          model: this.model.toJSON()
+        }));
+        return this;
       };
 
       return Repo;

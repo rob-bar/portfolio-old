@@ -13,7 +13,7 @@ define [
 ],
 (module, Backbone, helper, MeView, site, All, Pic, Link, Project, Tweet, Repo) ->
   class Main extends Backbone.View
-    tagName: "div"
+    tagName: "ul"
     attributes:
       id: "all"
     events: {}

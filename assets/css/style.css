@@ -691,7 +691,7 @@ body #main {
       background-color: #3d3d3d; }
       /* line 255, style.sass */
       body #main #me .cv a:hover .linkicon {
-        background: url('../img/ui/cv-link-hov.png?1378278094') top left no-repeat;
+        background: url('../img/ui/cv-link-hov.png?1384187034') top left no-repeat;
         -webkit-transform: scale(0.85, 0.85);
         -moz-transform: scale(0.85, 0.85);
         -ms-transform: scale(0.85, 0.85);
@@ -704,7 +704,7 @@ body #main {
         opacity: 1; }
       /* line 263, style.sass */
       body #main #me .cv a .linkicon {
-        background: url('../img/ui/cv-link.png?1378278023') top left no-repeat;
+        background: url('../img/ui/cv-link.png?1384187034') top left no-repeat;
         width: 83px;
         height: 75px;
         display: block;
@@ -1114,14 +1114,26 @@ body #main {
       body #main #all li.pic .shade, body #main #all li.pic .rect .shade, body #main .rect #all li.pic .shade {
         bottom: -10px; }
       /* line 508, style.sass */
+      body #main #all li.pic a {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        zoom: 1;
+        *display: inline; }
+      /* line 513, style.sass */
       body #main #all li.repo {
+        cursor: pointer;
         background-color: white;
         width: 150px;
         height: 150px; }
-        /* line 512, style.sass */
+        /* line 518, style.sass */
         body #main #all li.repo .shade, body #main #all li.repo .rect .shade, body #main .rect #all li.repo .shade {
           bottom: -14px; }
-        /* line 515, style.sass */
+        /* line 521, style.sass */
         body #main #all li.repo a {
           width: 150px;
           height: 150px;
@@ -1143,10 +1155,10 @@ body #main {
           -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
           transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 526, style.sass */
+          /* line 532, style.sass */
           body #main #all li.repo a:hover .repoinfo {
             bottom: 0px; }
-          /* line 529, style.sass */
+          /* line 535, style.sass */
           body #main #all li.repo a:hover .repoicon {
             margin: 13px auto 8px;
             -webkit-transform: scale(0.85, 0.85);
@@ -1155,10 +1167,10 @@ body #main {
             -o-transform: scale(0.85, 0.85);
             transform: scale(0.85, 0.85);
             background: url('../img/ui/github/repo-hov.png?1377265594') top left no-repeat; }
-          /* line 534, style.sass */
+          /* line 540, style.sass */
           body #main #all li.repo a:hover .githubicon {
             display: none; }
-          /* line 537, style.sass */
+          /* line 543, style.sass */
           body #main #all li.repo a .repoicon {
             background: url('../img/ui/github/repo.png?1376849577') top left no-repeat;
             width: 75px;
@@ -1170,14 +1182,14 @@ body #main {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-          /* line 544, style.sass */
+          /* line 550, style.sass */
           body #main #all li.repo a .githubicon {
             background: url('../img/ui/github/github.png?1376849595') top left no-repeat;
             width: 25px;
             height: 25px;
             display: block;
             margin: 0 auto; }
-          /* line 550, style.sass */
+          /* line 556, style.sass */
           body #main #all li.repo a .repoinfo {
             width: 100%;
             height: 50px;
@@ -1192,10 +1204,10 @@ body #main {
             -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
             transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms; }
-            /* line 560, style.sass */
+            /* line 566, style.sass */
             body #main #all li.repo a .repoinfo.smaller {
               font-size: 14px; }
-            /* line 563, style.sass */
+            /* line 569, style.sass */
             body #main #all li.repo a .repoinfo span {
               background: url('../img/ui/github/github-white.png?1376849691') top left no-repeat;
               width: 25px;
@@ -1218,6 +1230,6 @@ body #main {
 /* MEDIA QUERIES */
 /* ====================================================================================================== */
 @media screen and (max-width: 1370px) {
-  /* line 582, style.sass */
+  /* line 588, style.sass */
   body nav ul#social li.footer p {
     left: 200px; } }

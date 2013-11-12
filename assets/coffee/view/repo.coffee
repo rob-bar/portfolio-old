@@ -11,6 +11,7 @@ define [
     initialize: ->
 
     render: ->
-      helper.get_template("repo")(@model)
+      @$el.html helper.get_template "repo", {model: @model.toJSON()}
+      @
 
   module.exports = Repo

@@ -21,7 +21,10 @@
       Project.prototype.initialize = function() {};
 
       Project.prototype.render = function() {
-        return helper.get_template("project")(this.model);
+        this.$el.html(helper.get_template("project", {
+          model: this.model.toJSON()
+        }));
+        return this;
       };
 
       return Project;

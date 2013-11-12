@@ -14,7 +14,7 @@
         return _ref;
       }
 
-      Main.prototype.tagName = "div";
+      Main.prototype.tagName = "ul";
 
       Main.prototype.attributes = {
         id: "all"
