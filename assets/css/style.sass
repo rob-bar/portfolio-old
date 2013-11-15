@@ -167,7 +167,7 @@ body
         position: absolute
         right: 0
 
-        li
+        > li
           float: left
 
           &.footer
@@ -180,7 +180,10 @@ body
               +typo('osl', 13px, #203e3e)
               +ceaser-transition(all, 500ms, $easeOutExpo)
 
-        li.icon
+        li.menu
+          display: none
+
+        > li.icon, > li.menu
           float: left
           border-left: 1px solid #fafafa
           border-right: 1px solid #d0d0d0
@@ -220,6 +223,7 @@ body
       float: left
       list-style-type: none
       position: relative
+      +ceaser-transition(all, 500ms, $easeOutExpo)
 
     .rect
       .shade
@@ -298,6 +302,9 @@ body
             position: absolute
             right: -16px
             top: 20px
+            +scale(1)
+            +transform-origin(left, center)
+            +ceaser-transition(transform, 500ms, $easeOutExpo)
 
         .hov
           @extend .shaded
@@ -317,6 +324,9 @@ body
             position: absolute
             right: -16px
             top: 100px
+            +scale(1)
+            +transform-origin(left, center)
+            +ceaser-transition(transform, 500ms, $easeOutExpo)
 
         > div
           h1
@@ -584,6 +594,20 @@ body
 /* ====================================================================================================== */
 /* MEDIA QUERIES
 /* ====================================================================================================== */
++max-screen(479px)
+  body #main #me .baloon .norm .arrow
+    +scale(0)
+
+  body #main #me .baloon .hov .arrow
+    +scale(0)
+
++max-screen(1175px)
+  body nav ul#social li.icon
+    display: none
+
+  body nav ul#social li.menu
+    display: block
+
 +max-screen(1370px)
   body nav ul#social li.footer p
     left: 200px
