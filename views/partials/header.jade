@@ -20,15 +20,6 @@ block header
           p
             | 2013 &copy; All righrts reserved
 
-        each social in socials
-          li.icon
-            span.hov
-              a(class="socials-hover-#{social.name.toLowerCase()} socials-hover-sprite", href="#{social.url}")
-                span.visuallyhidden= social.name
-            span.nor
-              a(class="socials-#{social.name.toLowerCase()} socials-sprite", href="#{social.url}")
-                span.visuallyhidden= social.name
-
         li.menu
           span.hov
             a(class="socials-hover-menu socials-hover-sprite", href="#")
@@ -37,12 +28,27 @@ block header
             a(class="socials-menu socials-sprite", href="#")
               span.visuallyhidden= menu
 
-          ul.slider
-            each social in socials
-              li.icon
-                span.hov
-                  a(class="socials-hover-#{social.name.toLowerCase()} socials-hover-sprite", href="#{social.url}")
-                    span.visuallyhidden= social.name
-                span.nor
-                  a(class="socials-#{social.name.toLowerCase()} socials-sprite", href="#{social.url}")
-                    span.visuallyhidden= social.name
+
+
+        each social in socials
+          li.icon
+            span.hov
+              a(class="socials-hover-#{social.name.toLowerCase()} socials-hover-sprite", href="#{social.url}", target="_blank")
+                span.visuallyhidden= social.name
+            span.nor
+              a(class="socials-#{social.name.toLowerCase()} socials-sprite", href="#{social.url}", target="_blank")
+                span.visuallyhidden= social.name
+
+
+    ul#subnav
+      each nav in navs
+        li.nav
+          span.nor
+            a(class="#{nav.name.toLowerCase()}", href="#{nav.url}")= nav.name
+
+    ul#subsocial
+      each social in socials
+        li.icon
+          span.nor
+            a(class="socials-#{social.name.toLowerCase()} socials-sprite", href="#{social.url}", target="_blank")
+              span.visuallyhidden= social.name

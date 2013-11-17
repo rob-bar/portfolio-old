@@ -3,28 +3,4 @@ define ['backbone','underscore', 'jquery', 'site', 'router'],
 
   $ ->
     site.router = new AppRouter()
-    # Backbone.emulateHTTP = true
-    # Backbone.emulateJSON = true
     Backbone.history.start pushState: true
-
-    # _.each $(".repoinfo"), (repo) ->
-    #   if $(repo).text().length > 18
-    #     $(repo).addClass "smaller"
-
-    # $('.likes').click (e) ->
-    #   e.preventDefault()
-    #   $(e.currentTarget).addClass "liked"
-
-    # $('.work').click (e) ->
-    #   e.preventDefault()
-    #   unless $('#all li').eq(0).hasClass "inback"
-    #     $('#all li').each () ->
-    #       setTimeout =>
-    #         $(@).addClass "inback"
-    #       , $(@).offset().top * 0.75
-    #   else
-    #     $('#all li').each () ->
-    #       setTimeout =>
-    #         $(@).removeClass "inback"
-    #       , $(@).offset().top * 0.75
-

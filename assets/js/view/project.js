@@ -16,7 +16,14 @@
 
       Project.prototype.className = "work item";
 
-      Project.prototype.events = {};
+      Project.prototype.events = {
+        "click .likes": "like"
+      };
+
+      Project.prototype.like = function(e) {
+        e.preventDefault();
+        return $(e.currentTarget).addClass("liked");
+      };
 
       Project.prototype.initialize = function() {};
 

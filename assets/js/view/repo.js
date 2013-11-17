@@ -24,7 +24,16 @@
         this.$el.html(helper.get_template("repo", {
           model: this.model.toJSON()
         }));
+        this.checksize();
         return this;
+      };
+
+      Repo.prototype.checksize = function() {
+        var $repo;
+        $repo = this.$el.find(".repoinfo");
+        if ($repo.text().length > 18) {
+          return $repo.addClass("smaller");
+        }
       };
 
       return Repo;

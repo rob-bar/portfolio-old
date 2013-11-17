@@ -101,10 +101,69 @@ body, html
 
 body
   @extend .fontsmoothing
+
   #bg
     position: fixed
     +rect(100%, 100%)
     +background(image-url('layout/pat.png'), linear-gradient(center top, $bg_0, $bg_100))
+
+  #subsocial
+    display: none
+    +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
+    +box-shadow(rgba(0, 0, 0, 0.4) 0 0 5px 1px)
+    +ceaser-transition(all, 500ms, $easeOutExpo)
+    position: fixed
+    right: 10px
+    top: -400px
+    padding: 18px 0 8px 0
+    z-index: 9
+    +scale(.75)
+
+    &.open
+      top: -5px
+
+    li
+      list-style-type: none
+      margin: 0 5px
+      padding: 0
+
+      &.icon
+        margin: -10px 0 0 0
+        +rect(55px, 55px)
+
+        span
+          a
+            display: block
+            +rect(100%, 100%)
+  #subnav
+    display: none
+    +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
+    +box-shadow(rgba(0, 0, 0, 0.4) 0 0 5px 1px)
+    +ceaser-transition(all, 500ms, $easeOutExpo)
+    width: 105px
+    position: fixed
+    left: 10px
+    top: -150px
+    margin: 0
+    padding: 5px 0
+    z-index: 8
+
+
+    &.open
+      top: 55px
+
+    li
+      list-style-type: none
+      margin: 0 7px
+      padding: 0
+
+      a
+        margin: 0
+        display: block
+        color: #000
+        text-decoration: none
+        text-transform: uppercase
+        +typo("exl", 26px, #000)
 
   nav
     z-index: 10
@@ -597,8 +656,15 @@ body
 /* ====================================================================================================== */
 /* MEDIA QUERIES
 /* ====================================================================================================== */
++max-screen(320px)
+  body #main
+    margin: 0 -5px 0
+
 +max-screen(674px)
   body nav ul#nav li.menu
+    display: block
+
+  body #subnav
     display: block
 
   body nav ul#nav li.nav
@@ -614,6 +680,9 @@ body
 +max-screen(1185px)
   body nav ul#social li.icon
     display: none
+
+  body #subsocial
+    display: block
 
   body nav ul#social li.menu
     display: block

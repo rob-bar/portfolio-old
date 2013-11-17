@@ -16,14 +16,27 @@ define [
     tagName: "ul"
     attributes:
       id: "all"
+
     events: {}
+    init_events: ->
+      site.vent.on 'grav', @grav
+
+      @nav.find('ul#nav li.menu').on "click", @togglemenu
+      $('#subnav').on "mouseleave", @togglemenu
+      @nav.find('ul#social li.menu').on "click", @togglesocial
+      $('#subsocial').on "mouseleave", @togglesocial
+
+      $(window).on "scroll", @scroll
 
     initialize: ->
-      site.vent.on 'grav', @grav
+      @nav = $ "header nav"
       @me = new MeView()
+      @col = new All()
+
+      @init_events()
+
       @me.render()
 
-      @col = new All()
       @col.fetch
         success: (results) =>
           results.each (model) =>
@@ -35,8 +48,40 @@ define [
               when 'tweet' then new Tweet model: model
             @$el.append view.render().$el
 
-
     grav: =>
       @$el.append @me.$el
+
+    togglemenu: (e) ->
+      e.preventDefault()
+      $subnav = $ "#subnav"
+      $subnav.toggleClass "open"
+
+    togglesocial: (e) ->
+      e.preventDefault()
+      $subnav = $ "#subsocial"
+      $subnav.toggleClass "open"
+
+    toggle: (e)->
+      e.preventDefault()
+      unless $('#all li').eq(0).hasClass "inback"
+        $('#all li').each () ->
+          setTimeout =>
+            $(@).addClass "inback"
+          , $(@).offset().top * 0.75
+      else
+        $('#all li').each () ->
+          setTimeout =>
+            $(@).removeClass "inback"
+          , $(@).offset().top * 0.75
+
+    scroll: (e) ->
+      $subnav = $ "#subnav"
+      $subsocial = $ "#subsocial"
+
+      if $subnav.hasClass "open"
+        $subnav.removeClass "open"
+
+      if $subsocial.hasClass "open"
+        $subsocial.removeClass "open"
 
   module.exports = Main

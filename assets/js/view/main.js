@@ -22,12 +22,22 @@
 
       Main.prototype.events = {};
 
+      Main.prototype.init_events = function() {
+        site.vent.on('grav', this.grav);
+        this.nav.find('ul#nav li.menu').on("click", this.togglemenu);
+        $('#subnav').on("mouseleave", this.togglemenu);
+        this.nav.find('ul#social li.menu').on("click", this.togglesocial);
+        $('#subsocial').on("mouseleave", this.togglesocial);
+        return $(window).on("scroll", this.scroll);
+      };
+
       Main.prototype.initialize = function() {
         var _this = this;
-        site.vent.on('grav', this.grav);
+        this.nav = $("header nav");
         this.me = new MeView();
-        this.me.render();
         this.col = new All();
+        this.init_events();
+        this.me.render();
         return this.col.fetch({
           success: function(results) {
             return results.each(function(model) {
@@ -64,6 +74,51 @@
 
       Main.prototype.grav = function() {
         return this.$el.append(this.me.$el);
+      };
+
+      Main.prototype.togglemenu = function(e) {
+        var $subnav;
+        e.preventDefault();
+        $subnav = $("#subnav");
+        return $subnav.toggleClass("open");
+      };
+
+      Main.prototype.togglesocial = function(e) {
+        var $subnav;
+        e.preventDefault();
+        $subnav = $("#subsocial");
+        return $subnav.toggleClass("open");
+      };
+
+      Main.prototype.toggle = function(e) {
+        e.preventDefault();
+        if (!$('#all li').eq(0).hasClass("inback")) {
+          return $('#all li').each(function() {
+            var _this = this;
+            return setTimeout(function() {
+              return $(_this).addClass("inback");
+            }, $(this).offset().top * 0.75);
+          });
+        } else {
+          return $('#all li').each(function() {
+            var _this = this;
+            return setTimeout(function() {
+              return $(_this).removeClass("inback");
+            }, $(this).offset().top * 0.75);
+          });
+        }
+      };
+
+      Main.prototype.scroll = function(e) {
+        var $subnav, $subsocial;
+        $subnav = $("#subnav");
+        $subsocial = $("#subsocial");
+        if ($subnav.hasClass("open")) {
+          $subnav.removeClass("open");
+        }
+        if ($subsocial.hasClass("open")) {
+          return $subsocial.removeClass("open");
+        }
       };
 
       return Main;
