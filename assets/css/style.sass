@@ -132,6 +132,9 @@ body
           margin: 0
           padding: 0
 
+          &.menu
+            display: none
+
           &:hover
             span.hov
               top: 0px
@@ -594,6 +597,13 @@ body
 /* ====================================================================================================== */
 /* MEDIA QUERIES
 /* ====================================================================================================== */
++max-screen(674px)
+  body nav ul#nav li.menu
+    display: block
+
+  body nav ul#nav li.nav
+    display: none
+
 +max-screen(479px)
   body #main #me .baloon .norm .arrow
     +scale(0)
@@ -601,7 +611,7 @@ body
   body #main #me .baloon .hov .arrow
     +scale(0)
 
-+max-screen(1175px)
++max-screen(1185px)
   body nav ul#social li.icon
     display: none
 

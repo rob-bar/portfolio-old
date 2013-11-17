@@ -2,8 +2,14 @@ block header
   header
     nav
       ul#nav
+        li.menu
+          span.hov
+            a(class="menu", href="#") Menu
+          span.nor
+            a(class="menu", href="#") Menu
+
         each nav in navs
-          li
+          li.nav
             span.hov
               a(class="#{nav.name.toLowerCase()}", href="#{nav.url}")= nav.name
             span.nor
