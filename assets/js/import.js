@@ -1,5 +1,5 @@
 (function() {
-  var key, project, projects, tag, tags, _i, _len, _ref;
+  var key, nav, navs, project, projects, social, socials, tag, tags, _i, _len, _ref;
 
   projects = [
     {
@@ -325,6 +325,78 @@
     }
   ];
 
+  navs = [
+    {
+      name: "work",
+      url: "work",
+      is_active: true
+    }, {
+      name: "repos",
+      url: "repos",
+      is_active: true
+    }, {
+      name: "links",
+      url: "links",
+      is_active: true
+    }, {
+      name: "pics",
+      url: "pics",
+      is_active: true
+    }, {
+      name: "tweets",
+      url: "tweets",
+      is_active: true
+    }, {
+      name: "blog",
+      url: "blog",
+      is_active: false
+    }
+  ];
+
+  socials = [
+    {
+      name: "Facebook",
+      url: "https://www.facebook.com/robbie.bardijn",
+      is_active: true
+    }, {
+      name: "Linkedin",
+      url: "http://www.linkedin.com/profile/view?id=155010139",
+      is_active: true
+    }, {
+      name: "Twitter",
+      url: "https://twitter.com/robbiebardijn",
+      is_active: true
+    }, {
+      name: "Github",
+      url: "https://github.com/rob-bar/",
+      is_active: true
+    }, {
+      name: "Delicious",
+      url: "https://delicious.com/robbie_bardijn",
+      is_active: true
+    }, {
+      name: "Instagram",
+      url: "http://instagram.com/rob_bar",
+      is_active: true
+    }, {
+      name: "Skype",
+      url: "skype:scootergypsy?call",
+      is_active: true
+    }, {
+      name: "Pinterest",
+      url: "http://www.pinterest.com/furrylover/",
+      is_active: true
+    }, {
+      name: "LastFM",
+      url: "http://www.last.fm/user/Rob_Bie",
+      is_active: true
+    }, {
+      name: "GooglePlus",
+      url: "https://plus.google.com/107082922107138743776",
+      is_active: true
+    }
+  ];
+
   tags = [
     {
       name: "canvas",
@@ -426,9 +498,23 @@
 
   db.projects.drop();
 
+  db.socials.drop();
+
+  db.navs.drop();
+
   for (key in tags) {
     tag = tags[key];
     db.tags.insert(tag);
+  }
+
+  for (key in navs) {
+    nav = navs[key];
+    db.navs.insert(nav);
+  }
+
+  for (key in socials) {
+    social = socials[key];
+    db.socials.insert(social);
   }
 
   for (key in projects) {
