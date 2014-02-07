@@ -6,39 +6,39 @@ moment = require "moment"
 link = null
 
 realdates =
-    "Backbone infinite scroll": "23-10-2013"
-    "Fetching Backbone Submodels": "23-10-2013"
-    "Node Version Manager (NVM)": "14-10-2013"
-    "CoffeeScript in Node.js": "14-10-2013"
-    "Easing Functions": "20-9-2013"
-    "PageSpeed Insights": "26-7-2013"
-    "git - fast-forward": "24-7-2013"
-    "10 CoffeeScript One Liners": "22-7-2013"
-    "Icon Hover Effects": "14-6-2013"
-    "Page Transitions": "14-6-2013"
-    "Speaker Deck": "19-5-2013"
-    "Detecting Retina display": "19-4-2013"
-    "Handlebars demo": "28-3-2013"
-    "Pete Design": "19-3-2013"
-    "Zone Franche": "19-3-2013"
-    "Holobox": "19-3-2013"
-    "Minimal Monkey": "19-3-2013"
-    "Expanding Overlay Effect": "19-3-2013"
-    "Flipping Circle Slideshow": "19-3-2013"
-    "Move The Web Forward": "5-10-2012"
-    "jQuery Waypoints": "5-10-2012"
-    "jQuery Scroll Path": "5-10-2012"
-    "Codrops": "5-10-2012"
-    "jQuery File Upload": "13-9-2012"
-    "Hammer.js": "20-8-2012"
-    "JS Bin": "20-8-2012"
-    "CodePen": "20-8-2012"
-    "Backbone.js": "6-2-2012"
-    "HTML5 Semantics": "29-11-2011"
-    "HTML5 Doctor": "29-11-2011"
-    "Three.js": "29-11-2011"
-    "CanvasLoader": "29-11-2011"
-    "oCanvas": "29-11-2011"
+    "Backbone infinite scroll": "2013-10-23"
+    "Fetching Backbone Submodels": "2013-10-23"
+    "Node Version Manager (NVM)": "2013-10-14"
+    "CoffeeScript in Node.js": "2013-10-14"
+    "Easing Functions": "2013-9-20"
+    "PageSpeed Insights": "2013-7-26"
+    "git - fast-forward": "2013-7-24"
+    "10 CoffeeScript One Liners": "2013-7-22"
+    "Icon Hover Effects": "2013-6-14"
+    "Page Transitions": "2013-6-14"
+    "Speaker Deck": "2013-5-19"
+    "Detecting Retina display": "2013-4-19"
+    "Handlebars demo": "2013-3-28"
+    "Pete Design": "2013-3-19"
+    "Zone Franche": "2013-3-19"
+    "Holobox": "2013-3-19"
+    "Minimal Monkey": "2013-3-19"
+    "Expanding Overlay Effect": "2013-3-19"
+    "Flipping Circle Slideshow": "2013-3-19"
+    "Move The Web Forward": "2012-10-5"
+    "jQuery Waypoints": "2012-10-5"
+    "jQuery Scroll Path": "2012-10-5"
+    "Codrops": "2012-10-5"
+    "jQuery File Upload": "2012-9-13"
+    "Hammer.js": "2012-8-20"
+    "JS Bin": "2012-8-20"
+    "CodePen": "2012-8-20"
+    "Backbone.js": "2012-2-6"
+    "HTML5 Semantics": "2011-11-29"
+    "HTML5 Doctor": "2011-11-29"
+    "Three.js": "2011-11-29"
+    "CanvasLoader": "2011-11-29"
+    "oCanvas": "2011-11-29"
 
 exports.data =
   model: ->
@@ -78,17 +78,24 @@ exports.data =
     options.path = "/v2/json/#{config.site.deli.username}/#{tag}?count=100"
 
     h.help.request options, (data) =>
-
       @drop()
-      # MAPPING
+
+      # # MAPPING
       _.each data, (link, key, list) =>
+
+        if _.contains _.keys(realdates), link.d
+          ca = moment(realdates[link.d], "YYYY-MM-DD Z").toDate()
+        else
+          ca = moment.utc(link.dt, "YYYY-MM-DD Z").toDate()
+
         newlink =
           "kind": "link"
           "name": link.d
           "description": link.n
           "url": link.u
           "tags": link.t
-          "created_at": if _.contains _.keys(realdates), link.d then moment(realdates[link.d], "DD-MM-YYYY") else link.d
+          "created_at": ca
+
         @save newlink
         list[key] = newlink
 
