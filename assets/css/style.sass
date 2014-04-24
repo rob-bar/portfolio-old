@@ -279,6 +279,7 @@ body
     top: 55px
     height: 100%
     margin: 5px 0 0 0
+    width: 100%
 
     .item
       margin: 10px 0 0 10px
@@ -295,7 +296,16 @@ body
       .shade
         @extend .largeshade
 
+    #all
+      > li, > div
+        &.inback
+          +opacity(.5)
+          +translate3d(0, 0, -150px)
+
     #me
+      +opacity(1)
+      +ceaser-transition(all, 800ms, $easeOutExpo)
+
       .pic
         +translate3d(0, 0, 0)
         z-index: 1
@@ -370,7 +380,6 @@ body
 
         .hov
           @extend .shaded
-          // display: none
           position: absolute
           top: 0
           left: 0
@@ -408,10 +417,10 @@ body
       +transform-style()
       +perspective(1000px)
       +perspective-origin(50% 50%)
-      height: 100%
 
       li
         +translate3d(0, 0, 0)
+        +opacity(1)
 
         .shade
           bottom: -16px
@@ -422,12 +431,7 @@ body
           position: relative
           background-color: #fff
           +rect($large, $height)
-          +opacity(1)
           +ceaser-transition(all, 800ms, $easeOutExpo)
-
-          &.inback
-            +opacity(.5)
-            +translate3d(0, 0, -150px)
 
           &:hover
             .inner .thumb
@@ -573,6 +577,7 @@ body
               display: block
               margin: 38px auto 8px
               +ceaser-transition(all, $animtime, $easeOutExpo)
+
         &.pic
           .shade
             bottom: -10px

@@ -10,19 +10,23 @@ define [
   'view/project'
   'view/tweet'
   'view/repo'
+  'masonry'
 ],
-(module, Backbone, helper, MeView, site, All, Pic, Link, Project, Tweet, Repo) ->
+(module, Backbone, helper, MeView, site, All, Pic, Link, Project, Tweet, Repo, Masonry) ->
   class Main extends Backbone.View
     tagName: "ul"
     attributes:
       id: "all"
 
-    events: {}
+    events:
+      "click li": "toggle"
+
     init_events: ->
       site.vent.on 'grav', @grav
 
       @nav.find('ul#nav li.menu').on "click", @togglemenu
       $('#subnav').on "mouseleave", @togglemenu
+
       @nav.find('ul#social li.menu').on "click", @togglesocial
       $('#subsocial').on "mouseleave", @togglesocial
 
@@ -34,12 +38,11 @@ define [
       @col = new All()
 
       @init_events()
-
       @me.render()
 
       @col.fetch
         success: (results) =>
-          results.each (model) =>
+          results.each (model, index, list) =>
             view = switch model.get 'kind'
               when 'link' then new Link model: model
               when 'pic' then new Pic model: model
@@ -51,6 +54,7 @@ define [
     grav: =>
       @$el.append @me.$el
 
+
     togglemenu: (e) ->
       e.preventDefault()
       $subnav = $ "#subnav"
@@ -61,15 +65,16 @@ define [
       $subnav = $ "#subsocial"
       $subnav.toggleClass "open"
 
-    toggle: (e)->
+    toggle: (e) ->
       e.preventDefault()
-      unless $('#all li').eq(0).hasClass "inback"
-        $('#all li').each () ->
+      unless $('li').eq(0).hasClass "inback"
+        $('li, div').each () ->
           setTimeout =>
             $(@).addClass "inback"
           , $(@).offset().top * 0.75
+
       else
-        $('#all li').each () ->
+        $('li, div').each () ->
           setTimeout =>
             $(@).removeClass "inback"
           , $(@).offset().top * 0.75

@@ -37,7 +37,7 @@ exports.data =
       headers:
         "Content-Type": "application/json"
 
-    options['user-agent'] = req.get "user-agent"
+    options.headers['user-agent'] = req.get "user-agent"
     options.path = "/users/#{config.site.github.username}/repos?sort=created&type=owner&client_id=#{config.site.github.id}&client_secret=#{config.site.github.secret}"
 
     h.help.securerequest options, (data) =>

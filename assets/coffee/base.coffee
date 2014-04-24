@@ -1,6 +1,5 @@
-define ['backbone','underscore', 'jquery', 'site', 'router'],
-(Backbone, _, $, site, AppRouter) ->
-
+define ['site', 'router'],
+(site, AppRouter) ->
   $ ->
     site.router = new AppRouter()
     Backbone.history.start pushState: true

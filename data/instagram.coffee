@@ -33,7 +33,7 @@ exports.data =
     if pic.collection?
       pic.collection.drop()
 
-  tag: (callback, tag, req) ->
+  load: (callback, tag, req) ->
     options =
       host: "api.instagram.com"
       method: "GET"

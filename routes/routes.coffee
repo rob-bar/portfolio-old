@@ -78,51 +78,38 @@ exports.rest =
     offset = req.param "offset"
     limit = req.param "limit"
 
-    unless req.session.all?
-      async.series
-        works: (callback) ->
-          projects.data.actives (works) ->
-            callback(null, works)
+    async.series
+      works: (callback) ->
+        projects.data.actives (works) ->
+          callback(null, works)
 
-        repos: (callback) ->
-          github.data.all (repos) ->
-            callback(null, repos)
+      repos: (callback) ->
+        github.data.all (repos) ->
+          callback(null, repos)
 
-        pics: (callback) ->
-          instagram.data.all (pics) ->
-            callback(null, pics)
+      pics: (callback) ->
+        instagram.data.all (pics) ->
+          callback(null, pics)
 
-        tweets: (callback) ->
-          twitter.data.all (tweets) ->
-            callback(null, tweets)
+      tweets: (callback) ->
+        twitter.data.all (tweets) ->
+          callback(null, tweets)
 
-        links: (callback) ->
-          delicious.data.all (links) ->
-            callback(null, links)
+      links: (callback) ->
+        delicious.data.all (links) ->
+          callback(null, links)
 
-        (err, results) ->
-          results = _.union results.works, results.repos, results.pics, results.links
-          results = _.sortBy results, (result) -> moment(result.created_at).valueOf()
-          results = results.reverse()
+      (err, results) ->
+        results = _.union results.works, results.repos, results.pics, results.links
+        results = _.sortBy results, (result) -> moment(result.created_at).valueOf()
+        results = _.sortBy results, (result) -> result.kind
+        results = results.reverse()
 
-          # SESSION
-          all = results
-          req.session.all = "results_are_cached"
+        # PAGINATED OR NOT
+        if offset? and limit?
+          results = results.slice offset, parseInt(offset, 10) + parseInt(limit, 10)
 
-
-          # PAGINATED OR NOT
-          if offset? and limit?
-            results = results.slice offset, parseInt(offset, 10) + parseInt(limit, 10)
-
-          res.json results
-    else
-      results = all
-
-      # PAGINATED OR NOT
-      if offset? and limit?
-        results = results.slice offset, parseInt(offset, 10) + parseInt(limit, 10)
-
-      res.json results
+        res.json results
 
   works: (req, res) ->
     projects.data.actives (works) ->

@@ -3,7 +3,7 @@
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['module', 'backbone', 'helper', 'view/me', 'site', 'collection/all', 'view/pic', 'view/link', 'view/project', 'view/tweet', 'view/repo'], function(module, Backbone, helper, MeView, site, All, Pic, Link, Project, Tweet, Repo) {
+  define(['module', 'backbone', 'helper', 'view/me', 'site', 'collection/all', 'view/pic', 'view/link', 'view/project', 'view/tweet', 'view/repo', 'masonry'], function(module, Backbone, helper, MeView, site, All, Pic, Link, Project, Tweet, Repo, Masonry) {
     var Main, _ref;
     Main = (function(_super) {
       __extends(Main, _super);
@@ -20,7 +20,9 @@
         id: "all"
       };
 
-      Main.prototype.events = {};
+      Main.prototype.events = {
+        "click li": "toggle"
+      };
 
       Main.prototype.init_events = function() {
         site.vent.on('grav', this.grav);
@@ -40,7 +42,7 @@
         this.me.render();
         return this.col.fetch({
           success: function(results) {
-            return results.each(function(model) {
+            return results.each(function(model, index, list) {
               var view;
               view = (function() {
                 switch (model.get('kind')) {
@@ -92,15 +94,15 @@
 
       Main.prototype.toggle = function(e) {
         e.preventDefault();
-        if (!$('#all li').eq(0).hasClass("inback")) {
-          return $('#all li').each(function() {
+        if (!$('li').eq(0).hasClass("inback")) {
+          return $('li, div').each(function() {
             var _this = this;
             return setTimeout(function() {
               return $(_this).addClass("inback");
             }, $(this).offset().top * 0.75);
           });
         } else {
-          return $('#all li').each(function() {
+          return $('li, div').each(function() {
             var _this = this;
             return setTimeout(function() {
               return $(_this).removeClass("inback");
