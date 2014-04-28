@@ -4,7 +4,7 @@ define [
   'helper'
 ],
 (module, Backbone, helper) ->
-  class Project extends Backbone.View
+  class ProjectView extends Backbone.View
     tagName: "li"
     className: "work item"
     events:
@@ -20,4 +20,4 @@ define [
       @$el.html helper.get_template "project", model: @model.toJSON()
       @
 
-  module.exports = Project
+  module.exports = ProjectView

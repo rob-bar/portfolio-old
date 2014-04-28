@@ -31,7 +31,7 @@
       AppRouter.prototype.before = function() {
         if (this.main == null) {
           this.main = new MainView();
-          return $("#main").append(this.main.$el);
+          return $("body header").after(this.main.$el);
         }
       };
 

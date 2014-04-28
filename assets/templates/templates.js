@@ -13,7 +13,7 @@ this["JST"]["assets/templates/me"] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var locals_ = (locals || {}),grav = locals_.grav;
-buf.push("<div class=\"baloon item\"><div class=\"norm large\"><img src=\"img/layout/shade-310.png\" alt=\"shade\" class=\"shade\"/><img src=\"img/ui/arrows/baloon-white.png\" alt=\"arrow\" class=\"arrow\"/><h1>Robbie Bardijn</h1><p><a href=\"mailto:robbie.bardijn@gmail.com\">robbie.bardijn@gmail.com</a></p><p>0032/472.79.88.63</p></div><div class=\"hov large\"><img src=\"img/layout/shade-310.png\" alt=\"shade\" class=\"shade\"/><img src=\"img/ui/arrows/baloon-blue.png\" alt=\"arrow\" class=\"arrow\"/><h1>Hire me...</h1><p>I’m glad to help</p></div></div><div class=\"pic rect item\"><img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><img" + (jade.attr("src", "" + (grav) + "", true, false)) + "/></div><div class=\"cv rect item\"><img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a href=\"/downloads/curriculumvitea.pdf\" target=\"_blank\"><span class=\"linkicon\"></span><span class=\"text\">Curriculum Vitae</span></a></div>");;return buf.join("");
+buf.push("<div class=\"baloon item\"><div class=\"norm large\"><img src=\"img/layout/shade-310.png\" alt=\"shade\" class=\"shade\"/><img src=\"img/ui/arrows/baloon-white.png\" alt=\"arrow\" class=\"arrow\"/><h1>Robbie Bardijn</h1><p><a href=\"mailto:robbie.bardijn@gmail.com\">robbie.bardijn@gmail.com</a></p><p><a href=\"tel: 0032472798863\" class=\"tel\">(0032) 0472 / 79.88.63</a></p></div><div class=\"hov large\"><img src=\"img/layout/shade-310.png\" alt=\"shade\" class=\"shade\"/><img src=\"img/ui/arrows/baloon-blue.png\" alt=\"arrow\" class=\"arrow\"/><h1>Hire me...</h1><p>I’m glad to help</p></div></div><div class=\"pic rect item\"><img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><img" + (jade.attr("src", "" + (grav) + "", true, false)) + "/></div><div class=\"cv rect item\"><img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a href=\"/downloads/curriculumvitea.pdf\" target=\"_blank\"><span class=\"linkicon\"></span><span class=\"text\">Curriculum Vitae</span></a></div>");;return buf.join("");
 };
 
 this["JST"]["assets/templates/pic"] = function template(locals) {
@@ -35,11 +35,18 @@ var locals_ = (locals || {}),model = locals_.model;
 buf.push("<img src=\"img/layout/shade-310.png\" alt=\"shade\" class=\"shade\"/><div class=\"inner\"><img" + (jade.attr("src", "img/projects/thumbs/" + (model.media.thumb) + "", true, false)) + " alt=\"thumb\" class=\"thumb\"/><div class=\"insetshade\"></div><div class=\"likes normal\"><a href=\"#\" class=\"heart\"></a></div></div>");;return buf.join("");
 };
 
+this["JST"]["assets/templates/projectdetail"] = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+
+buf.push("<h3>detail</h3>");;return buf.join("");
+};
+
 this["JST"]["assets/templates/repo"] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var locals_ = (locals || {}),model = locals_.model;
-buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a" + (jade.attr("href", "" + (model.url) + "", true, false)) + " target=\"_blank\"><span class=\"repoicon\"></span><span class=\"githubicon\"></span><span class=\"repoinfo\"><span></span>" + (jade.escape(null == (jade.interp = model.name) ? "" : jade.interp)) + "</span></a>");;return buf.join("");
+buf.push("<img src=\"img/layout/shade-150.png\" alt=\"shade\" class=\"shade\"/><a" + (jade.attr("href", "" + (model.url) + "", true, false)) + " target=\"_blank\"><span class=\"repoicon\"></span><span class=\"repoinfo\"><span></span>" + (jade.escape(null == (jade.interp = model.name) ? "" : jade.interp)) + "</span></a>");;return buf.join("");
 };
 
 this["JST"]["assets/templates/tweet"] = function template(locals) {

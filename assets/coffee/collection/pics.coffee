@@ -4,7 +4,7 @@ define [
   'module'
   'model/pic'
 ],
-(Backbone, site, module) ->
+(Backbone, site, module, Pic) ->
 
   class Pics extends Backbone.Collection
     model: Pic

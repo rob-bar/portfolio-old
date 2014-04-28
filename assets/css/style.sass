@@ -41,7 +41,7 @@ $height: 150px
 +font-face("osb", font-files("OpenSans-Bold.woff","OpenSans-Bold.ttf","OpenSans-Bold.otf","OpenSans-Bold.svg"),"OpenSans-Bold.eot")
 +font-face("osl", font-files("OpenSans-Light.woff","OpenSans-Light.ttf","OpenSans-Light.otf","OpenSans-Light.svg"),"OpenSans-Light.eot")
 +font-face("fut", font-files("FuturaStd-CondensedLight.woff","FuturaStd-CondensedLight.ttf","FuturaStd-CondensedLight.otf","FuturaStd-CondensedLight.svg"),"FuturaStd-CondensedLight.eot")
-
++font-face("futl", font-files("FuturaStd-Light.woff","FuturaStd-Light.ttf","FuturaStd-Light.otf","FuturaStd-Light.svg"),"FuturaStd-Light.eot")
 /* ====================================================================================================== */
 /* MIXINS
 /* ====================================================================================================== */
@@ -89,11 +89,14 @@ $height: 150px
 
 .shaded
   +box-shadow(rgba(0, 0, 0, .4) 0 0 4px 0px)
+
 /* ====================================================================================================== */
 /* GENERAL
 /* ====================================================================================================== */
 body, html
   height: 100%
+  padding: 0
+  margin: 0
 
 .menu, ol, ul
   padding: 0
@@ -105,19 +108,19 @@ body
   #bg
     position: fixed
     +rect(100%, 100%)
-    +background(image-url('layout/pat.png'), linear-gradient(center top, $bg_0, $bg_100))
+    +background(image-url('layout/pat.png'), linear-gradient($bg_0, $bg_100))
 
   #subsocial
     display: none
-    +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
+    +background(image-url('layout/pat.png'), linear-gradient($nav_0, $nav_100))
     +box-shadow(rgba(0, 0, 0, 0.4) 0 0 5px 1px)
     +ceaser-transition(all, 500ms, $easeOutExpo)
-    position: fixed
+    position: absolute
     right: 10px
     top: -400px
     padding: 18px 0 8px 0
-    z-index: 9
     +scale(.75)
+    z-index: 12
 
     &.open
       top: -5px
@@ -135,18 +138,19 @@ body
           a
             display: block
             +rect(100%, 100%)
+
   #subnav
     display: none
-    +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
+    +background(image-url('layout/pat.png'), linear-gradient($nav_0, $nav_100))
     +box-shadow(rgba(0, 0, 0, 0.4) 0 0 5px 1px)
     +ceaser-transition(all, 500ms, $easeOutExpo)
     width: 105px
-    position: fixed
+    position: absolute
     left: 10px
     top: -150px
     margin: 0
     padding: 5px 0
-    z-index: 8
+    z-index: 11
 
 
     &.open
@@ -165,14 +169,20 @@ body
         text-transform: uppercase
         +typo("exl", 26px, #000)
 
-  nav
-    z-index: 10
-    width: 100%
-    height: 55px
-    overflow: hidden
+  header
+    +rect(100%, 55px)
     position: fixed
+    top: 0
+
+    z-index: 10
     +box-shadow(rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset)
-    +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_0, $nav_100))
+
+  nav
+    z-index: 15
+    position: relative
+    overflow: hidden
+    +rect(100%, 55px)
+    +background(image-url('layout/pat.png'), linear-gradient($nav_0, $nav_100))
 
     ul
       margin: 0 10px
@@ -203,7 +213,7 @@ body
           span.hov
             position: absolute
             top: -56px
-            +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_100, $nav_hov_0))
+            +background(image-url('layout/pat.png'), linear-gradient($nav_hov_100, $nav_hov_0))
 
             a
               color: #FFF
@@ -260,7 +270,7 @@ body
           span.hov
             position: absolute
             top: -55px
-            +background(image-url('layout/pat.png'), linear-gradient(center top, $nav_hov_0, $nav_hov_100))
+            +background(image-url('layout/pat.png'), linear-gradient($nav_hov_0, $nav_hov_100))
 
           span.nor
             position: relative
@@ -275,14 +285,16 @@ body
 
   #main
     z-index: 5
-    position: absolute
+    position: relative
     top: 55px
-    height: 100%
-    margin: 5px 0 0 0
-    width: 100%
+    margin: 0 auto
+    +ceaser-transition(width, 500ms, $easeOutExpo)
+    // +transform-style()
+    // +perspective(1000px)
+    // +perspective-origin(50% 50%)
 
     .item
-      margin: 10px 0 0 10px
+      margin: 10px 5px 0 5px
       float: left
       list-style-type: none
       position: relative
@@ -296,13 +308,15 @@ body
       .shade
         @extend .largeshade
 
-    #all
-      > li, > div
+    #projects
+      li
         &.inback
           +opacity(.5)
           +translate3d(0, 0, -150px)
 
     #me
+      +pie-clearfix
+      margin: 10px 0 0 0
       +opacity(1)
       +ceaser-transition(all, 800ms, $easeOutExpo)
 
@@ -330,17 +344,17 @@ body
           &:hover
             .linkicon
               +background(image-url('ui/cv-link-hov.png') top left no-repeat)
-              +scale(.85)
-              margin: 30px auto 5px
+              +scale(.9)
+              margin: 30px auto
 
             .text
               +opacity(1)
 
           .linkicon
             +background(image-url('ui/cv-link.png') top left no-repeat)
-            +rect(83px, 75px)
+            +rect(69px, 61px)
             display: block
-            margin: 38px auto 5px
+            margin: 40px auto
             +ceaser-transition(all, 500ms, $easeOutExpo)
 
           .text
@@ -363,11 +377,10 @@ body
           top: 0
           left: 0
           $pad: 30px
-          display: none
           padding: $pad
           +rect($large - ($pad * 2), $height - ($pad * 2))
           +border-radius(5px)
-          +background(image-url('layout/pat.png'), linear-gradient(center top, rgba(255, 255, 255, 0), #dfdfdf))
+          +background(image-url('layout/pat.png'), linear-gradient(rgba(255, 255, 255, 0), #dfdfdf))
           background-color: #FFF
 
           .arrow
@@ -383,12 +396,13 @@ body
           position: absolute
           top: 0
           left: 0
+          display: none
           $pad: 40px
           $padhor: 70px
           padding: $pad $padhor
           +rect($large - ($padhor * 2), $height - ($pad * 2))
           +border-radius(5px)
-          +background(image-url('layout/pat.png'), linear-gradient(center top, rgba(62, 171, 233, 0), #0077bb))
+          +background(image-url('layout/pat.png'), linear-gradient(rgba(62, 171, 233, 0), #0077bb))
           background-color: #3eabe9
 
           .arrow
@@ -410,13 +424,21 @@ body
             +typo("osl", 20px, #000)
 
             a
+              +typo("futl", 21px, #000)
               color: #000
               text-decoration: none
 
-    #all
-      +transform-style()
-      +perspective(1000px)
-      +perspective-origin(50% 50%)
+              &.tel
+                font-size: 18px
+
+    ul
+      +pie-clearfix
+      margin: 10px 0 0 0
+
+      &#projects
+        +transform-style()
+        +perspective(1250px)
+        +perspective-origin(50% 50%)
 
       li
         +translate3d(0, 0, 0)
@@ -431,9 +453,11 @@ body
           position: relative
           background-color: #fff
           +rect($large, $height)
-          +ceaser-transition(all, 800ms, $easeOutExpo)
+          +ceaser-transition(all, 700ms, $easeOutExpo)
 
           &:hover
+            z-index: 200
+
             .inner .thumb
               +scale(.9)
 
@@ -502,7 +526,7 @@ body
                 +inline-block
 
         &.link
-          background-color: #db2421
+          background-color: #166362
           +rect($rect, $rect)
 
           .shade
@@ -522,8 +546,9 @@ body
             &:hover
               .deliinfo
                 +transform(translate(-75px, 75px) rotate(45deg))
+
               .deliicon
-                +transform(translate(20px, -20px)scale(0.75))
+                +transform(translate(25px, -25px) scale(0.8))
 
             .deliinfo
               +rect(213px, 208px)
@@ -541,9 +566,9 @@ body
 
             .deliicon
               +background(image-url('ui/delicious/link.png') top left no-repeat)
-              +rect(87px, 86px)
+              +rect(70px, 67px)
               display: block
-              margin: 33px auto 8px
+              margin: 40px auto
               +apply-origin(top right, false)
               +ceaser-transition(all, $animtime, $easeOutExpo)
 
@@ -579,9 +604,6 @@ body
               +ceaser-transition(all, $animtime, $easeOutExpo)
 
         &.pic
-          .shade
-            bottom: -10px
-
           a
             +rect($rect, $rect)
             overflow: hidden
@@ -589,7 +611,7 @@ body
 
         &.repo
           cursor: pointer
-          background-color: #FFF
+          background-color: #2383a6
           +rect($rect, $rect)
 
           .shade
@@ -610,35 +632,27 @@ body
                 bottom: 0px
 
               .repoicon
-                margin: 13px auto 8px
-                +scale(.85,.85)
-                +background(image-url('ui/github/repo-hov.png') top left no-repeat)
-
-              .githubicon
-                display: none
+                margin: 16px auto
+                // +scale(.9)
 
             .repoicon
               +background(image-url('ui/github/repo.png') top left no-repeat)
-              +rect(75px, 76px)
+              +rect(65px, 64px)
               display: block
-              margin: 33px auto 8px
+              margin: 40px auto
               +ceaser-transition(all, $animtime, $easeOutExpo)
 
-            .githubicon
-              +background(image-url('ui/github/github.png') top left no-repeat)
-              +rect(25px, 25px)
-              display: block
-              margin: 0 auto
 
             .repoinfo
               +rect(100%, 50px)
               position: absolute
               bottom: -50px
               display: block
-              background-color: #333333
+              background-color: #FFF
               line-height: 50px
               word-break: break-all
               +ceaser-transition(all, $animtime, $easeOutExpo)
+              color: #185971
 
               &.smaller
                 font-size: 14px
@@ -695,3 +709,8 @@ body
 +max-screen(1370px)
   body nav ul#social li.footer p
     left: 200px
+
+@for $i from 1 through 8
+  +min-screen(320px * $i)
+    #main
+      width: 320px * $i

@@ -4,7 +4,7 @@ define [
   'module'
   'model/link'
 ],
-(Backbone, site, module) ->
+(Backbone, site, module, Link) ->
 
   class Links extends Backbone.Collection
     model: Link

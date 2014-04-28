@@ -16,5 +16,5 @@ require.config
       deps: ['underscore', 'jquery']
       exports: 'Backbone'
     app:
-      deps: ["backbone","masonry"],
+      deps: ["backbone"],
       exports: "App"

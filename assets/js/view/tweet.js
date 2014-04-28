@@ -3,31 +3,31 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   define(['module', 'backbone', 'helper'], function(module, Backbone, helper) {
-    var Tweet, _ref;
-    Tweet = (function(_super) {
-      __extends(Tweet, _super);
+    var TweetView, _ref;
+    TweetView = (function(_super) {
+      __extends(TweetView, _super);
 
-      function Tweet() {
-        _ref = Tweet.__super__.constructor.apply(this, arguments);
+      function TweetView() {
+        _ref = TweetView.__super__.constructor.apply(this, arguments);
         return _ref;
       }
 
-      Tweet.prototype.tagName = "li";
+      TweetView.prototype.tagName = "li";
 
-      Tweet.prototype.className = "tweet rect item";
+      TweetView.prototype.className = "tweet rect item";
 
-      Tweet.prototype.events = {};
+      TweetView.prototype.events = {};
 
-      Tweet.prototype.initialize = function() {};
+      TweetView.prototype.initialize = function() {};
 
-      Tweet.prototype.render = function() {
+      TweetView.prototype.render = function() {
         return helper.get_template("tweet")(this.model);
       };
 
-      return Tweet;
+      return TweetView;
 
     })(Backbone.View);
-    return module.exports = Tweet;
+    return module.exports = TweetView;
   });
 
 }).call(this);

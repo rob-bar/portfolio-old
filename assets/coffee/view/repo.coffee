@@ -4,7 +4,7 @@ define [
   'helper'
 ],
 (module, Backbone, helper) ->
-  class Repo extends Backbone.View
+  class RepoView extends Backbone.View
     tagName: "li"
     className: "repo rect item"
     events: {}
@@ -22,4 +22,4 @@ define [
       if $repo.text().length > 18
         $repo.addClass "smaller"
 
-  module.exports = Repo
+  module.exports = RepoView

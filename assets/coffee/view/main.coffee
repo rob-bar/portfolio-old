@@ -2,24 +2,21 @@ define [
   'module'
   'backbone'
   'helper'
-  'view/me'
   'site'
-  'collection/all'
-  'view/pic'
-  'view/link'
-  'view/project'
-  'view/tweet'
-  'view/repo'
-  'masonry'
+  'view/me'
+  'view/projects'
+  'view/repos'
+  'view/pics'
+  'view/links'
+  'view/tweets'
 ],
-(module, Backbone, helper, MeView, site, All, Pic, Link, Project, Tweet, Repo, Masonry) ->
+(module, Backbone, helper, site, MeView, ProjectsView, ReposView, PicsView, LinksView, TweetsView) ->
   class Main extends Backbone.View
-    tagName: "ul"
+    tagName: "div"
     attributes:
-      id: "all"
+      id: "main"
 
-    events:
-      "click li": "toggle"
+    events: {}
 
     init_events: ->
       site.vent.on 'grav', @grav
@@ -35,24 +32,24 @@ define [
     initialize: ->
       @nav = $ "header nav"
       @me = new MeView()
-      @col = new All()
+      @$el.append @me.render().$el
+
+      @projects = new ProjectsView()
+      @$el.append @projects.render().$el
+
+      @repos = new ReposView()
+      @$el.append @repos.render().$el
+
+      @pics = new PicsView()
+      @$el.append @pics.render().$el
+
+      @links = new LinksView()
+      @$el.append @links.render().$el
+
+      @tweets = new TweetsView()
+      @$el.append @tweets.render().$el
 
       @init_events()
-      @me.render()
-
-      @col.fetch
-        success: (results) =>
-          results.each (model, index, list) =>
-            view = switch model.get 'kind'
-              when 'link' then new Link model: model
-              when 'pic' then new Pic model: model
-              when 'repo' then new Repo model: model
-              when 'work' then new Project model: model
-              when 'tweet' then new Tweet model: model
-            @$el.append view.render().$el
-
-    grav: =>
-      @$el.append @me.$el
 
 
     togglemenu: (e) ->
@@ -65,19 +62,6 @@ define [
       $subnav = $ "#subsocial"
       $subnav.toggleClass "open"
 
-    toggle: (e) ->
-      e.preventDefault()
-      unless $('li').eq(0).hasClass "inback"
-        $('li, div').each () ->
-          setTimeout =>
-            $(@).addClass "inback"
-          , $(@).offset().top * 0.75
-
-      else
-        $('li, div').each () ->
-          setTimeout =>
-            $(@).removeClass "inback"
-          , $(@).offset().top * 0.75
 
     scroll: (e) ->
       $subnav = $ "#subnav"

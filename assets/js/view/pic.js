@@ -3,34 +3,34 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   define(['module', 'backbone', 'helper'], function(module, Backbone, helper) {
-    var Pic, _ref;
-    Pic = (function(_super) {
-      __extends(Pic, _super);
+    var PicView, _ref;
+    PicView = (function(_super) {
+      __extends(PicView, _super);
 
-      function Pic() {
-        _ref = Pic.__super__.constructor.apply(this, arguments);
+      function PicView() {
+        _ref = PicView.__super__.constructor.apply(this, arguments);
         return _ref;
       }
 
-      Pic.prototype.tagName = "li";
+      PicView.prototype.tagName = "li";
 
-      Pic.prototype.className = "pic rect item";
+      PicView.prototype.className = "pic rect item";
 
-      Pic.prototype.events = {};
+      PicView.prototype.events = {};
 
-      Pic.prototype.initialize = function() {};
+      PicView.prototype.initialize = function() {};
 
-      Pic.prototype.render = function() {
+      PicView.prototype.render = function() {
         this.$el.html(helper.get_template("pic", {
           model: this.model.toJSON()
         }));
         return this;
       };
 
-      return Pic;
+      return PicView;
 
     })(Backbone.View);
-    return module.exports = Pic;
+    return module.exports = PicView;
   });
 
 }).call(this);

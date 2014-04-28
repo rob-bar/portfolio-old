@@ -30,7 +30,7 @@ define [
       # console.log "before"
       unless @main?
         @main = new MainView()
-        $("#main").append @main.$el
+        $("body header").after @main.$el
 
     after: ->
       # console.log "AFTER"

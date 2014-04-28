@@ -9,14 +9,15 @@ define [
     tagName: "div"
     attributes:
       id: "me"
+
     events: {}
 
     initialize: ->
-    render: =>
+    render: ->
       $.ajax "/rest/grav",
         method: "get"
         success: (data, textStatus, jqXHR) =>
           @$el.html helper.get_template("me", {grav: data})
           site.vent.trigger 'grav'
-
+      @
   module.exports = Me

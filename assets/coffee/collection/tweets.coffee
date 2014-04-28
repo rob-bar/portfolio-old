@@ -4,7 +4,7 @@ define [
   'module'
   'model/tweet'
 ],
-(Backbone, site, module) ->
+(Backbone, site, module, Tweet) ->
 
   class Tweets extends Backbone.Collection
     model: Tweet

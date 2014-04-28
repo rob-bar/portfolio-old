@@ -27,7 +27,7 @@ exports.data =
 
   sorted: (callback) ->
     @model()
-    project.find {is_active: true}, null, {sort: {launch_date: 1}}, (err, docs) ->
+    project.find {is_active: true}, null, {sort: {created_at: -1}}, (err, docs) ->
       callback docs
 
   actives: (callback) ->

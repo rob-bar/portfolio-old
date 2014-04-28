@@ -101,8 +101,8 @@ exports.rest =
 
       (err, results) ->
         results = _.union results.works, results.repos, results.pics, results.links
-        results = _.sortBy results, (result) -> moment(result.created_at).valueOf()
         results = _.sortBy results, (result) -> result.kind
+
         results = results.reverse()
 
         # PAGINATED OR NOT
@@ -112,7 +112,8 @@ exports.rest =
         res.json results
 
   works: (req, res) ->
-    projects.data.actives (works) ->
+    projects.data.sorted (works) ->
+      # works = _.sortBy works, (result) -> moment(result.created_at).valueOf()
       res.json works
 
   socials: (req, res) ->

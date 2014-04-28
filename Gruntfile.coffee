@@ -12,11 +12,11 @@ module.exports = (grunt) ->
           cssDir: 'assets/css'
           imagesDir: 'assets/img'
           fontsDir: 'assets/font'
-          httpPath: "/"
+          httpPath: '/'
           relativeAssets: true
-          boring: true
           debugInfo: false
-          outputStyle: 'compressed'
+          outputStyle: 'expanded'
+          noLineComments: true
           raw: 'preferred_syntax = :sass\n'
 
     coffee:

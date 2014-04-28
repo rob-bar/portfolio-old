@@ -4,7 +4,7 @@ define [
   'module'
   'model/project'
 ],
-(Backbone, site, module, Repo) ->
+(Backbone, site, module, Project) ->
 
   class Projects extends Backbone.Collection
     model: Project

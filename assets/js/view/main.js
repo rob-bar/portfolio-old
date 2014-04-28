@@ -1,28 +1,24 @@
 (function() {
-  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-    __hasProp = {}.hasOwnProperty,
+  var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['module', 'backbone', 'helper', 'view/me', 'site', 'collection/all', 'view/pic', 'view/link', 'view/project', 'view/tweet', 'view/repo', 'masonry'], function(module, Backbone, helper, MeView, site, All, Pic, Link, Project, Tweet, Repo, Masonry) {
+  define(['module', 'backbone', 'helper', 'site', 'view/me', 'view/projects', 'view/repos', 'view/pics', 'view/links', 'view/tweets'], function(module, Backbone, helper, site, MeView, ProjectsView, ReposView, PicsView, LinksView, TweetsView) {
     var Main, _ref;
     Main = (function(_super) {
       __extends(Main, _super);
 
       function Main() {
-        this.grav = __bind(this.grav, this);
         _ref = Main.__super__.constructor.apply(this, arguments);
         return _ref;
       }
 
-      Main.prototype.tagName = "ul";
+      Main.prototype.tagName = "div";
 
       Main.prototype.attributes = {
-        id: "all"
+        id: "main"
       };
 
-      Main.prototype.events = {
-        "click li": "toggle"
-      };
+      Main.prototype.events = {};
 
       Main.prototype.init_events = function() {
         site.vent.on('grav', this.grav);
@@ -34,48 +30,20 @@
       };
 
       Main.prototype.initialize = function() {
-        var _this = this;
         this.nav = $("header nav");
         this.me = new MeView();
-        this.col = new All();
-        this.init_events();
-        this.me.render();
-        return this.col.fetch({
-          success: function(results) {
-            return results.each(function(model, index, list) {
-              var view;
-              view = (function() {
-                switch (model.get('kind')) {
-                  case 'link':
-                    return new Link({
-                      model: model
-                    });
-                  case 'pic':
-                    return new Pic({
-                      model: model
-                    });
-                  case 'repo':
-                    return new Repo({
-                      model: model
-                    });
-                  case 'work':
-                    return new Project({
-                      model: model
-                    });
-                  case 'tweet':
-                    return new Tweet({
-                      model: model
-                    });
-                }
-              })();
-              return _this.$el.append(view.render().$el);
-            });
-          }
-        });
-      };
-
-      Main.prototype.grav = function() {
-        return this.$el.append(this.me.$el);
+        this.$el.append(this.me.render().$el);
+        this.projects = new ProjectsView();
+        this.$el.append(this.projects.render().$el);
+        this.repos = new ReposView();
+        this.$el.append(this.repos.render().$el);
+        this.pics = new PicsView();
+        this.$el.append(this.pics.render().$el);
+        this.links = new LinksView();
+        this.$el.append(this.links.render().$el);
+        this.tweets = new TweetsView();
+        this.$el.append(this.tweets.render().$el);
+        return this.init_events();
       };
 
       Main.prototype.togglemenu = function(e) {
@@ -90,25 +58,6 @@
         e.preventDefault();
         $subnav = $("#subsocial");
         return $subnav.toggleClass("open");
-      };
-
-      Main.prototype.toggle = function(e) {
-        e.preventDefault();
-        if (!$('li').eq(0).hasClass("inback")) {
-          return $('li, div').each(function() {
-            var _this = this;
-            return setTimeout(function() {
-              return $(_this).addClass("inback");
-            }, $(this).offset().top * 0.75);
-          });
-        } else {
-          return $('li, div').each(function() {
-            var _this = this;
-            return setTimeout(function() {
-              return $(_this).removeClass("inback");
-            }, $(this).offset().top * 0.75);
-          });
-        }
       };
 
       Main.prototype.scroll = function(e) {
