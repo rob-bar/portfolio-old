@@ -20,6 +20,7 @@ define [
     toggle: (e) ->
       e.preventDefault()
       clickecoffset = $(e.currentTarget).offset().top
+
       unless $('li').eq(0).hasClass "inback"
         $('li').each () ->
           setTimeout =>
@@ -40,4 +41,5 @@ define [
             view = new ProjectView model: model
             @$el.append view.render().$el
       @
+
   module.exports = ProjectsView

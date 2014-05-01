@@ -18,6 +18,5 @@ define [
         method: "get"
         success: (data, textStatus, jqXHR) =>
           @$el.html helper.get_template("me", {grav: data})
-          site.vent.trigger 'grav'
       @
   module.exports = Me

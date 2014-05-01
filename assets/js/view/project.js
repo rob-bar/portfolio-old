@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['module', 'backbone', 'helper'], function(module, Backbone, helper) {
+  define(['module', 'backbone', 'helper', 'site'], function(module, Backbone, helper, site) {
     var ProjectView, _ref;
     ProjectView = (function(_super) {
       __extends(ProjectView, _super);
@@ -17,12 +17,18 @@
       ProjectView.prototype.className = "work item";
 
       ProjectView.prototype.events = {
-        "click .likes": "like"
+        "click .likes": "like",
+        "click .inner": "showproject"
       };
 
       ProjectView.prototype.like = function(e) {
         e.preventDefault();
         return $(e.currentTarget).addClass("liked");
+      };
+
+      ProjectView.prototype.showproject = function(e) {
+        e.preventDefault();
+        return site.vent.trigger('showproject', this.model);
       };
 
       ProjectView.prototype.initialize = function() {};

@@ -5,12 +5,13 @@ define [
   'site'
   'view/me'
   'view/projects'
+  'view/projectdetail'
   'view/repos'
   'view/pics'
   'view/links'
   'view/tweets'
 ],
-(module, Backbone, helper, site, MeView, ProjectsView, ReposView, PicsView, LinksView, TweetsView) ->
+(module, Backbone, helper, site, MeView, ProjectsView, ProjectDetailView, ReposView, PicsView, LinksView, TweetsView) ->
   class Main extends Backbone.View
     tagName: "div"
     attributes:
@@ -19,7 +20,7 @@ define [
     events: {}
 
     init_events: ->
-      site.vent.on 'grav', @grav
+      site.vent.on 'showproject', @showproject
 
       @nav.find('ul#nav li.menu').on "click", @togglemenu
       $('#subnav').on "mouseleave", @togglemenu
@@ -35,7 +36,9 @@ define [
       @$el.append @me.render().$el
 
       @projects = new ProjectsView()
-      @$el.append @projects.render().$el
+      @$wrapper = $ "<div/>", "class": "wrapper"
+      @$wrapper.append @projects.render().$el
+      @$el.append @$wrapper
 
       @repos = new ReposView()
       @$el.append @repos.render().$el
@@ -49,8 +52,10 @@ define [
       @tweets = new TweetsView()
       @$el.append @tweets.render().$el
 
-      @init_events()
+      @projectdetail = new ProjectDetailView()
+      @$wrapper.append @projectdetail.$el
 
+      @init_events()
 
     togglemenu: (e) ->
       e.preventDefault()
@@ -62,6 +67,8 @@ define [
       $subnav = $ "#subsocial"
       $subnav.toggleClass "open"
 
+    showproject: (project) =>
+      @projectdetail.render project
 
     scroll: (e) ->
       $subnav = $ "#subnav"

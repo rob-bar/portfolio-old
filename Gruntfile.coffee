@@ -8,7 +8,7 @@ module.exports = (grunt) ->
       app:
         options:
           require: ['compass-h5bp','ceaser-easing']
-          sassDir: 'assets/css'
+          sassDir: 'assets/sass'
           cssDir: 'assets/css'
           imagesDir: 'assets/img'
           fontsDir: 'assets/font'
@@ -82,10 +82,7 @@ module.exports = (grunt) ->
         files: ['assets/coffee/**/*.coffee']
         tasks: ['coffee']
       sass:
-        files: ['assets/css/**/*.sass']
-        tasks: ['compass']
-      scss:
-        files: ['assets/css/**/*.scss']
+        files: ['assets/sass/**/*.sass']
         tasks: ['compass']
       jade:
         files: ['assets/templates/**/*.jade']

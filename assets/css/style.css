@@ -15,6 +15,15 @@
 /* VARS */
 /* ====================================================================================================== */
 /* ====================================================================================================== */
+/* IMPORTS */
+/* ====================================================================================================== */
+/* ====================================================================================================== */
+/* VARS */
+/* ====================================================================================================== */
+/* ====================================================================================================== */
+/* MIXINS */
+/* ====================================================================================================== */
+/* ====================================================================================================== */
 /* INITS & FONTS */
 /* ====================================================================================================== */
 .socials-delicious {
@@ -480,50 +489,28 @@ table {
   src: url('../font/FuturaStd-Light.eot?&1398428054#iefix') format('embedded-opentype'), url('../font/FuturaStd-Light.woff?1398428054') format('woff'), url('../font/FuturaStd-Light.ttf?1398428054') format('truetype'), url('../font/FuturaStd-Light.otf?1398428052') format('opentype'), url('../font/FuturaStd-Light.svg?1398428054') format('svg');
 }
 /* ====================================================================================================== */
-/* MIXINS */
+/* BASE */
 /* ====================================================================================================== */
-.unselectable {
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-*:active, *:hover, *:focus {
-  outline: 0 !important;
-}
-
-.fontsmoothing, body {
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-}
-
-.largeshade, body #main .large .shade {
+.largeshade, #main .large .shade {
   position: absolute;
   bottom: -16px;
   left: 0px;
   width: 100%;
 }
 
-.shade, body #main .rect .shade {
+.shade, #main .rect .shade {
   position: absolute;
-  bottom: -14px;
+  bottom: -16px;
   left: 0px;
   width: 100%;
 }
 
-.shaded, body #main #me .cv, body #main #me .baloon .norm, body #main #me .baloon .hov, body #main ul li.work {
+.shaded, #main #me .cv, #main #me .baloon .norm, #main #me .baloon .hov, #main .work {
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0px;
 }
 
-/* ====================================================================================================== */
-/* GENERAL */
-/* ====================================================================================================== */
 body, html {
   height: 100%;
   padding: 0;
@@ -535,7 +522,17 @@ body, html {
   margin: 0;
 }
 
-body #bg {
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/* ====================================================================================================== */
+/* LAYOUT */
+/* ====================================================================================================== */
+#bg {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -543,7 +540,8 @@ body #bg {
   background: url('../img/layout/pat.png?1390329945'), -webkit-linear-gradient(#293742, #192026);
   background: url('../img/layout/pat.png?1390329945'), linear-gradient(#293742, #192026);
 }
-body #subsocial {
+
+#subsocial {
   display: none;
   background: url('../img/layout/pat.png?1390329945'), -moz-linear-gradient(#fefdfd, #dadada);
   background: url('../img/layout/pat.png?1390329945'), -webkit-linear-gradient(#fefdfd, #dadada);
@@ -566,25 +564,26 @@ body #subsocial {
   transform: scale(0.75, 0.75);
   z-index: 12;
 }
-body #subsocial.open {
+#subsocial.open {
   top: -5px;
 }
-body #subsocial li {
+#subsocial li {
   list-style-type: none;
   margin: 0 5px;
   padding: 0;
 }
-body #subsocial li.icon {
+#subsocial li.icon {
   margin: -10px 0 0 0;
   width: 55px;
   height: 55px;
 }
-body #subsocial li.icon span a {
+#subsocial li.icon span a {
   display: block;
   width: 100%;
   height: 100%;
 }
-body #subnav {
+
+#subnav {
   display: none;
   background: url('../img/layout/pat.png?1390329945'), -moz-linear-gradient(#fefdfd, #dadada);
   background: url('../img/layout/pat.png?1390329945'), -webkit-linear-gradient(#fefdfd, #dadada);
@@ -605,26 +604,28 @@ body #subnav {
   padding: 5px 0;
   z-index: 11;
 }
-body #subnav.open {
+#subnav.open {
   top: 55px;
 }
-body #subnav li {
+#subnav li {
   list-style-type: none;
   margin: 0 7px;
   padding: 0;
 }
-body #subnav li a {
+#subnav li a {
   margin: 0;
   display: block;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: normal;
-  font-family: "exl", Arial, Helvetica;
+  font-family: "exl";
   font-size: 26px;
   color: black;
+  font-weight: normal;
+  font-style: normal;
 }
-body header {
+
+.fixed {
   width: 100%;
   height: 55px;
   position: fixed;
@@ -634,7 +635,8 @@ body header {
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
 }
-body nav {
+
+nav {
   z-index: 15;
   position: relative;
   overflow: hidden;
@@ -644,130 +646,133 @@ body nav {
   background: url('../img/layout/pat.png?1390329945'), -webkit-linear-gradient(#fefdfd, #dadada);
   background: url('../img/layout/pat.png?1390329945'), linear-gradient(#fefdfd, #dadada);
 }
-body nav ul {
+nav ul {
   margin: 0 10px;
   padding: 0;
   list-style-type: none;
 }
-body nav ul#nav {
+nav ul#nav {
   position: absolute;
   left: 0;
   top: 0;
 }
-body nav ul#nav li {
+nav ul#nav li {
   float: left;
   border-left: 1px solid #fafafa;
   border-right: 1px solid #d0d0d0;
   margin: 0;
   padding: 0;
 }
-body nav ul#nav li.menu {
+nav ul#nav li.menu {
   display: none;
 }
-body nav ul#nav li:hover span.hov {
+nav ul#nav li:hover span.hov {
   top: 0px;
 }
-body nav ul#nav li:hover span.nor {
+nav ul#nav li:hover span.nor {
   top: 55px;
 }
-body nav ul#nav li span.hov {
+nav ul#nav li span.hov {
   position: absolute;
   top: -56px;
   background: url('../img/layout/pat.png?1390329945'), -moz-linear-gradient(#272727, #090909);
   background: url('../img/layout/pat.png?1390329945'), -webkit-linear-gradient(#272727, #090909);
   background: url('../img/layout/pat.png?1390329945'), linear-gradient(#272727, #090909);
 }
-body nav ul#nav li span.hov a {
+nav ul#nav li span.hov a {
   color: white;
   text-shadow: rgba(0, 0, 0, 0.8) 0 2px 1px;
 }
-body nav ul#nav li span.nor {
+nav ul#nav li span.nor {
   position: relative;
   top: 0px;
 }
-body nav ul#nav li span {
+nav ul#nav li span {
   -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
   -webkit-transition-delay: 0ms;
   transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body nav ul#nav li span a {
+nav ul#nav li span a {
   margin: 0;
   padding: 4px 15px 6px;
   display: block;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: normal;
-  font-family: "exl", Arial, Helvetica;
+  font-family: "exl";
   font-size: 32px;
   color: black;
+  font-weight: normal;
+  font-style: normal;
 }
-body nav ul#social {
+nav ul#social {
   position: absolute;
   right: 0;
 }
-body nav ul#social > li {
+nav ul#social > li {
   float: left;
 }
-body nav ul#social > li.footer {
+nav ul#social > li.footer {
   overflow: hidden;
 }
-body nav ul#social > li.footer p {
+nav ul#social > li.footer p {
   position: relative;
   left: 0;
   margin: 19px 15px;
-  font-weight: normal;
-  font-family: "osl", Arial, Helvetica;
+  font-family: "osl";
   font-size: 13px;
   color: #203e3e;
+  font-weight: normal;
+  font-style: normal;
   -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
   -webkit-transition-delay: 0ms;
   transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body nav ul#social li.menu {
+nav ul#social li.menu {
   display: none;
 }
-body nav ul#social > li.icon, body nav ul#social > li.menu {
+nav ul#social > li.icon, nav ul#social > li.menu {
   float: left;
   border-left: 1px solid #fafafa;
   border-right: 1px solid #d0d0d0;
   width: 55px;
   height: 55px;
 }
-body nav ul#social > li.icon:hover span.hov, body nav ul#social > li.menu:hover span.hov {
+nav ul#social > li.icon:hover span.hov, nav ul#social > li.menu:hover span.hov {
   top: 0px;
 }
-body nav ul#social > li.icon:hover span.nor, body nav ul#social > li.menu:hover span.nor {
+nav ul#social > li.icon:hover span.nor, nav ul#social > li.menu:hover span.nor {
   top: 55px;
 }
-body nav ul#social > li.icon span.hov, body nav ul#social > li.menu span.hov {
+nav ul#social > li.icon span.hov, nav ul#social > li.menu span.hov {
   position: absolute;
   top: -55px;
   background: url('../img/layout/pat.png?1390329945'), -moz-linear-gradient(#090909, #272727);
   background: url('../img/layout/pat.png?1390329945'), -webkit-linear-gradient(#090909, #272727);
   background: url('../img/layout/pat.png?1390329945'), linear-gradient(#090909, #272727);
 }
-body nav ul#social > li.icon span.nor, body nav ul#social > li.menu span.nor {
+nav ul#social > li.icon span.nor, nav ul#social > li.menu span.nor {
   position: relative;
   top: 0px;
 }
-body nav ul#social > li.icon span, body nav ul#social > li.menu span {
+nav ul#social > li.icon span, nav ul#social > li.menu span {
   -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
   -webkit-transition-delay: 0ms;
   transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body nav ul#social > li.icon span a, body nav ul#social > li.menu span a {
+nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   display: block;
   width: 55px;
   height: 55px;
 }
-body #main {
+
+#main {
   z-index: 5;
   position: relative;
   top: 55px;
@@ -778,7 +783,7 @@ body #main {
   -webkit-transition-delay: 0ms;
   transition: width 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main .item {
+#main .item {
   margin: 10px 5px 0 5px;
   float: left;
   list-style-type: none;
@@ -789,14 +794,7 @@ body #main .item {
   -webkit-transition-delay: 0ms;
   transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main #projects li.inback {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
-  -moz-transform: translate3d(0, 0, -150px);
-  -webkit-transform: translate3d(0, 0, -150px);
-  transform: translate3d(0, 0, -150px);
-}
-body #main #me {
+#main #me {
   *zoom: 1;
   margin: 10px 0 0 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
@@ -807,12 +805,12 @@ body #main #me {
   -webkit-transition-delay: 0ms;
   transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main #me:after {
+#main #me:after {
   content: "";
   display: table;
   clear: both;
 }
-body #main #me .pic {
+#main #me .pic {
   -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -821,7 +819,10 @@ body #main #me .pic {
   width: 150px;
   height: 150px;
 }
-body #main #me .cv {
+#main #me .pic .shade {
+  bottom: -14px;
+}
+#main #me .cv {
   -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -829,7 +830,10 @@ body #main #me .cv {
   height: 150px;
   z-index: 3;
 }
-body #main #me .cv a {
+#main #me .cv .shade {
+  bottom: -14px;
+}
+#main #me .cv a {
   width: 150px;
   height: 150px;
   position: absolute;
@@ -839,7 +843,7 @@ body #main #me .cv a {
   text-decoration: none;
   background-color: #3d3d3d;
 }
-body #main #me .cv a:hover .linkicon {
+#main #me .cv a:hover .linkicon {
   background: url('../img/ui/cv-link-hov.png?1398435717') top left no-repeat;
   -moz-transform: scale(0.9, 0.9);
   -ms-transform: scale(0.9, 0.9);
@@ -847,11 +851,11 @@ body #main #me .cv a:hover .linkicon {
   transform: scale(0.9, 0.9);
   margin: 30px auto;
 }
-body #main #me .cv a:hover .text {
+#main #me .cv a:hover .text {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-body #main #me .cv a .linkicon {
+#main #me .cv a .linkicon {
   background: url('../img/ui/cv-link.png?1398435681') top left no-repeat;
   width: 69px;
   height: 61px;
@@ -863,11 +867,12 @@ body #main #me .cv a .linkicon {
   -webkit-transition-delay: 0ms;
   transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main #me .cv a .text {
-  font-weight: normal;
-  font-family: "fut", Arial, Helvetica;
+#main #me .cv a .text {
+  font-family: "fut";
   font-size: 18px;
   color: #141414;
+  font-weight: normal;
+  font-style: normal;
   text-align: center;
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -878,7 +883,7 @@ body #main #me .cv a .text {
   -webkit-transition-delay: 0ms;
   transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main #me .baloon {
+#main #me .baloon {
   -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -887,7 +892,7 @@ body #main #me .baloon {
   width: 310px;
   height: 150px;
 }
-body #main #me .baloon .norm {
+#main #me .baloon .norm {
   position: absolute;
   top: 0;
   left: 0;
@@ -902,7 +907,7 @@ body #main #me .baloon .norm {
   background: url('../img/layout/pat.png?1390329945'), linear-gradient(rgba(255, 255, 255, 0), #dfdfdf);
   background-color: white;
 }
-body #main #me .baloon .norm .arrow {
+#main #me .baloon .norm .arrow {
   position: absolute;
   right: -16px;
   top: 20px;
@@ -920,7 +925,7 @@ body #main #me .baloon .norm .arrow {
   -webkit-transition-delay: 0ms;
   transition: transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main #me .baloon .hov {
+#main #me .baloon .hov {
   position: absolute;
   top: 0;
   left: 0;
@@ -936,7 +941,7 @@ body #main #me .baloon .hov {
   background: url('../img/layout/pat.png?1390329945'), linear-gradient(rgba(62, 171, 233, 0), #0077bb);
   background-color: #3eabe9;
 }
-body #main #me .baloon .hov .arrow {
+#main #me .baloon .hov .arrow {
   position: absolute;
   right: -16px;
   top: 100px;
@@ -954,42 +959,53 @@ body #main #me .baloon .hov .arrow {
   -webkit-transition-delay: 0ms;
   transition: transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main #me .baloon > div h1 {
+#main #me .baloon > div h1 {
   margin: 0;
-  font-weight: normal;
-  font-family: "chunk5", Arial, Helvetica;
+  font-family: "chunk5";
   font-size: 30px;
   color: black;
+  font-weight: normal;
+  font-style: normal;
   line-height: 1em;
 }
-body #main #me .baloon > div p {
+#main #me .baloon > div p {
   margin: 0.15em 0;
-  font-weight: normal;
-  font-family: "osl", Arial, Helvetica;
+  font-family: "osl";
   font-size: 20px;
   color: black;
-}
-body #main #me .baloon > div p a {
   font-weight: normal;
-  font-family: "futl", Arial, Helvetica;
+  font-style: normal;
+}
+#main #me .baloon > div p a {
+  font-family: "futl";
   font-size: 21px;
   color: black;
+  font-weight: normal;
+  font-style: normal;
   color: black;
   text-decoration: none;
 }
-body #main #me .baloon > div p a.tel {
+#main #me .baloon > div p a.tel {
   font-size: 18px;
 }
-body #main ul {
-  *zoom: 1;
-  margin: 10px 0 0 0;
+#main .workdetail {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 5px;
 }
-body #main ul:after {
-  content: "";
-  display: table;
-  clear: both;
+#main .workdetail.show {
+  display: block;
 }
-body #main ul#projects {
+#main .workdetail .panel {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+#main #projects {
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -1000,17 +1016,26 @@ body #main ul#projects {
   -webkit-perspective-origin: 50% 50%;
   perspective-origin: 50% 50%;
 }
-body #main ul li {
-  -moz-transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
+#main #projects li.inback {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -moz-transform: translate3d(0, 0, -150px);
+  -webkit-transform: translate3d(0, 0, -150px);
+  transform: translate3d(0, 0, -150px);
 }
-body #main ul li .shade, body #main ul li .rect .shade, body #main .rect ul li .shade {
-  bottom: -16px;
+#main > ul, #main .wrapper {
+  *zoom: 1;
+  margin: 10px 0 0 0;
 }
-body #main ul li.work {
+#main > ul:after, #main .wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#main .wrapper {
+  position: relative;
+}
+#main .work {
   cursor: pointer;
   position: relative;
   background-color: white;
@@ -1022,31 +1047,31 @@ body #main ul li.work {
   -webkit-transition-delay: 0ms;
   transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.work:hover {
+#main .work:hover {
   z-index: 200;
 }
-body #main ul li.work:hover .inner .thumb {
+#main .work:hover .inner .thumb {
   -moz-transform: scale(0.9, 0.9);
   -ms-transform: scale(0.9, 0.9);
   -webkit-transform: scale(0.9, 0.9);
   transform: scale(0.9, 0.9);
 }
-body #main ul li.work:hover .inner .likes {
+#main .work:hover .inner .likes {
   bottom: -25px;
   left: -25px;
 }
-body #main ul li.work:hover .inner .insetshade {
+#main .work:hover .inner .insetshade {
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
 }
-body #main ul li.work .inner {
+#main .work .inner {
   width: 310px;
   height: 150px;
   overflow: hidden;
   position: relative;
 }
-body #main ul li.work .inner .thumb {
+#main .work .inner .thumb {
   position: relative;
   -moz-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
   -o-transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
@@ -1055,7 +1080,7 @@ body #main ul li.work .inner .thumb {
   transition: all 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0ms;
   margin: -25px 0 0 -25px;
 }
-body #main ul li.work .inner .insetshade {
+#main .work .inner .insetshade {
   position: absolute;
   top: 0;
   left: 0;
@@ -1070,7 +1095,7 @@ body #main ul li.work .inner .insetshade {
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.work .inner .likes {
+#main .work .inner .likes {
   width: 50px;
   height: 50px;
   background-color: white;
@@ -1091,29 +1116,29 @@ body #main ul li.work .inner .likes {
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.work .inner .likes.liked {
+#main .work .inner .likes.liked {
   background-color: white;
   bottom: -25px;
   left: -25px;
 }
-body #main ul li.work .inner .likes.liked .heart {
+#main .work .inner .likes.liked .heart {
   background-position: -28px 0px;
 }
-body #main ul li.work .inner .likes.liked:hover {
+#main .work .inner .likes.liked:hover {
   background-color: white;
   bottom: -25px;
   left: -25px;
 }
-body #main ul li.work .inner .likes.liked:hover .heart {
+#main .work .inner .likes.liked:hover .heart {
   background-position: -28px 0px;
 }
-body #main ul li.work .inner .likes:hover {
+#main .work .inner .likes:hover {
   background-color: black;
 }
-body #main ul li.work .inner .likes:hover .heart {
+#main .work .inner .likes:hover .heart {
   background-position: -14px 0px;
 }
-body #main ul li.work .inner .likes .heart {
+#main .work .inner .likes .heart {
   margin: 5px 0;
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -1128,15 +1153,15 @@ body #main ul li.work .inner .likes .heart {
   *zoom: 1;
   *display: inline;
 }
-body #main ul li.link {
+#main .link {
   background-color: #166362;
   width: 150px;
   height: 150px;
 }
-body #main ul li.link .shade {
+#main .link .shade {
   bottom: -14px;
 }
-body #main ul li.link a {
+#main .link a {
   width: 150px;
   height: 150px;
   display: inline-block;
@@ -1146,10 +1171,11 @@ body #main ul li.link a {
   *display: inline;
   position: relative;
   text-decoration: none;
-  font-weight: normal;
-  font-family: "fut", Arial, Helvetica;
+  font-family: "fut";
   font-size: 18px;
   color: #454545;
+  font-weight: normal;
+  font-style: normal;
   overflow: hidden;
   -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
@@ -1160,19 +1186,19 @@ body #main ul li.link a {
   -webkit-backface-visibility: false;
   backface-visibility: false;
 }
-body #main ul li.link a:hover .deliinfo {
+#main .link a:hover .deliinfo {
   -moz-transform: translate(-75px, 75px) rotate(45deg);
   -ms-transform: translate(-75px, 75px) rotate(45deg);
   -webkit-transform: translate(-75px, 75px) rotate(45deg);
   transform: translate(-75px, 75px) rotate(45deg);
 }
-body #main ul li.link a:hover .deliicon {
+#main .link a:hover .deliicon {
   -moz-transform: translate(25px, -25px) scale(0.8);
   -ms-transform: translate(25px, -25px) scale(0.8);
   -webkit-transform: translate(25px, -25px) scale(0.8);
   transform: translate(25px, -25px) scale(0.8);
 }
-body #main ul li.link a .deliinfo {
+#main .link a .deliinfo {
   width: 213px;
   height: 208px;
   background-color: white;
@@ -1196,7 +1222,7 @@ body #main ul li.link a .deliinfo {
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.link a .deliicon {
+#main .link a .deliicon {
   background: url('../img/ui/delicious/link.png?1398438147') top left no-repeat;
   width: 70px;
   height: 67px;
@@ -1212,15 +1238,15 @@ body #main ul li.link a .deliicon {
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.tweet {
+#main .tweet {
   background-color: #138bd1;
   width: 150px;
   height: 150px;
 }
-body #main ul li.tweet .shade {
+#main .tweet .shade {
   bottom: -14px;
 }
-body #main ul li.tweet a {
+#main .tweet a {
   width: 150px;
   height: 150px;
   display: inline-block;
@@ -1230,10 +1256,11 @@ body #main ul li.tweet a {
   *display: inline;
   position: relative;
   text-decoration: none;
-  font-weight: normal;
-  font-family: "fut", Arial, Helvetica;
+  font-family: "fut";
   font-size: 18px;
   color: #454545;
+  font-weight: normal;
+  font-style: normal;
   overflow: hidden;
   -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
@@ -1241,17 +1268,17 @@ body #main ul li.tweet a {
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.tweet a:hover {
+#main .tweet a:hover {
   background-color: #0f83c6;
 }
-body #main ul li.tweet a:hover .tweeticon {
+#main .tweet a:hover .tweeticon {
   -moz-transform: scale(0.9, 0.9);
   -ms-transform: scale(0.9, 0.9);
   -webkit-transform: scale(0.9, 0.9);
   transform: scale(0.9, 0.9);
   background: url('../img/ui/twitter/tweet-hov.png?1390329945') top left no-repeat;
 }
-body #main ul li.tweet a .tweeticon {
+#main .tweet a .tweeticon {
   background: url('../img/ui/twitter/tweet.png?1390329945') top left no-repeat;
   width: 90px;
   height: 73px;
@@ -1263,7 +1290,7 @@ body #main ul li.tweet a .tweeticon {
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.pic a {
+#main .pic a {
   width: 150px;
   height: 150px;
   overflow: hidden;
@@ -1273,16 +1300,16 @@ body #main ul li.pic a {
   *zoom: 1;
   *display: inline;
 }
-body #main ul li.repo {
+#main .repo {
   cursor: pointer;
   background-color: #2383a6;
   width: 150px;
   height: 150px;
 }
-body #main ul li.repo .shade {
+#main .repo .shade {
   bottom: -14px;
 }
-body #main ul li.repo a {
+#main .repo a {
   width: 150px;
   height: 150px;
   display: inline-block;
@@ -1292,10 +1319,11 @@ body #main ul li.repo a {
   *display: inline;
   position: relative;
   text-decoration: none;
-  font-weight: normal;
-  font-family: "fut", Arial, Helvetica;
+  font-family: "fut";
   font-size: 18px;
   color: white;
+  font-weight: normal;
+  font-style: normal;
   overflow: hidden;
   -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
@@ -1303,13 +1331,13 @@ body #main ul li.repo a {
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.repo a:hover .repoinfo {
+#main .repo a:hover .repoinfo {
   bottom: 0px;
 }
-body #main ul li.repo a:hover .repoicon {
+#main .repo a:hover .repoicon {
   margin: 16px auto;
 }
-body #main ul li.repo a .repoicon {
+#main .repo a .repoicon {
   background: url('../img/ui/github/repo.png?1398436487') top left no-repeat;
   width: 65px;
   height: 64px;
@@ -1321,7 +1349,7 @@ body #main ul li.repo a .repoicon {
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-body #main ul li.repo a .repoinfo {
+#main .repo a .repoinfo {
   width: 100%;
   height: 50px;
   position: absolute;
@@ -1337,10 +1365,10 @@ body #main ul li.repo a .repoinfo {
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   color: #185971;
 }
-body #main ul li.repo a .repoinfo.smaller {
+#main .repo a .repoinfo.smaller {
   font-size: 14px;
 }
-body #main ul li.repo a .repoinfo span {
+#main .repo a .repoinfo span {
   background: url('../img/ui/github/github-white.png?1398438015') top left no-repeat;
   width: 25px;
   height: 25px;
@@ -1352,12 +1380,6 @@ body #main ul li.repo a .repoinfo span {
   margin: 0 10px;
 }
 
-/* ====================================================================================================== */
-/* PAGES */
-/* ====================================================================================================== */
-/* ====================================================================================================== */
-/* IE & FALLBACKS */
-/* ====================================================================================================== */
 /* ====================================================================================================== */
 /* MEDIA QUERIES */
 /* ====================================================================================================== */

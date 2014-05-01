@@ -27,10 +27,9 @@
         $.ajax("/rest/grav", {
           method: "get",
           success: function(data, textStatus, jqXHR) {
-            _this.$el.html(helper.get_template("me", {
+            return _this.$el.html(helper.get_template("me", {
               grav: data
             }));
-            return site.vent.trigger('grav');
           }
         });
         return this;

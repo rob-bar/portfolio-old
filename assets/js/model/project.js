@@ -13,7 +13,7 @@
       }
 
       Project.prototype.defaults = {
-        title: "Unknown title",
+        name: "Unknown Name",
         client: "Unknown client",
         type_id: 0,
         likes: 0,

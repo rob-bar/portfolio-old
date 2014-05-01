@@ -14,7 +14,7 @@
 
       ProjectDetailView.prototype.tagName = "article";
 
-      ProjectDetailView.prototype.className = "work";
+      ProjectDetailView.prototype.className = "workdetail";
 
       ProjectDetailView.prototype.events = {};
 
@@ -23,12 +23,13 @@
         return $(e.currentTarget).addClass("liked");
       };
 
-      ProjectDetailView.prototype.initialize = function() {};
-
-      ProjectDetailView.prototype.render = function() {
+      ProjectDetailView.prototype.render = function(model) {
+        this.model = model;
+        console.log(this.model.toJSON());
         this.$el.html(helper.get_template("projectdetail", {
           model: this.model.toJSON()
         }));
+        this.$el.addClass("show");
         return this;
       };
 

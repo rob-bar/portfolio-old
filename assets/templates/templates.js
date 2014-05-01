@@ -38,8 +38,8 @@ buf.push("<img src=\"img/layout/shade-310.png\" alt=\"shade\" class=\"shade\"/><
 this["JST"]["assets/templates/projectdetail"] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
-
-buf.push("<h3>detail</h3>");;return buf.join("");
+var locals_ = (locals || {}),model = locals_.model;
+buf.push("<div class=\"prev\"><a href=\"#\" class=\"prev\"></a></div><div class=\"next\"><a href=\"#\" class=\"next\"></a></div><div class=\"close\"><a href=\"#\" class=\"close\"></a></div><div class=\"panel\"><div class=\"gallery\"><div class=\"media\"></div><div class=\"indic\"></div><a href=\"#\" class=\"tags\"></a><a href=\"#\" class=\"like\">" + (jade.escape(null == (jade.interp = model.likes + " likes") ? "" : jade.interp)) + "</a></div><aside><header><h3>" + (jade.escape(null == (jade.interp = model.name) ? "" : jade.interp)) + "</h3><h4><strong>Client:</strong><span>" + (jade.escape(null == (jade.interp = model.client) ? "" : jade.interp)) + "</span></h4><h4><strong>Type:</strong><span>" + (jade.escape(null == (jade.interp = model.type_id) ? "" : jade.interp)) + "</span></h4></header>" + (null == (jade.interp = model.description) ? "" : jade.interp) + "<a href=\"#\" class=\"visitsite\"></a><a href=\"#\" class=\"like\"></a></aside></div>");;return buf.join("");
 };
 
 this["JST"]["assets/templates/repo"] = function template(locals) {
