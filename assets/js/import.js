@@ -8,7 +8,7 @@
       type_id: "website",
       likes: 0,
       created_at: new Date(2013, 3, 22),
-      description: "<p>  The website was meant to be a teasing website for people who wanted to get to know the <strong>Proximus network</strong>.  For Proximus itself it was important that they could use this website as an entertaining website with some new and fancy things in it.  The idea was to work on great content: <strong>cartoons</strong>, <strong>facts</strong> and <strong>information</strong>.</p><p>  The website has a detection build in to serve the <strong>mobile</strong> or the <strong>desktop</strong> website based on the browser.  The main reason for doing so was the difference between the desktop and the mobile site.  As you can see the desktop has a <strong>css 3D effect</strong> built into and the mobile site has a <strong>lazy loading scrolling</strong> system.</p><p>  We chose to separate the data with a rest service <a href='http://fuelphp.com/' target='_blank'>Fuelphp</a> and to work with <a href='http://backbonejs.org/' target='_blank'>Backbone.js</a> on the front-end.  This gave us the ability to separate the project better in nicely <strong>encapsulated</strong> layers.</p><p>  You should <a href='http://bestnetwork.be/' target='_blank'>try it out</a>.</p>",
+      description: "<p>  The website was meant to be a teasing website for people who wanted to get to know the <strong>Proximus network</strong>.  For Proximus itself it was important that they could use this website as an entertaining website with some new and fancy things in it.  The idea was to work on great content: <strong>cartoons</strong>, <strong>facts</strong> and <strong>information</strong>.</p><p>  The website has a detection build in to serve the <strong>mobile</strong> or the <strong>desktop</strong> website based on the browser.  The main reason for doing so was the difference between the desktop and the mobile site.  As you can see the desktop has a <strong>css 3D effect</strong> built into and the mobile site has a <strong>lazy loading scrolling</strong> system.</p><p>  We chose to separate the data with a rest service <a href='http://fuelphp.com/' target='_blank'>Fuelphp</a> and to work with <a href='http://backbonejs.org/' target='_blank'>Backbone.js</a> on the front-end.  This gave us the ability to separate the <pr></pr>oject better in nicely <strong>encapsulated</strong> layers.</p><p>  You should <a href='http://bestnetwork.be/' target='_blank'>try it out</a>.</p>",
       is_active: true,
       media: {
         thumb: "proximus-bestnetwork.jpg",
@@ -24,7 +24,7 @@
       type_id: "game",
       likes: 0,
       created_at: new Date(2012, 4, 20),
-      description: "This was a HTML5 game I developed for fun, to spend my time getting to know Javascript and the HTML5 canvas element.To add in a little challenge I wanted to use the Facebook api to let users connect with their Facebook credentials.Everything, from design to the Facebook api to the Javascript was done by me.For now the game is off-line.You might want to come back and play it later,I'm optimizing it and puting it with the rest of my games.",
+      description: "<p>This was a HTML5 game I developed for fun, to spend my time getting to know Javascript and the HTML5 canvas element.To add in a little challenge I wanted to use the Facebook api to let users connect with their Facebook credentials.Everything, from design to the Facebook api to the Javascript was done by me.For now the game is off-line.You might want to come back and play it later,I'm optimizing it and puting it with the rest of my games.",
       is_active: true,
       media: {
         thumb: "own-tetris.jpg",
@@ -191,7 +191,7 @@
         big: "cecemel-winteraction.jpg",
         pictures: [],
         videos: [],
-        preview: ""
+        preview: "http://cecemel.be/winteractie/"
       },
       tags: []
     }, {

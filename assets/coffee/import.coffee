@@ -18,7 +18,7 @@ projects = [
 </p>
 <p>
   We chose to separate the data with a rest service <a href='http://fuelphp.com/' target='_blank'>Fuelphp</a> and to work with <a href='http://backbonejs.org/' target='_blank'>Backbone.js</a> on the front-end.
-  This gave us the ability to separate the project better in nicely <strong>encapsulated</strong> layers.
+  This gave us the ability to separate the <pr></pr>oject better in nicely <strong>encapsulated</strong> layers.
 </p>
 <p>
   You should <a href='http://bestnetwork.be/' target='_blank'>try it out</a>.
@@ -38,7 +38,9 @@ projects = [
   type_id: "game"
   likes: 0
   created_at: new Date(2012, 4, 20)
-  description: "This was a HTML5 game I developed for fun, to spend my time getting to know Javascript and the HTML5 canvas element.
+  description: "
+<p>
+This was a HTML5 game I developed for fun, to spend my time getting to know Javascript and the HTML5 canvas element.
 To add in a little challenge I wanted to use the Facebook api to let users connect with their Facebook credentials.
 Everything, from design to the Facebook api to the Javascript was done by me.
 For now the game is off-line.
@@ -227,7 +229,7 @@ Feel free play,share or submit your score."
     big: "cecemel-winteraction.jpg"
     pictures: []
     videos: []
-    preview: ""
+    preview: "http://cecemel.be/winteractie/"
   tags: []
   }
   {

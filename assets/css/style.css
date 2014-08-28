@@ -1046,6 +1046,10 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   -webkit-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
   -webkit-transition-delay: 0ms;
   transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 #main .work:hover {
   z-index: 200;
@@ -1061,9 +1065,8 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   left: -25px;
 }
 #main .work:hover .inner .insetshade {
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 30px 20px inset;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
 }
 #main .work .inner {
   width: 310px;
@@ -1086,9 +1089,7 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   left: 0;
   width: 310px;
   height: 150px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 0 50px 20px inset;
+  background: url('../img/layout/inset-shade.png?1409230930') center center no-repeat;
   -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);

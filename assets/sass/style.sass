@@ -425,11 +425,13 @@ nav
 
   .work
     @extend .shaded
+
     cursor: pointer
     position: relative
     background-color: #fff
     +rect($large, $height)
     +ceaser-transition(all, 700ms, $easeOutExpo)
+    +transform(translate3d(0, 0, 0))
 
     &:hover
       z-index: 200
@@ -442,7 +444,7 @@ nav
         left: -25px
 
       .inner .insetshade
-        +box-shadow(rgba(0, 0, 0, .1) 0 0 30px 20px inset)
+        +opacity(.5)
 
     .inner
       +rect($large, $height)
@@ -459,7 +461,7 @@ nav
         top: 0
         left: 0
         +rect($large, $height)
-        +box-shadow(rgba(0, 0, 0, .3) 0 0 50px 20px inset)
+        +background(image-url('layout/inset-shade.png') center center no-repeat)
         +ceaser-transition(all, 400ms, $easeOutExpo)
 
       .likes
