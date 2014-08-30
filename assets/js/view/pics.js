@@ -14,6 +14,10 @@
 
       PicsView.prototype.tagName = "ul";
 
+      PicsView.prototype.className = "perspective";
+
+      PicsView.prototype.views = [];
+
       PicsView.prototype.attributes = {
         id: "pics"
       };
@@ -30,13 +34,31 @@
             return results.each(function(model, index, list) {
               var view;
               view = new PicView({
-                model: model
+                model: model,
+                place: index
               });
-              return _this.$el.append(view.render().$el);
+              view.render();
+              _this.views.push(view);
+              _this.$el.append(view.$el);
+              if (index === (list.length - 1)) {
+                return helper.set_height(_this.collection, _this.$el, helper.project_colls() * 2)();
+              }
             });
           }
         });
         return this;
+      };
+
+      PicsView.prototype.in_viewport = function() {
+        return _.each(this.views, function(view, index) {
+          var factor;
+          if (view.in_view_port_full()) {
+            factor = view.place % (helper.project_colls() * 2);
+            return setTimeout(function() {
+              return view.$el.removeClass("hide");
+            }, helper.animation_delay(factor));
+          }
+        });
       };
 
       return PicsView;

@@ -14,17 +14,27 @@
 
       PicView.prototype.tagName = "li";
 
-      PicView.prototype.className = "pic rect item";
+      PicView.prototype.className = "pic rect item hide";
 
       PicView.prototype.events = {};
 
-      PicView.prototype.initialize = function() {};
+      PicView.prototype.initialize = function(options) {
+        return this.place = options.place;
+      };
 
       PicView.prototype.render = function() {
         this.$el.html(helper.get_template("pic", {
           model: this.model.toJSON()
         }));
         return this;
+      };
+
+      PicView.prototype.in_viewport = function() {
+        return helper.in_view_port(this.el);
+      };
+
+      PicView.prototype.in_view_port_full = function() {
+        return helper.in_view_port_full(this.el);
       };
 
       return PicView;

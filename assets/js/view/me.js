@@ -14,6 +14,8 @@
 
       Me.prototype.tagName = "div";
 
+      Me.prototype.className = "intro";
+
       Me.prototype.attributes = {
         id: "me"
       };

@@ -21,6 +21,7 @@ exports.help =
         console.log res.data
         data = JSON.parse data.join('')
         callback(data)
+
     request.end()
 
   request: (options, callback) ->
@@ -36,6 +37,7 @@ exports.help =
       res.on 'end', ()->
         data = JSON.parse data.join('')
         callback(data)
+
     request.end()
 
   oauthtoken: (callback) ->

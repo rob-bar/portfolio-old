@@ -14,7 +14,7 @@
 
       ProjectView.prototype.tagName = "li";
 
-      ProjectView.prototype.className = "work item";
+      ProjectView.prototype.className = "work item hide";
 
       ProjectView.prototype.events = {
         "click .likes": "like",
@@ -27,11 +27,20 @@
       };
 
       ProjectView.prototype.showproject = function(e) {
-        e.preventDefault();
-        return site.vent.trigger('showproject', this.model);
+        return e.preventDefault();
       };
 
-      ProjectView.prototype.initialize = function() {};
+      ProjectView.prototype.initialize = function(options) {
+        return this.place = options.place;
+      };
+
+      ProjectView.prototype.in_viewport = function() {
+        return helper.in_view_port(this.el);
+      };
+
+      ProjectView.prototype.in_view_port_full = function() {
+        return helper.in_view_port_full(this.el);
+      };
 
       ProjectView.prototype.render = function() {
         this.$el.html(helper.get_template("project", {

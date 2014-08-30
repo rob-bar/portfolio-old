@@ -7,7 +7,7 @@ define [
 (module, Backbone, helper, site) ->
   class ProjectView extends Backbone.View
     tagName: "li"
-    className: "work item"
+    className: "work item hide"
     events:
       "click .likes" : "like"
       "click .inner" : "showproject"
@@ -18,9 +18,16 @@ define [
 
     showproject: (e) ->
       e.preventDefault()
-      site.vent.trigger 'showproject', @model
+      # site.vent.trigger 'showproject', @model
 
-    initialize: ->
+    initialize: (options)->
+      @place = options.place
+
+    in_viewport: () ->
+      helper.in_view_port @el
+
+    in_view_port_full: () ->
+      helper.in_view_port_full @el
 
     render: ->
       @$el.html helper.get_template "project", model: @model.toJSON()

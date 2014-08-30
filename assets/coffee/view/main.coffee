@@ -29,11 +29,29 @@ define [
       $('#subsocial').on "mouseleave", @togglesocial
 
       $(window).on "scroll", @scroll
+      $(window).on "resize", @resize
+
+    intro: ->
+      setTimeout =>
+        @me.$el.find(">div").removeClass "hide"
+
+        setTimeout =>
+          @me.$el.find(">div").removeClass "inback"
+
+          setTimeout =>
+            @projects.intro();
+          , 500
+
+        , 500
+
+      , 500
 
     initialize: ->
       @nav = $ "header nav"
       @me = new MeView()
       @$el.append @me.render().$el
+
+      @me.$el.addClass "perspective"
 
       @projects = new ProjectsView()
       @$wrapper = $ "<div/>", "class": "wrapper"
@@ -56,6 +74,7 @@ define [
       @$wrapper.append @projectdetail.$el
 
       @init_events()
+      @intro()
 
     togglemenu: (e) ->
       e.preventDefault()
@@ -70,7 +89,7 @@ define [
     showproject: (project) =>
       @projectdetail.render project
 
-    scroll: (e) ->
+    scroll: (e) =>
       $subnav = $ "#subnav"
       $subsocial = $ "#subsocial"
 
@@ -79,5 +98,14 @@ define [
 
       if $subsocial.hasClass "open"
         $subsocial.removeClass "open"
+
+      if helper.intro_done
+        @projects.in_viewport()
+        @repos.in_viewport()
+        @pics.in_viewport()
+        @links.in_viewport()
+
+    resize: (e) =>
+      @projects.set_height()()
 
   module.exports = Main

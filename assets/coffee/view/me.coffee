@@ -7,6 +7,7 @@ define [
 (module, Backbone, helper, site) ->
   class Me extends Backbone.View
     tagName: "div"
+    className: "intro"
     attributes:
       id: "me"
 

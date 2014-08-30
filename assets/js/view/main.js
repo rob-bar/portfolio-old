@@ -9,6 +9,8 @@
       __extends(Main, _super);
 
       function Main() {
+        this.resize = __bind(this.resize, this);
+        this.scroll = __bind(this.scroll, this);
         this.showproject = __bind(this.showproject, this);
         _ref = Main.__super__.constructor.apply(this, arguments);
         return _ref;
@@ -28,13 +30,28 @@
         $('#subnav').on("mouseleave", this.togglemenu);
         this.nav.find('ul#social li.menu').on("click", this.togglesocial);
         $('#subsocial').on("mouseleave", this.togglesocial);
-        return $(window).on("scroll", this.scroll);
+        $(window).on("scroll", this.scroll);
+        return $(window).on("resize", this.resize);
+      };
+
+      Main.prototype.intro = function() {
+        var _this = this;
+        return setTimeout(function() {
+          _this.me.$el.find(">div").removeClass("hide");
+          return setTimeout(function() {
+            _this.me.$el.find(">div").removeClass("inback");
+            return setTimeout(function() {
+              return _this.projects.intro();
+            }, 500);
+          }, 500);
+        }, 500);
       };
 
       Main.prototype.initialize = function() {
         this.nav = $("header nav");
         this.me = new MeView();
         this.$el.append(this.me.render().$el);
+        this.me.$el.addClass("perspective");
         this.projects = new ProjectsView();
         this.$wrapper = $("<div/>", {
           "class": "wrapper"
@@ -51,7 +68,8 @@
         this.$el.append(this.tweets.render().$el);
         this.projectdetail = new ProjectDetailView();
         this.$wrapper.append(this.projectdetail.$el);
-        return this.init_events();
+        this.init_events();
+        return this.intro();
       };
 
       Main.prototype.togglemenu = function(e) {
@@ -80,8 +98,18 @@
           $subnav.removeClass("open");
         }
         if ($subsocial.hasClass("open")) {
-          return $subsocial.removeClass("open");
+          $subsocial.removeClass("open");
         }
+        if (helper.intro_done) {
+          this.projects.in_viewport();
+          this.repos.in_viewport();
+          this.pics.in_viewport();
+          return this.links.in_viewport();
+        }
+      };
+
+      Main.prototype.resize = function(e) {
+        return this.projects.set_height()();
       };
 
       return Main;

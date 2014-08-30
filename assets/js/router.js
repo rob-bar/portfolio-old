@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['module', 'backbone', 'helper', 'view/main'], function(module, Backbone, helper, MainView) {
+  define(['module', 'backbone', 'helper', 'site', 'view/main'], function(module, Backbone, helper, site, MainView) {
     var AppRouter, _ref;
     AppRouter = (function(_super) {
       __extends(AppRouter, _super);
@@ -15,7 +15,12 @@
       AppRouter.prototype.routes = {
         "route:before": "before",
         "route:after": "after",
-        "": "index"
+        "": "index",
+        "me": "me",
+        "work": "work",
+        "pics": "pics",
+        "links": "links",
+        "repos": "repos"
       };
 
       AppRouter.prototype.initialize = function() {
@@ -24,8 +29,56 @@
         return this.listenTo(this, 'route:after', this.after);
       };
 
-      AppRouter.prototype.index = function() {
-        return this.main;
+      AppRouter.prototype.index = function() {};
+
+      AppRouter.prototype.me = function() {
+        if (helper.intro_done) {
+          return helper.scroll_to($("#main #me"));
+        } else {
+          return site.vent.on("intro_done", function() {
+            return helper.scroll_to($("#main #me"));
+          });
+        }
+      };
+
+      AppRouter.prototype.repos = function() {
+        if (helper.intro_done) {
+          return helper.scroll_to($("#main #repos"));
+        } else {
+          return site.vent.on("intro_done", function() {
+            return helper.scroll_to($("#main #repos"));
+          });
+        }
+      };
+
+      AppRouter.prototype.work = function() {
+        if (helper.intro_done) {
+          return helper.scroll_to($("#main #projects"));
+        } else {
+          return site.vent.on("intro_done", function() {
+            return helper.scroll_to($("#main #projects"));
+          });
+        }
+      };
+
+      AppRouter.prototype.pics = function() {
+        if (helper.intro_done) {
+          return helper.scroll_to($("#main #pics"));
+        } else {
+          return site.vent.on("intro_done", function() {
+            return helper.scroll_to($("#main #pics"));
+          });
+        }
+      };
+
+      AppRouter.prototype.links = function() {
+        if (helper.intro_done) {
+          return helper.scroll_to($("#main #links"));
+        } else {
+          return site.vent.on("intro_done", function() {
+            return helper.scroll_to($("#main #links"));
+          });
+        }
       };
 
       AppRouter.prototype.before = function() {

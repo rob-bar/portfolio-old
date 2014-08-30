@@ -327,6 +327,10 @@
 
   navs = [
     {
+      name: "me",
+      url: "me",
+      is_active: true
+    }, {
       name: "work",
       url: "work",
       is_active: true
@@ -335,17 +339,17 @@
       url: "repos",
       is_active: true
     }, {
-      name: "links",
-      url: "links",
-      is_active: true
-    }, {
       name: "pics",
       url: "pics",
       is_active: true
     }, {
+      name: "links",
+      url: "links",
+      is_active: true
+    }, {
       name: "tweets",
       url: "tweets",
-      is_active: true
+      is_active: false
     }, {
       name: "blog",
       url: "blog",

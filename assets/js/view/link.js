@@ -14,17 +14,27 @@
 
       LinkView.prototype.tagName = "li";
 
-      LinkView.prototype.className = "link rect item";
+      LinkView.prototype.className = "link rect item hide";
 
       LinkView.prototype.events = {};
 
-      LinkView.prototype.initialize = function() {};
+      LinkView.prototype.initialize = function(options) {
+        return this.place = options.place;
+      };
 
       LinkView.prototype.render = function() {
         this.$el.html(helper.get_template("link", {
           model: this.model.toJSON()
         }));
         return this;
+      };
+
+      LinkView.prototype.in_viewport = function() {
+        return helper.in_view_port(this.el);
+      };
+
+      LinkView.prototype.in_view_port_full = function() {
+        return helper.in_view_port_full(this.el);
       };
 
       return LinkView;

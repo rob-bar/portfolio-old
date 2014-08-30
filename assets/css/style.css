@@ -636,6 +636,18 @@ body {
   box-shadow: rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset;
 }
 
+.perspective {
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-perspective: 1250px;
+  -webkit-perspective: 1250px;
+  perspective: 1250px;
+  -moz-perspective-origin: 50% 50%;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+}
+
 nav {
   z-index: 15;
   position: relative;
@@ -799,16 +811,32 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   margin: 10px 0 0 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-  -moz-transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-  -o-transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
-  -webkit-transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
-  -webkit-transition-delay: 0ms;
-  transition: all 800ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
 #main #me:after {
   content: "";
   display: table;
   clear: both;
+}
+#main #me > div {
+  -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -webkit-transition-delay: 0ms;
+  transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+}
+#main #me .inback {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -moz-transform: translate3d(0, 0, -150px);
+  -webkit-transform: translate3d(0, 0, -150px);
+  transform: translate3d(0, 0, -150px);
+}
+#main #me .hide {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transform: translate3d(0, -300px, -150px);
+  -webkit-transform: translate3d(0, -300px, -150px);
+  transform: translate3d(0, -300px, -150px);
 }
 #main #me .pic {
   -moz-transform: translate3d(0, 0, 0);
@@ -1005,23 +1033,27 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   height: 100%;
   background-color: white;
 }
-#main #projects {
-  -moz-transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -moz-perspective: 1250px;
-  -webkit-perspective: 1250px;
-  perspective: 1250px;
-  -moz-perspective-origin: 50% 50%;
-  -webkit-perspective-origin: 50% 50%;
-  perspective-origin: 50% 50%;
-}
-#main #projects li.inback {
+#main #projects li.inback, #main #repos li.inback, #main #pics li.inback, #main #links li.inback {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  -moz-transform: translate3d(0, 0, -150px);
-  -webkit-transform: translate3d(0, 0, -150px);
-  transform: translate3d(0, 0, -150px);
+  -moz-transform: scale(0.75, 0.75);
+  -ms-transform: scale(0.75, 0.75);
+  -webkit-transform: scale(0.75, 0.75);
+  transform: scale(0.75, 0.75);
+  -moz-transform: translate3d(0, 0, -50px);
+  -webkit-transform: translate3d(0, 0, -50px);
+  transform: translate3d(0, 0, -50px);
+}
+#main #projects li.hide, #main #repos li.hide, #main #pics li.hide, #main #links li.hide {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transform: scale(0.75, 0.75);
+  -ms-transform: scale(0.75, 0.75);
+  -webkit-transform: scale(0.75, 0.75);
+  transform: scale(0.75, 0.75);
+  -moz-transform: translate3d(0, 0, -100px);
+  -webkit-transform: translate3d(0, 0, -100px);
+  transform: translate3d(0, 0, -100px);
 }
 #main > ul, #main .wrapper {
   *zoom: 1;
@@ -1050,6 +1082,10 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   -ms-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 #main .work:hover {
   z-index: 200;
@@ -1089,7 +1125,7 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   left: 0;
   width: 310px;
   height: 150px;
-  background: url('../img/layout/inset-shade.png?1409230930') center center no-repeat;
+  background: url('../img/layout/inset-shade.png?1409231055') center center no-repeat;
   -moz-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -o-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);

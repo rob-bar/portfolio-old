@@ -3,3 +3,8 @@ define ['site', 'router'],
   $ ->
     site.router = new AppRouter()
     Backbone.history.start pushState: true
+
+  window.onload = ->
+    setTimeout ->
+      scrollTo(0, 0)
+     , 100

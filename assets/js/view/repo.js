@@ -14,11 +14,13 @@
 
       RepoView.prototype.tagName = "li";
 
-      RepoView.prototype.className = "repo rect item";
+      RepoView.prototype.className = "repo rect item hide";
 
       RepoView.prototype.events = {};
 
-      RepoView.prototype.initialize = function() {};
+      RepoView.prototype.initialize = function(options) {
+        return this.place = options.place;
+      };
 
       RepoView.prototype.render = function() {
         this.$el.html(helper.get_template("repo", {
@@ -34,6 +36,14 @@
         if ($repo.text().length > 18) {
           return $repo.addClass("smaller");
         }
+      };
+
+      RepoView.prototype.in_viewport = function() {
+        return helper.in_view_port(this.el);
+      };
+
+      RepoView.prototype.in_view_port_full = function() {
+        return helper.in_view_port_full(this.el);
       };
 
       return RepoView;

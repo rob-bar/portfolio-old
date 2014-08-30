@@ -14,9 +14,13 @@
 
       ProjectsView.prototype.tagName = "ul";
 
+      ProjectsView.prototype.className = "perspective";
+
       ProjectsView.prototype.attributes = {
         id: "projects"
       };
+
+      ProjectsView.prototype.views = [];
 
       ProjectsView.prototype.events = {
         "click li": "toggle"
@@ -45,6 +49,35 @@
         }
       };
 
+      ProjectsView.prototype.intro = function() {
+        return _.each(this.views, function(view, index, list) {
+          return setTimeout(function() {
+            if (view.in_viewport()) {
+              view.$el.removeClass("hide");
+              if (index === (list.length - 1)) {
+                helper.intro_done = true;
+                return site.vent.trigger("intro_done");
+              }
+            } else {
+              helper.intro_done = true;
+              site.vent.trigger("intro_done");
+            }
+          }, helper.animation_delay(index));
+        });
+      };
+
+      ProjectsView.prototype.in_viewport = function() {
+        return _.each(this.views, function(view, index) {
+          var factor;
+          if (view.in_view_port_full()) {
+            factor = view.place % helper.project_colls();
+            return setTimeout(function() {
+              return view.$el.removeClass("hide");
+            }, helper.animation_delay(factor));
+          }
+        });
+      };
+
       ProjectsView.prototype.render = function() {
         var _this = this;
         this.collection = new Projects();
@@ -53,9 +86,15 @@
             return results.each(function(model, index, list) {
               var view;
               view = new ProjectView({
-                model: model
+                model: model,
+                place: index
               });
-              return _this.$el.append(view.render().$el);
+              view.render();
+              _this.views.push(view);
+              _this.$el.append(view.$el);
+              if (index === (list.length - 1)) {
+                return helper.set_height(_this.collection, _this.$el, helper.project_colls())();
+              }
             });
           }
         });

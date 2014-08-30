@@ -137,6 +137,11 @@ body
   z-index: 10
   +box-shadow(rgba(0, 0, 0, 0.6) 0 2px 10px 5px, rgba(0, 0, 0, 0.3) 0 1px 7px 0 inset)
 
+.perspective
+  +transform-style()
+  +perspective(1250px)
+  +perspective-origin(50% 50%)
+
 nav
   z-index: 15
   position: relative
@@ -272,8 +277,17 @@ nav
     +pie-clearfix
     margin: 10px 0 0 0
     +opacity(1)
-    +ceaser-transition(all, 800ms, $easeOutExpo)
 
+    > div
+      +ceaser-transition(all, 500ms, $easeOutExpo)
+
+    .inback
+      +opacity(.5)
+      +translate3d(0, 0, -150px)
+
+    .hide
+      +opacity(0)
+      +translate3d(0, -300px, -150px)
 
     .pic
       +translate3d(0, 0, 0)
@@ -406,15 +420,17 @@ nav
       +square(100%)
       background-color: $white
 
-  #projects
-    +transform-style()
-    +perspective(1250px)
-    +perspective-origin(50% 50%)
-
+  #projects, #repos, #pics, #links
     li
       &.inback
         +opacity(.5)
-        +translate3d(0, 0, -150px)
+        +scale(.75, .75)
+        +translate3d(0, 0, -50px)
+
+      &.hide
+        +opacity(0)
+        +scale(.75, .75)
+        +translate3d(0, 0, -100px)
 
   > ul, .wrapper
     +pie-clearfix
@@ -425,13 +441,13 @@ nav
 
   .work
     @extend .shaded
-
     cursor: pointer
     position: relative
     background-color: #fff
     +rect($large, $height)
     +ceaser-transition(all, 700ms, $easeOutExpo)
     +transform(translate3d(0, 0, 0))
+    +scale(1, 1)
 
     &:hover
       z-index: 200
