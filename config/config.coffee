@@ -2,7 +2,7 @@ exports.site =
   port: 8088
   mode: "development"
   title: "Portfolio"
-  host: "robbiebardijn.be"
+  host: "staging.robbiebardijn.be"
   ga: "UA-27483596-1"
   fake_ga: "UA-xxxxxxxx-x"
   tag: "RobbieBardijn"
