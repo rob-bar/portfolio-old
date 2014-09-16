@@ -28,7 +28,7 @@ define [
       @nav.find('ul#social li.menu').on "click", @togglesocial
       $('#subsocial').on "mouseleave", @togglesocial
 
-      $(window).on "touchmove", @scroll
+      $('body').on "touchmove", @scroll
       # $(window).on "scroll", @scroll
       $(window).on "resize", @resize
 
