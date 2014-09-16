@@ -28,8 +28,8 @@ define [
       @nav.find('ul#social li.menu').on "click", @togglesocial
       $('#subsocial').on "mouseleave", @togglesocial
 
-      $('body').on "touchmove", @scroll
-      # $(window).on "scroll", @scroll
+      # $('body').on "touchmove", @scroll
+      $(window).on "scroll", @scroll
       $(window).on "resize", @resize
 
     intro: ->

@@ -30,7 +30,7 @@
         $('#subnav').on("mouseleave", this.togglemenu);
         this.nav.find('ul#social li.menu').on("click", this.togglesocial);
         $('#subsocial').on("mouseleave", this.togglesocial);
-        $('body').on("touchmove", this.scroll);
+        $(window).on("scroll", this.scroll);
         return $(window).on("resize", this.resize);
       };
 
