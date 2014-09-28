@@ -18,6 +18,12 @@
         return "/" + site.config.rest + "/works";
       };
 
+      Projects.prototype.get_by_slug = function(slug) {
+        return _.find(this.models, function(project) {
+          return project.slug() === slug;
+        });
+      };
+
       return Projects;
 
     })(Backbone.Collection);

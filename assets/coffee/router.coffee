@@ -14,6 +14,7 @@ define [
       "": "index"
       "me": "me"
       "work": "work"
+      "work/:projectid": "workdetail"
       "pics": "pics"
       "links": "links"
       "repos": "repos"
@@ -62,6 +63,17 @@ define [
       else
         site.vent.on "intro_done", ->
           helper.scroll_to $("#main #links")
+
+    workdetail: (slug) ->
+      if helper.intro_done
+        @main.projects.open_detail_by_slug slug
+
+      else
+        site.vent.on "intro_done", =>
+          helper.scroll_to $("#main #projects")
+          console.log @main.projects
+          @main.projects.open_detail_by_slug slug
+
     # ======================================================================================================
     # BEFORE @ AFTER
     # ======================================================================================================

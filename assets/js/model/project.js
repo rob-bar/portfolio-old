@@ -13,6 +13,7 @@
       }
 
       Project.prototype.defaults = {
+        _id: 0,
         name: "Unknown Name",
         client: "Unknown client",
         type_id: 0,
@@ -22,6 +23,10 @@
         is_active: false,
         media: {},
         tags: []
+      };
+
+      Project.prototype.slug = function() {
+        return this.get("name").toLowerCase().replace(/\s/g, "-").replace(/[^\w-]+/g, "");
       };
 
       return Project;

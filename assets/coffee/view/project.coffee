@@ -18,7 +18,8 @@ define [
 
     showproject: (e) ->
       e.preventDefault()
-      # site.vent.trigger 'showproject', @model
+      site.router.navigate "work/#{@model.slug()}"
+      site.vent.trigger 'showproject', @model
 
     initialize: (options)->
       @place = options.place

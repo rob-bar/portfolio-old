@@ -3,6 +3,7 @@ routes = require "./routes"
 path = require "path"
 http = require "http"
 config = require "./config/config.coffee"
+slashes = require "connect-slashes"
 
 process.env.NODE_ENV = config.site.mode
 
@@ -26,9 +27,13 @@ app.configure ->
   app.use express.session()
 
   app.use express.static path.join __dirname, 'assets'
+
+  app.use slashes(false)
+
   app.use app.router
 
   app.locals.basedir = app.get('views');
+
   @
 
 app.configure 'development', ->
@@ -40,7 +45,10 @@ app.configure 'production', ->
   app.use express.errorHandler()
   @
 
+# MIDDLEWARES
+
 # ROUTES
+
 
 # REST
 app.get '/rest/all/:offset/:limit', (req, res) ->

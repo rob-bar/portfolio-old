@@ -27,7 +27,9 @@
       };
 
       ProjectView.prototype.showproject = function(e) {
-        return e.preventDefault();
+        e.preventDefault();
+        site.router.navigate("work/" + (this.model.slug()));
+        return site.vent.trigger('showproject', this.model);
       };
 
       ProjectView.prototype.initialize = function(options) {

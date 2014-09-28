@@ -25,7 +25,6 @@
 
       ProjectDetailView.prototype.render = function(model) {
         this.model = model;
-        console.log(this.model.toJSON());
         this.$el.html(helper.get_template("projectdetail", {
           model: this.model.toJSON()
         }));

@@ -22,14 +22,14 @@ define [
       e.preventDefault()
       clickecoffset = $(e.currentTarget).offset().top
 
-      unless $('li').eq(0).hasClass "inback"
-        $('li').each () ->
+      unless $el.find('li').eq(0).hasClass "inback"
+        $el.find('li').each () ->
           setTimeout =>
             $(@).addClass "inback"
           , Math.abs(clickecoffset - $(@).offset().top) * 1
 
       else
-        $('li').each () ->
+        $el.find('li').each () ->
           setTimeout =>
             $(@).removeClass "inback"
           , Math.abs(clickecoffset - $(@).offset().top) * 1
@@ -57,6 +57,9 @@ define [
           setTimeout ->
             view.$el.removeClass "hide"
           , helper.animation_delay(factor)
+
+    open_detail_by_slug: (slug) ->
+      site.vent.trigger 'showproject', @collection.get_by_slug slug
 
     render: ->
       @collection = new Projects()

@@ -32,15 +32,15 @@
         var clickecoffset;
         e.preventDefault();
         clickecoffset = $(e.currentTarget).offset().top;
-        if (!$('li').eq(0).hasClass("inback")) {
-          return $('li').each(function() {
+        if (!$el.find('li').eq(0).hasClass("inback")) {
+          return $el.find('li').each(function() {
             var _this = this;
             return setTimeout(function() {
               return $(_this).addClass("inback");
             }, Math.abs(clickecoffset - $(this).offset().top) * 1);
           });
         } else {
-          return $('li').each(function() {
+          return $el.find('li').each(function() {
             var _this = this;
             return setTimeout(function() {
               return $(_this).removeClass("inback");
@@ -76,6 +76,10 @@
             }, helper.animation_delay(factor));
           }
         });
+      };
+
+      ProjectsView.prototype.open_detail_by_slug = function(slug) {
+        return site.vent.trigger('showproject', this.collection.get_by_slug(slug));
       };
 
       ProjectsView.prototype.render = function() {

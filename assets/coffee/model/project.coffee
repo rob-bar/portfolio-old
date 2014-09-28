@@ -6,6 +6,7 @@ define [
 (module, Backbone, helper) ->
   class Project extends Backbone.Model
     defaults:
+      _id: 0
       name: "Unknown Name"
       client: "Unknown client"
       type_id: 0
@@ -15,5 +16,11 @@ define [
       is_active: false
       media: {}
       tags: []
+
+    slug: ->
+      @get("name")
+        .toLowerCase()
+        .replace(/\s/g, "-")
+        .replace(/[^\w-]+/g, "")
 
   module.exports = Project

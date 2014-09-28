@@ -18,6 +18,7 @@
         "": "index",
         "me": "me",
         "work": "work",
+        "work/:projectid": "workdetail",
         "pics": "pics",
         "links": "links",
         "repos": "repos"
@@ -77,6 +78,19 @@
         } else {
           return site.vent.on("intro_done", function() {
             return helper.scroll_to($("#main #links"));
+          });
+        }
+      };
+
+      AppRouter.prototype.workdetail = function(slug) {
+        var _this = this;
+        if (helper.intro_done) {
+          return this.main.projects.open_detail_by_slug(slug);
+        } else {
+          return site.vent.on("intro_done", function() {
+            helper.scroll_to($("#main #projects"));
+            console.log(_this.main.projects);
+            return _this.main.projects.open_detail_by_slug(slug);
           });
         }
       };

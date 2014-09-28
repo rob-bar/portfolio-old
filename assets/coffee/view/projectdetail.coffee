@@ -15,7 +15,6 @@ define [
 
     render: (model) ->
       @model = model
-      console.log @model.toJSON()
       @$el.html helper.get_template "projectdetail", model: @model.toJSON()
       @$el.addClass "show"
 
