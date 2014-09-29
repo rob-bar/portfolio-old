@@ -1,9 +1,9 @@
-div.prev
-  a(class="prev" href="#")
-div.next
-  a(class="next" href="#")
-div.close
-  a(class="close" href="#")
+a.prev(href="#")
+  i
+a.next(href="#")
+  i
+a.close(href="#")
+  i
 
 div.panel
   div.gallery
@@ -20,9 +20,10 @@ div.panel
         span= model.client
       h4
         strong Type:
-        span= model.type_id
+        span= model.type
 
     != model.description
 
-    a(class="visitsite" href="#")
-    a(class="like" href="#")
+    div.actions
+      a(class="visitsite" href="#") Visite Website
+      a(class="like" href="#") Like

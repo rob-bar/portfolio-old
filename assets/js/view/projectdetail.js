@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['module', 'backbone', 'helper'], function(module, Backbone, helper) {
+  define(['module', 'backbone', 'helper', 'model/project'], function(module, Backbone, helper, Project) {
     var ProjectDetailView, _ref;
     ProjectDetailView = (function(_super) {
       __extends(ProjectDetailView, _super);
@@ -16,15 +16,27 @@
 
       ProjectDetailView.prototype.className = "workdetail";
 
-      ProjectDetailView.prototype.events = {};
+      ProjectDetailView.prototype.events = {
+        "click .close": "close"
+      };
+
+      ProjectDetailView.prototype.initialize = function() {
+        return this.render(new Project());
+      };
 
       ProjectDetailView.prototype.like = function(e) {
         e.preventDefault();
         return $(e.currentTarget).addClass("liked");
       };
 
+      ProjectDetailView.prototype.close = function(e) {
+        e.preventDefault();
+        return this.$el.removeClass("show");
+      };
+
       ProjectDetailView.prototype.render = function(model) {
         this.model = model;
+        console.log(this.model.toJSON());
         this.$el.html(helper.get_template("projectdetail", {
           model: this.model.toJSON()
         }));

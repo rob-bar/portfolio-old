@@ -32,6 +32,7 @@
 +font-face("osl", font-files("OpenSans-Light.woff","OpenSans-Light.ttf","OpenSans-Light.otf","OpenSans-Light.svg"),"OpenSans-Light.eot")
 +font-face("fut", font-files("FuturaStd-CondensedLight.woff","FuturaStd-CondensedLight.ttf","FuturaStd-CondensedLight.otf","FuturaStd-CondensedLight.svg"),"FuturaStd-CondensedLight.eot")
 +font-face("futl", font-files("FuturaStd-Light.woff","FuturaStd-Light.ttf","FuturaStd-Light.otf","FuturaStd-Light.svg"),"FuturaStd-Light.eot")
++font-face("futh", font-files("FuturaStd-Heavy.woff","FuturaStd-Heavy.ttf","FuturaStd-Heavy.otf","FuturaStd-Heavy.svg"),"FuturaStd-Heavy.eot")
 
 /* ====================================================================================================== */
 /* BASE
@@ -407,18 +408,107 @@ nav
 
   .workdetail
     display: none
-    +square(100%)
+    +rect(100%, 630px)
+    +box-sizing(border-box)
     position: absolute
     top: 0
     left: 0
-    padding: 0 5px
 
     &.show
       display: block
 
     .panel
       +square(100%)
+      +box-sizing(border-box)
       background-color: $white
+      top: 40px
+      margin: 1px 0 0 0
+      position: absolute
+      padding: 5px
+
+    aside
+      float: right
+      width: 345px
+      height: 100%
+      position: relative
+
+      .actions
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 100%
+
+        .visitsite
+          +inline-block
+          +box-sizing(border-box)
+          width: 50%
+          background-color: #20a0ce
+          +typo("futh", 15px, #fff)
+          line-height: 15px
+          text-decoration: none
+          text-transform: uppercase
+          text-align: center
+          padding: 15px 0 11px
+          border-right: 2.5px solid #fff
+
+        .like
+          +inline-block
+          +box-sizing(border-box)
+          width: 50%
+          background-color: #db1616
+          +typo("futh", 15px, #fff)
+          line-height: 15px
+          text-decoration: none
+          text-transform: uppercase
+          text-align: center
+          padding: 15px 0 11px
+          border-left: 2.5px solid #fff
+      h3
+        +typo("futh", 34px, #231f20)
+        margin: 15px 0 5px 0
+
+      h4
+        margin: 0
+
+        strong
+          +typo("futh", 18px, #231f20)
+          +inline-block
+
+        span
+          +inline-block
+          margin: 0 5px
+          +typo("futl", 18px, #231f20)
+
+      p
+        +typo("futl", 16px, #231f20)
+
+        strong
+          font-family: "futh"
+          font-weight: normal
+
+        a
+          font-family: "futh"
+          color: #3d47c6
+
+    .gallery
+      width: 910px
+      +box-shadow(rgba(0, 0, 0, 0.3) 0 0 4px 0 inset)
+      height: 100%
+      +inline-block
+
+    .close
+      position: absolute
+      right: 0
+      top: 0
+      background-color: #FFF
+      +square(40px)
+      +box-sizing(border-box)
+      padding: 8px
+
+      i
+        display: block
+        +square(24px)
+        +background(image-url('layout/close.png') center center no-repeat)
 
   #projects, #repos, #pics, #links
     li
