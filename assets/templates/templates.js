@@ -39,7 +39,62 @@ this["JST"]["assets/templates/projectdetail"] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var locals_ = (locals || {}),model = locals_.model;
-buf.push("<a href=\"#\" class=\"prev\"><i></i></a><a href=\"#\" class=\"next\"><i></i></a><a href=\"#\" class=\"close\"><i></i></a><div class=\"panel\"><div class=\"gallery\"><div class=\"media\"></div><div class=\"indic\"></div><a href=\"#\" class=\"tags\"></a><a href=\"#\" class=\"like\">" + (jade.escape(null == (jade.interp = model.likes + " likes") ? "" : jade.interp)) + "</a></div><aside><header><h3>" + (jade.escape(null == (jade.interp = model.name) ? "" : jade.interp)) + "</h3><h4><strong>Client:</strong><span>" + (jade.escape(null == (jade.interp = model.client) ? "" : jade.interp)) + "</span></h4><h4><strong>Type:</strong><span>" + (jade.escape(null == (jade.interp = model.type) ? "" : jade.interp)) + "</span></h4></header>" + (null == (jade.interp = model.description) ? "" : jade.interp) + "<div class=\"actions\"><a href=\"#\" class=\"visitsite\">Visite Website</a><a href=\"#\" class=\"like\">Like</a></div></aside></div>");;return buf.join("");
+buf.push("<a href=\"#\" class=\"prev\"><i></i></a><a href=\"#\" class=\"next\"><i></i></a><a href=\"#\" class=\"close\"><i></i></a><div class=\"panel\"><div class=\"gallery\"><div class=\"media\">");
+// iterate model.media
+;(function(){
+  var $$obj = model.media;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var media = $$obj[$index];
+
+buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true, false)) + (jade.attr("alt", model.name, true, false)) + "/>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var media = $$obj[$index];
+
+buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true, false)) + (jade.attr("alt", model.name, true, false)) + "/>");
+    }
+
+  }
+}).call(this);
+
+buf.push("<span class=\"shade\"></span></div><ul class=\"pag\">");
+// iterate model.media
+;(function(){
+  var $$obj = model.media;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var media = $$obj[$index];
+
+buf.push("<li class=\"indic\"><a href=\"#\"></a></li>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var media = $$obj[$index];
+
+buf.push("<li class=\"indic\"><a href=\"#\"></a></li>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul><div class=\"tr\"><a href=\"#\" class=\"tags\"></a><a href=\"#\" class=\"likes\">" + (jade.escape(null == (jade.interp = model.likes + " likes") ? "" : jade.interp)) + "</a></div><div class=\"bl\"><span>" + (jade.escape(null == (jade.interp = model.created_at) ? "" : jade.interp)) + "</span></div></div><aside><header><h3>" + (jade.escape(null == (jade.interp = model.name) ? "" : jade.interp)) + "</h3><h4><strong>Client:</strong><span>" + (jade.escape(null == (jade.interp = model.client) ? "" : jade.interp)) + "</span></h4><h4><strong>Type:</strong><span>" + (jade.escape(null == (jade.interp = model.type) ? "" : jade.interp)) + "</span></h4></header>" + (null == (jade.interp = model.description) ? "" : jade.interp) + "<div class=\"actions\">");
+if ( model.media.preview !== "")
+{
+buf.push("<a target=\"_blank\"" + (jade.attr("href", model.media.preview, true, false)) + " class=\"visitsite\">Visite Website</a><a href=\"#\" class=\"like\">Like</a>");
+}
+else
+{
+buf.push("<a href=\"#\" class=\"like justified\">Like</a>");
+}
+buf.push("</div></aside></div>");;return buf.join("");
 };
 
 this["JST"]["assets/templates/repo"] = function template(locals) {

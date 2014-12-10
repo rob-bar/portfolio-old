@@ -463,6 +463,7 @@ nav
           text-align: center
           padding: 15px 0 11px
           border-left: 2.5px solid #fff
+
       h3
         +typo("futh", 34px, #231f20)
         margin: 15px 0 5px 0
@@ -492,10 +493,42 @@ nav
 
     .gallery
       width: 910px
-      +box-shadow(rgba(0, 0, 0, 0.3) 0 0 4px 0 inset)
       height: 100%
+      position: relative
+      overflow: hidden
       +inline-block
 
+      .shade
+        position: absolute
+        top: 0
+        left: 0
+        +square(100%)
+        +box-shadow(rgba(0, 0, 0, 0.3) 0 0 4px 0 inset)
+
+      .media
+        img
+          height: 620px
+          width: auto
+          position: absolute
+          top: 0
+          left: 50%
+          margin: 0 0 0 -615px
+
+
+      .pag
+        position: relative
+
+      .tr
+        position: absolute
+        top: 0
+        right: 0
+
+        .likes
+
+      .bl
+        position: absolute
+        top: 100%
+        left: 0
     .close
       position: absolute
       right: 0

@@ -1158,15 +1158,45 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
 }
 #main .workdetail .gallery {
   width: 910px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0 inset;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0 inset;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0 inset;
   height: 100%;
+  position: relative;
+  overflow: hidden;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
+}
+#main .workdetail .gallery .shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0 inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0 inset;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0 inset;
+}
+#main .workdetail .gallery .media img {
+  height: 620px;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -615px;
+}
+#main .workdetail .gallery .pag {
+  position: relative;
+}
+#main .workdetail .gallery .tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#main .workdetail .gallery .bl {
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 #main .workdetail .close {
   position: absolute;

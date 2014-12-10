@@ -8,9 +8,21 @@ a.close(href="#")
 div.panel
   div.gallery
     div.media
-    div.indic
-    a(class="tags" href="#")
-    a(class="like" href="#")= model.likes + " likes"
+      each media in model.media
+        img(src="/img/projects/detail/#{media}" alt=model.name)
+      span.shade
+
+    ul.pag
+      each media in model.media
+        li.indic
+          a(href="#")
+
+    div.tr
+      a(class="tags" href="#")
+      a(class="likes" href="#")= model.likes + " likes"
+
+    div.bl
+      span=model.created_at
 
   aside
     header
@@ -25,5 +37,8 @@ div.panel
     != model.description
 
     div.actions
-      a(class="visitsite" href="#") Visite Website
-      a(class="like" href="#") Like
+      if model.media.preview !== ""
+        a(class="visitsite" target="_blank" href=model.media.preview) Visite Website
+        a(class="like" href="#") Like
+      else
+        a(class="like justified" href="#") Like
