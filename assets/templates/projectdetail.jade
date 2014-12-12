@@ -8,37 +8,52 @@ a.close(href="#")
 div.panel
   div.gallery
     div.media
-      each media in model.media
-        img(src="/img/projects/detail/#{media}" alt=model.name)
+      each media, i in project.media.pictures
+        if i === 0
+          img(src="/img/projects/detail/#{media}" alt=project.name).picture
+        else
+          img(src="/img/projects/detail/#{media}" alt=project.name).picture.hidden
+
       span.shade
 
     ul.pag
-      each media in model.media
-        li.indic
-          a(href="#")
+      each media, i in project.media.pictures
+        if i === 0
+          li.indic.active
+            a(href="#")
+              span.normal
+              span.active
+        else
+          li.indic
+            a(href="#")
+              span.normal
+              span.active
 
     div.tr
       a(class="tags" href="#")
-      a(class="likes" href="#")= model.likes + " likes"
+      a(class="likes" href="#")= project.likes + " likes"
 
     div.bl
-      span=model.created_at
+      div.calendar(href="#")
+        span.month= project.month()
+        small.year= project.year()
 
   aside
-    header
-      h3= model.name
-      h4
-        strong Client:
-        span= model.client
-      h4
-        strong Type:
-        span= model.type
+    div.info
+      header
+        h3= project.name
+        h4
+          strong Client:
+          span= project.client
+        h4
+          strong Type:
+          span= project.type
 
-    != model.description
+      != project.description
 
     div.actions
-      if model.media.preview !== ""
-        a(class="visitsite" target="_blank" href=model.media.preview) Visite Website
+      if project.media.preview !== ""
+        a(class="visitsite" target="_blank" href=project.media.preview) Visite Website
         a(class="like" href="#") Like
       else
         a(class="like justified" href="#") Like

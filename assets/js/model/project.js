@@ -12,6 +12,10 @@
         return _ref;
       }
 
+      Project.prototype.relations = {
+        "media": Backbone.Model
+      };
+
       Project.prototype.defaults = {
         _id: 0,
         name: "Unknown Name",
@@ -21,8 +25,20 @@
         created_at: new Date(),
         description: "Unknown description",
         is_active: false,
-        media: {},
-        tags: []
+        media: {
+          thumb: "",
+          big: "",
+          pictures: [],
+          videos: [],
+          preview: ""
+        },
+        tags: [],
+        month: function() {
+          return helper.zero_fill(new Date(this.created_at).getMonth() + 1);
+        },
+        year: function() {
+          return new Date(this.created_at).getFullYear();
+        }
       };
 
       Project.prototype.slug = function() {

@@ -6,6 +6,7 @@
       jquery: 'vendor/jquery',
       underscore: 'vendor/underscore',
       backbone: 'vendor/backbone',
+      backbonenested: 'vendor/backbonenested',
       async: 'vendor/async',
       jade: 'vendor/jade',
       appear: 'vendor/jquery.appear'
@@ -20,6 +21,10 @@
       backbone: {
         deps: ['underscore', 'jquery'],
         exports: 'Backbone'
+      },
+      backbonenested: {
+        deps: ['backbone'],
+        exports: 'Backbonenested'
       },
       appear: {
         deps: ['jquery'],

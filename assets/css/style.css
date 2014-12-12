@@ -1031,6 +1031,7 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 200;
 }
 #main .workdetail.show {
   display: block;
@@ -1058,6 +1059,10 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   bottom: 0;
   right: 0;
   width: 100%;
+  padding: 0 0 0 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #main .workdetail aside .actions .visitsite {
   display: inline-block;
@@ -1068,19 +1073,27 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 50%;
-  background-color: #20a0ce;
+  -moz-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -o-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -webkit-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -webkit-transition-delay: 0ms;
+  transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
   font-family: "futh";
   font-size: 15px;
   color: white;
   font-weight: normal;
   font-style: normal;
+  width: 50%;
+  background-color: #20a0ce;
   line-height: 15px;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
   padding: 15px 0 11px;
   border-right: 2.5px solid white;
+}
+#main .workdetail aside .actions .visitsite:hover, #main .workdetail aside .actions .visitsite.active {
+  background-color: #166d8c;
 }
 #main .workdetail aside .actions .like {
   display: inline-block;
@@ -1104,8 +1117,22 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   text-align: center;
   padding: 15px 0 11px;
   border-left: 2.5px solid white;
+  -moz-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -o-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -webkit-transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -webkit-transition-delay: 0ms;
+  transition: all 700ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
 }
-#main .workdetail aside h3 {
+#main .workdetail aside .actions .like.justified {
+  width: 100%;
+}
+#main .workdetail aside .actions .like:hover, #main .workdetail aside .actions .like.active {
+  background-color: #950f0f;
+}
+#main .workdetail aside .info {
+  padding: 0 5px 0 20px;
+}
+#main .workdetail aside .info h3 {
   font-family: "futh";
   font-size: 34px;
   color: #231f20;
@@ -1113,10 +1140,10 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   font-style: normal;
   margin: 15px 0 5px 0;
 }
-#main .workdetail aside h4 {
+#main .workdetail aside .info h4 {
   margin: 0;
 }
-#main .workdetail aside h4 strong {
+#main .workdetail aside .info h4 strong {
   font-family: "futh";
   font-size: 18px;
   color: #231f20;
@@ -1128,7 +1155,7 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   *zoom: 1;
   *display: inline;
 }
-#main .workdetail aside h4 span {
+#main .workdetail aside .info h4 span {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -1141,23 +1168,22 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   font-weight: normal;
   font-style: normal;
 }
-#main .workdetail aside p {
+#main .workdetail aside .info p {
   font-family: "futl";
   font-size: 16px;
   color: #231f20;
   font-weight: normal;
   font-style: normal;
 }
-#main .workdetail aside p strong {
+#main .workdetail aside .info p strong {
   font-family: "futh";
   font-weight: normal;
 }
-#main .workdetail aside p a {
+#main .workdetail aside .info p a {
   font-family: "futh";
   color: #3d47c6;
 }
 #main .workdetail .gallery {
-  width: 910px;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -1166,6 +1192,7 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
+  background-color: #636777;
 }
 #main .workdetail .gallery .shade {
   position: absolute;
@@ -1186,17 +1213,174 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   margin: 0 0 0 -615px;
 }
 #main .workdetail .gallery .pag {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  margin: 0 0 25px 0;
+}
+#main .workdetail .gallery .pag .indic {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  margin: 0 15px;
+  -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -webkit-transition-delay: 0ms;
+  transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+}
+#main .workdetail .gallery .pag .indic.active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+#main .workdetail .gallery .pag .indic.active a .normal {
+  -moz-transform: scale(0.4, 0.4);
+  -ms-transform: scale(0.4, 0.4);
+  -webkit-transform: scale(0.4, 0.4);
+  transform: scale(0.4, 0.4);
+}
+#main .workdetail .gallery .pag .indic.active a .active {
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 2px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 2px;
+}
+#main .workdetail .gallery .pag .indic:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+#main .workdetail .gallery .pag .indic a {
+  outline: none;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  text-decoration: none;
   position: relative;
+  width: 16px;
+  height: 16px;
+}
+#main .workdetail .gallery .pag .indic a .normal {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 16px;
+  height: 16px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background-color: white;
+  -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -webkit-transition-delay: 0ms;
+  transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+}
+#main .workdetail .gallery .pag .indic a .active {
+  position: absolute;
+  top: -2px;
+  left: 6px;
+  border: 2px solid white;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 16px;
+  height: 16px;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -webkit-transition-delay: 0ms;
+  transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+  -moz-box-shadow: transparent 0 0 0;
+  -webkit-box-shadow: transparent 0 0 0;
+  box-shadow: transparent 0 0 0;
 }
 #main .workdetail .gallery .tr {
   position: absolute;
   top: 0;
   right: 0;
+  margin: 10px 15px;
+}
+#main .workdetail .gallery .tr .likes {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+  font-family: arial;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
 }
 #main .workdetail .gallery .bl {
   position: absolute;
-  top: 100%;
+  bottom: 0;
   left: 0;
+  margin: 10px;
+}
+#main .workdetail .gallery .bl .calendar {
+  width: 48px;
+  height: 51px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  background: url('../img/svg/calendar.svg?1418300972') center center no-repeat;
+  text-align: center;
+  -webkit-filter: drop-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px);
+}
+#main .workdetail .gallery .bl .calendar span {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+#main .workdetail .gallery .bl .calendar .month {
+  font-family: "futh";
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 16px;
+  margin: 18px 0 0 0;
+}
+#main .workdetail .gallery .bl .calendar .year {
+  font-family: "futh";
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
+  font-style: normal;
 }
 #main .workdetail .close {
   position: absolute;
@@ -1658,39 +1842,87 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   #main {
     width: 320px;
   }
+  #main .workdetail aside {
+    width: 360px;
+  }
+  #main .workdetail .gallery {
+    width: -50px;
+  }
 }
 @media screen and (min-width: 640px) {
   #main {
     width: 640px;
+  }
+  #main .workdetail aside {
+    width: 360px;
+  }
+  #main .workdetail .gallery {
+    width: 270px;
   }
 }
 @media screen and (min-width: 960px) {
   #main {
     width: 960px;
   }
+  #main .workdetail aside {
+    width: 360px;
+  }
+  #main .workdetail .gallery {
+    width: 590px;
+  }
 }
 @media screen and (min-width: 1280px) {
   #main {
     width: 1280px;
+  }
+  #main .workdetail aside {
+    width: 360px;
+  }
+  #main .workdetail .gallery {
+    width: 910px;
   }
 }
 @media screen and (min-width: 1600px) {
   #main {
     width: 1600px;
   }
+  #main .workdetail aside {
+    width: 360px;
+  }
+  #main .workdetail .gallery {
+    width: 1230px;
+  }
 }
 @media screen and (min-width: 1920px) {
   #main {
     width: 1920px;
+  }
+  #main .workdetail aside {
+    width: 360px;
+  }
+  #main .workdetail .gallery {
+    width: 1550px;
   }
 }
 @media screen and (min-width: 2240px) {
   #main {
     width: 2240px;
   }
+  #main .workdetail aside {
+    width: 360px;
+  }
+  #main .workdetail .gallery {
+    width: 1870px;
+  }
 }
 @media screen and (min-width: 2560px) {
   #main {
     width: 2560px;
+  }
+  #main .workdetail aside {
+    width: 360px;
+  }
+  #main .workdetail .gallery {
+    width: 2190px;
   }
 }

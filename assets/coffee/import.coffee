@@ -18,7 +18,7 @@ projects = [
 </p>
 <p>
   We chose to separate the data with a rest service <a href='http://fuelphp.com/' target='_blank'>Fuelphp</a> and to work with <a href='http://backbonejs.org/' target='_blank'>Backbone.js</a> on the front-end.
-  This gave us the ability to separate the <pr></pr>oject better in nicely <strong>encapsulated</strong> layers.
+  This gave us the ability to separate the project in nicely <strong>encapsulated</strong> layers.
 </p>
 <p>
   You should <a href='http://bestnetwork.be/' target='_blank'>try it out</a>.
@@ -420,17 +420,21 @@ projects = [
   created_at: new Date(2013, 7, 25)
   description: "
 <p>
-  This was a project that was a restyling of the old website for <strong>Mercedes</strong> freemind.
+  This was a project that was a restyling of the old <strong>Mercedes freemind</strong> website.
+</p>
+<p>
   The website is meant for the owners of a <strong>Mercedes</strong> car who want to
   calculate and review their maintenance program for their car.
 </p>
 <p>
-  The project was a ASP.net port to <a href='http://fuelphp.com/' target='_blank'>fuelphp</a>, an old Webservices
-  is still beeing used for sending the emails and doing some of the calculations.
+  This project was an ASP.net port to <a href='http://fuelphp.com/' target='_blank'>fuelphp</a>, some old webservices
+  are still beeing used for sending the emails and doing some of the calculations.
 </p>
 <p>
   The website is responsive and accessible for <strong>tablet</strong> and <strong>mobile</strong> device.
-  Main challenges were the components and responsiveness of the website,
+</p>
+<p>
+  For me, the main challenges were the components and responsiveness of the website,
   because this was a decision that was made later on in the project.
 </p>
 <p>

@@ -10,6 +10,7 @@ define [
     className: "workdetail"
     events:
       "click .close": "close"
+      "click .indic": "change_slide"
 
     initialize: ->
       @render(new Project())
@@ -22,12 +23,19 @@ define [
       e.preventDefault()
       @$el.removeClass "show"
 
+    change_slide: (e) ->
+      e.preventDefault()
+      $(e.currentTarget).toggleClass "active"
+      $(e.currentTarget).siblings().removeClass "active"
+
+      picture = @$el.find(".picture").eq $(e.currentTarget).index()
+      picture.toggleClass "hidden"
+      picture.siblings(".picture").addClass "hidden"
+
     render: (model) ->
       @model = model
-      console.log @model.toJSON()
-      @$el.html helper.get_template "projectdetail", model: @model.toJSON()
+      @$el.html helper.get_template "projectdetail", project: @model.attributes
       @$el.addClass "show"
-
       @
 
 

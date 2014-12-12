@@ -20,6 +20,10 @@ define ['module', 'jquery', 'backbone', '../templates/templates'],
     animation_delay: (index)->
       ((index * 100) / @animation_factor()) * 100
 
+    zero_fill: (i) ->
+      ret = if (i < 10) then '0' else ''
+      ret + i
+
     in_view_port: (el) ->
       rect = el.getBoundingClientRect()
       return ( rect.top >= 0 and rect.left >= 0 and (rect.top + ((rect.bottom - rect.top) * .25)) <= (window.innerHeight || document.documentElement.clientHeight) and rect.right <= (window.innerWidth || document.documentElement.clientWidth))

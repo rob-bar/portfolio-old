@@ -21,6 +21,11 @@
       animation_delay: function(index) {
         return ((index * 100) / this.animation_factor()) * 100;
       },
+      zero_fill: function(i) {
+        var ret;
+        ret = i < 10 ? '0' : '';
+        return ret + i;
+      },
       in_view_port: function(el) {
         var rect;
         rect = el.getBoundingClientRect();

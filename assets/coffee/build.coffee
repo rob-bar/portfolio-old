@@ -5,6 +5,7 @@ require.config
     jquery: 'vendor/jquery'
     underscore: 'vendor/underscore'
     backbone: 'vendor/backbone'
+    backbonenested: 'vendor/backbonenested'
     async: 'vendor/async'
     jade: 'vendor/jade'
     appear: 'vendor/jquery.appear'
@@ -16,6 +17,9 @@ require.config
     backbone:
       deps: ['underscore', 'jquery']
       exports: 'Backbone'
+    backbonenested:
+      deps: ['backbone']
+      exports: 'Backbonenested'
     appear:
       deps: ['jquery']
       exports: 'jQuery.fn.appear'

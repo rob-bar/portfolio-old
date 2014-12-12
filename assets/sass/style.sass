@@ -413,6 +413,7 @@ nav
     position: absolute
     top: 0
     left: 0
+    z-index: 200
 
     &.show
       display: block
@@ -437,19 +438,27 @@ nav
         bottom: 0
         right: 0
         width: 100%
+        padding: 0 0 0 5px
+        +box-sizing(border-box)
 
         .visitsite
           +inline-block
           +box-sizing(border-box)
+          +ceaser-transition(all, 700ms, $easeOutExpo)
+          +typo("futh", 15px, #fff)
           width: 50%
           background-color: #20a0ce
-          +typo("futh", 15px, #fff)
           line-height: 15px
           text-decoration: none
           text-transform: uppercase
           text-align: center
           padding: 15px 0 11px
           border-right: 2.5px solid #fff
+
+
+          &:hover,
+          &.active,
+            background-color: darken(#20a0ce, 15%)
 
         .like
           +inline-block
@@ -463,40 +472,52 @@ nav
           text-align: center
           padding: 15px 0 11px
           border-left: 2.5px solid #fff
+          +ceaser-transition(all, 700ms, $easeOutExpo)
 
-      h3
-        +typo("futh", 34px, #231f20)
-        margin: 15px 0 5px 0
+          &.justified
+            width: 100%
 
-      h4
-        margin: 0
+          &:hover,
+          &.active,
+            background-color: darken(#db1616, 15%)
 
-        strong
-          +typo("futh", 18px, #231f20)
-          +inline-block
+      .info
+        padding: 0 5px 0 20px
 
-        span
-          +inline-block
-          margin: 0 5px
-          +typo("futl", 18px, #231f20)
+        h3
+          +typo("futh", 34px, #231f20)
+          margin: 15px 0 5px 0
 
-      p
-        +typo("futl", 16px, #231f20)
+        h4
+          margin: 0
 
-        strong
-          font-family: "futh"
-          font-weight: normal
+          strong
+            +typo("futh", 18px, #231f20)
+            +inline-block
 
-        a
-          font-family: "futh"
-          color: #3d47c6
+          span
+            +inline-block
+            margin: 0 5px
+            +typo("futl", 18px, #231f20)
+
+        p
+          +typo("futl", 16px, #231f20)
+
+          strong
+            font-family: "futh"
+            font-weight: normal
+
+          a
+            font-family: "futh"
+            color: #3d47c6
 
     .gallery
-      width: 910px
+      // width: 910px
       height: 100%
       position: relative
       overflow: hidden
       +inline-block
+      background-color: #636777
 
       .shade
         position: absolute
@@ -514,21 +535,100 @@ nav
           left: 50%
           margin: 0 0 0 -615px
 
-
       .pag
-        position: relative
+        position: absolute
+        width: 100%
+        text-align: center
+        bottom: 0
+        margin: 0 0 25px 0
+
+        .indic
+          list-style-type: none
+          +inline-block
+          +opacity(.6)
+          margin: 0 15px
+          +ceaser-transition(all, 500ms, $easeOutExpo)
+
+          &.active
+            +opacity(1)
+
+            a
+
+              .normal
+                +scale(.4, .4)
+
+              .active
+                +scale(1, 1)
+                +box-shadow(rgba($black, 0.3) 1px 1px 2px)
+
+          &:hover
+            +opacity(1)
+
+          a
+            outline: none
+            +square(100%)
+            +inline-block
+            text-decoration: none
+            position: relative
+            +square(16px)
+
+            .normal
+              position: absolute
+              +inline-block
+              +square(16px)
+              +border-radius(8px)
+              background-color: $white
+              +ceaser-transition(all, 500ms, $easeOutExpo)
+
+            .active
+              position: absolute
+              top: -2px
+              left: 6px
+              border: 2px solid $white
+              +inline-block
+              +square(16px)
+              +scale(0, 0)
+              +border-radius(10px)
+              +ceaser-transition(all, 500ms, $easeOutExpo)
+              +box-shadow(rgba($black, 0) 0 0 0)
 
       .tr
         position: absolute
         top: 0
         right: 0
+        margin: 10px 15px
 
         .likes
+          +inline-block
+          +single-text-shadow(1px, 1px, 2px, 0, rgba($black, 0.3))
+          +typo(arial, 16px, $white, bold)
+          text-decoration: none
+
 
       .bl
         position: absolute
-        top: 100%
+        bottom: 0
         left: 0
+        margin: 10px
+
+        .calendar
+          +rect(48px, 51px)
+          +inline-block
+          +background(image-url('svg/calendar.svg') center center no-repeat)
+          text-align: center
+          +filter(drop-shadow(rgba($black, 0.3) 1px 1px 2px))
+
+          span
+            +inline-block
+
+          .month
+            +typo("futh", 24px, $black, bold)
+            line-height: 16px
+            margin: 18px 0 0 0
+
+          .year
+            +typo("futh", 12px, $black, bold)
+
     .close
       position: absolute
       right: 0
@@ -821,3 +921,9 @@ nav
   +min-screen(320px * $i)
     #main
       width: 320px * $i
+
+      .workdetail
+        aside
+          width: 360px
+        .gallery
+          width: (320px * $i) - 370px

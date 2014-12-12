@@ -113,7 +113,6 @@ exports.rest =
 
   works: (req, res) ->
     projects.data.sorted (works) ->
-      # works = _.sortBy works, (result) -> moment(result.created_at).valueOf()
       res.json works
 
   socials: (req, res) ->

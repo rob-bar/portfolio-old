@@ -17,7 +17,8 @@
       ProjectDetailView.prototype.className = "workdetail";
 
       ProjectDetailView.prototype.events = {
-        "click .close": "close"
+        "click .close": "close",
+        "click .indic": "change_slide"
       };
 
       ProjectDetailView.prototype.initialize = function() {
@@ -34,11 +35,20 @@
         return this.$el.removeClass("show");
       };
 
+      ProjectDetailView.prototype.change_slide = function(e) {
+        var picture;
+        e.preventDefault();
+        $(e.currentTarget).toggleClass("active");
+        $(e.currentTarget).siblings().removeClass("active");
+        picture = this.$el.find(".picture").eq($(e.currentTarget).index());
+        picture.toggleClass("hidden");
+        return picture.siblings(".picture").addClass("hidden");
+      };
+
       ProjectDetailView.prototype.render = function(model) {
         this.model = model;
-        console.log(this.model.toJSON());
         this.$el.html(helper.get_template("projectdetail", {
-          model: this.model.toJSON()
+          project: this.model.attributes
         }));
         this.$el.addClass("show");
         return this;

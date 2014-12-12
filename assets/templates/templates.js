@@ -38,57 +38,85 @@ buf.push("<img src=\"/img/layout/shade-310.png\" alt=\"shade\" class=\"shade\"/>
 this["JST"]["assets/templates/projectdetail"] = function template(locals) {
 var buf = [];
 var jade_mixins = {};
-var locals_ = (locals || {}),model = locals_.model;
+var locals_ = (locals || {}),project = locals_.project;
 buf.push("<a href=\"#\" class=\"prev\"><i></i></a><a href=\"#\" class=\"next\"><i></i></a><a href=\"#\" class=\"close\"><i></i></a><div class=\"panel\"><div class=\"gallery\"><div class=\"media\">");
-// iterate model.media
+// iterate project.media.pictures
 ;(function(){
-  var $$obj = model.media;
+  var $$obj = project.media.pictures;
   if ('number' == typeof $$obj.length) {
 
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var media = $$obj[$index];
+    for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+      var media = $$obj[i];
 
-buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true, false)) + (jade.attr("alt", model.name, true, false)) + "/>");
+if ( i === 0)
+{
+buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true, false)) + (jade.attr("alt", project.name, true, false)) + " class=\"picture\"/>");
+}
+else
+{
+buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true, false)) + (jade.attr("alt", project.name, true, false)) + " class=\"picture hidden\"/>");
+}
     }
 
   } else {
     var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      var media = $$obj[$index];
+    for (var i in $$obj) {
+      $$l++;      var media = $$obj[i];
 
-buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true, false)) + (jade.attr("alt", model.name, true, false)) + "/>");
+if ( i === 0)
+{
+buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true, false)) + (jade.attr("alt", project.name, true, false)) + " class=\"picture\"/>");
+}
+else
+{
+buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true, false)) + (jade.attr("alt", project.name, true, false)) + " class=\"picture hidden\"/>");
+}
     }
 
   }
 }).call(this);
 
 buf.push("<span class=\"shade\"></span></div><ul class=\"pag\">");
-// iterate model.media
+// iterate project.media.pictures
 ;(function(){
-  var $$obj = model.media;
+  var $$obj = project.media.pictures;
   if ('number' == typeof $$obj.length) {
 
-    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-      var media = $$obj[$index];
+    for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+      var media = $$obj[i];
 
-buf.push("<li class=\"indic\"><a href=\"#\"></a></li>");
+if ( i === 0)
+{
+buf.push("<li class=\"indic active\"><a href=\"#\"><span class=\"normal\"></span><span class=\"active\"></span></a></li>");
+}
+else
+{
+buf.push("<li class=\"indic\"><a href=\"#\"><span class=\"normal\"></span><span class=\"active\"></span></a></li>");
+}
     }
 
   } else {
     var $$l = 0;
-    for (var $index in $$obj) {
-      $$l++;      var media = $$obj[$index];
+    for (var i in $$obj) {
+      $$l++;      var media = $$obj[i];
 
-buf.push("<li class=\"indic\"><a href=\"#\"></a></li>");
+if ( i === 0)
+{
+buf.push("<li class=\"indic active\"><a href=\"#\"><span class=\"normal\"></span><span class=\"active\"></span></a></li>");
+}
+else
+{
+buf.push("<li class=\"indic\"><a href=\"#\"><span class=\"normal\"></span><span class=\"active\"></span></a></li>");
+}
     }
 
   }
 }).call(this);
 
-buf.push("</ul><div class=\"tr\"><a href=\"#\" class=\"tags\"></a><a href=\"#\" class=\"likes\">" + (jade.escape(null == (jade.interp = model.likes + " likes") ? "" : jade.interp)) + "</a></div><div class=\"bl\"><span>" + (jade.escape(null == (jade.interp = model.created_at) ? "" : jade.interp)) + "</span></div></div><aside><header><h3>" + (jade.escape(null == (jade.interp = model.name) ? "" : jade.interp)) + "</h3><h4><strong>Client:</strong><span>" + (jade.escape(null == (jade.interp = model.client) ? "" : jade.interp)) + "</span></h4><h4><strong>Type:</strong><span>" + (jade.escape(null == (jade.interp = model.type) ? "" : jade.interp)) + "</span></h4></header>" + (null == (jade.interp = model.description) ? "" : jade.interp) + "<div class=\"actions\">");
-if ( model.media.preview !== "")
+buf.push("</ul><div class=\"tr\"><a href=\"#\" class=\"tags\"></a><a href=\"#\" class=\"likes\">" + (jade.escape(null == (jade.interp = project.likes + " likes") ? "" : jade.interp)) + "</a></div><div class=\"bl\"><div href=\"#\" class=\"calendar\"><span class=\"month\">" + (jade.escape(null == (jade.interp = project.month()) ? "" : jade.interp)) + "</span><small class=\"year\">" + (jade.escape(null == (jade.interp = project.year()) ? "" : jade.interp)) + "</small></div></div></div><aside><div class=\"info\"><header><h3>" + (jade.escape(null == (jade.interp = project.name) ? "" : jade.interp)) + "</h3><h4><strong>Client:</strong><span>" + (jade.escape(null == (jade.interp = project.client) ? "" : jade.interp)) + "</span></h4><h4><strong>Type:</strong><span>" + (jade.escape(null == (jade.interp = project.type) ? "" : jade.interp)) + "</span></h4></header>" + (null == (jade.interp = project.description) ? "" : jade.interp) + "</div><div class=\"actions\">");
+if ( project.media.preview !== "")
 {
-buf.push("<a target=\"_blank\"" + (jade.attr("href", model.media.preview, true, false)) + " class=\"visitsite\">Visite Website</a><a href=\"#\" class=\"like\">Like</a>");
+buf.push("<a target=\"_blank\"" + (jade.attr("href", project.media.preview, true, false)) + " class=\"visitsite\">Visite Website</a><a href=\"#\" class=\"like\">Like</a>");
 }
 else
 {
