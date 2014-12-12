@@ -27,6 +27,11 @@ define [
       tags: []
       month: -> helper.zero_fill(new Date(@created_at).getMonth() + 1)
       year: -> new Date(@created_at).getFullYear()
+      liketext: ->
+        if @likes == 1
+          return @likes + " like"
+        else
+          return @likes + " likes"
 
     slug: ->
       @get("name")

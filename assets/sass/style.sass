@@ -297,7 +297,7 @@ nav
       +square($rect)
 
       .shade
-        bottom: -14px
+        bottom: -14px !important
 
     .cv
       +translate3d(0, 0, 0)
@@ -598,11 +598,34 @@ nav
         right: 0
         margin: 10px 15px
 
+        .tags
+          +inline-block
+          +rect(28px, 28px)
+          +background(image-url('svg/tag-stroke.svg') center center no-repeat)
+          +filter(drop-shadow(rgba($black, 0.3) 1px 1px 2px))
+          text-decoration: none
+          margin: 0 5px
+
+          &:hover
+            +background(image-url('svg/tag-full.svg') center center no-repeat)
+
+        .like
+          +inline-block
+          +rect(32px, 28px)
+          +background(image-url('svg/heart-stroke.svg') center center no-repeat)
+          +filter(drop-shadow(rgba($black, 0.3) 1px 1px 2px))
+          text-decoration: none
+          margin: 0 5px
+
+          &:hover
+            +background(image-url('svg/heart-full.svg') center center no-repeat)
+
         .likes
           +inline-block
           +single-text-shadow(1px, 1px, 2px, 0, rgba($black, 0.3))
           +typo(arial, 16px, $white, bold)
           text-decoration: none
+          margin: 0 5px
 
 
       .bl
@@ -821,6 +844,9 @@ nav
         +ceaser-transition(all, $animtime, $easeOutExpo)
 
   .pic
+    .shade
+      bottom: -14px !important
+
     a
       +square($rect)
       overflow: hidden

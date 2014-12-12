@@ -30,8 +30,9 @@ div.panel
               span.active
 
     div.tr
-      a(class="tags" href="#")
-      a(class="likes" href="#")= project.likes + " likes"
+      a(href="#").tags
+      a(href="#").like
+      span.likes= project.liketext()
 
     div.bl
       div.calendar(href="#")

@@ -853,7 +853,7 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   height: 150px;
 }
 #main #me .pic .shade {
-  bottom: -14px;
+  bottom: -14px !important;
 }
 #main #me .cv {
   -moz-transform: translate3d(0, 0, 0);
@@ -1325,6 +1325,40 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   right: 0;
   margin: 10px 15px;
 }
+#main .workdetail .gallery .tr .tags {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 28px;
+  height: 28px;
+  background: url('../img/svg/tag-stroke.svg?1418395802') center center no-repeat;
+  -webkit-filter: drop-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px);
+  text-decoration: none;
+  margin: 0 5px;
+}
+#main .workdetail .gallery .tr .tags:hover {
+  background: url('../img/svg/tag-full.svg?1418395859') center center no-repeat;
+}
+#main .workdetail .gallery .tr .like {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 32px;
+  height: 28px;
+  background: url('../img/svg/heart-stroke.svg?1418395579') center center no-repeat;
+  -webkit-filter: drop-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px);
+  text-decoration: none;
+  margin: 0 5px;
+}
+#main .workdetail .gallery .tr .like:hover {
+  background: url('../img/svg/heart-full.svg?1418395642') center center no-repeat;
+}
 #main .workdetail .gallery .tr .likes {
   display: inline-block;
   vertical-align: middle;
@@ -1339,6 +1373,7 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   font-weight: bold;
   font-style: normal;
   text-decoration: none;
+  margin: 0 5px;
 }
 #main .workdetail .gallery .bl {
   position: absolute;
@@ -1693,6 +1728,9 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   -webkit-transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
   -webkit-transition-delay: 0ms;
   transition: all 400ms cubic-bezier(0.190, 1.000, 0.220, 1.000) 0ms;
+}
+#main .pic .shade {
+  bottom: -14px !important;
 }
 #main .pic a {
   width: 150px;

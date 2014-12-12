@@ -3,7 +3,7 @@ projects = [
   name: "Bestnetwork"
   client: "Proximus"
   type_id: "website"
-  likes: 14
+  likes: 5
   created_at: new Date(2013, 3, 22)
   description: "
 <p>
@@ -71,7 +71,7 @@ projects = [
   name: "Spectre facebook website"
   client: "Hp"
   type_id: "website"
-  likes: 0
+  likes: 1
   created_at: new Date(2012, 5, 12)
   description: "
 <p>
@@ -89,7 +89,7 @@ projects = [
   to give it a little touch. The website was also for a big part a SPA.
 </p>
 <p>
-  The project is off-line.
+  The project is <strong>off-line</strong>.
 </p>
 "
   is_active: true
@@ -105,7 +105,7 @@ projects = [
   name: "Canvas Snake"
   client: "No client, just for fun"
   type_id: "game"
-  likes: 0
+  likes: 5
   created_at: new Date(2012, 2, 5)
   description: "
 <p>
@@ -160,6 +160,9 @@ projects = [
   you <strong>upload</strong> or <strong>take a picture</strong> and then <strong>draw funny things </strong>around your picture.
   This was one of them.
 </p>
+<p>
+  The project is <strong>off-line</strong>.
+</p>
 "
   is_active: true
   media:
@@ -201,63 +204,32 @@ projects = [
     pictures: []
     videos: []
     preview: "http://games.robbiebardijn.be/games/asteroids"
-  tags: []
+  tags: ["game", "canvas", "javascript", "php", "css3", "html5"]
   }
   {
-  name: "Polygone DN"
-  client: ""
+  name: "Happy 2011"
+  client: "Polygone"
   type_id: "website"
-  likes: 0
-  created_at: new Date(2010, 11, 1)
-  description: ""
-  is_active: true
-  media:
-    thumb: "polygone-dn.jpg"
-    big: "polygone-dn.jpg"
-    pictures: []
-    videos: []
-    preview: ""
-  tags: []
-  }
-  {
-  name: "Ta tronche sur un abribus"
-  client: ""
-  type_id: "website"
-  likes: 0
-  created_at: new Date(2011, 0, 14)
-  description: ""
-  is_active: true
-  media:
-    thumb: "allotelecom-tatronche.jpg"
-    big: "allotelecom-tatronche.jpg"
-    pictures: []
-    videos: []
-    preview: ""
-  tags: []
-  }
-  {
-  name: "Viage launch"
-  client: ""
-  type_id: "website"
-  likes: 0
-  created_at: new Date(2010, 8, 22)
-  description: ""
-  is_active: true
-  media:
-    thumb: "viage-viage.jpg"
-    big: "viage-viage.jpg"
-    pictures: []
-    videos: []
-    preview: ""
-  tags: []
-  }
-  {
-  name: "Polygone Newyear"
-  client: ""
-  type_id: "website"
-  likes: 0
+  likes: 2
   created_at: new Date(2011, 11, 20)
-  description: ""
+  description: "
+<p>
+  This projects was assigned to me,
+  because I was the most skilled Flash person at Polygone.
+</p>
+<p>
+  I think this was my <strong>last Flash project ever</strong>.
+  Time to say good by and move on.
+  Me and flash had a good run.
+</p>
+<p>
+  The project itself was a <strong>digital greetings card</strong>,
+  to wish somebody a merry christmas and happy New year.
+</p>
+<p>
+  I reviewed it <a href='#' target='_blank'>here</a> for fun.
+</p>
+"
   is_active: true
   media:
     thumb: "polygone-newyear.jpg"
@@ -302,11 +274,28 @@ projects = [
   }
   {
   name: "Cecemel Winteractie"
-  client: ""
+  client: "Cecemel"
   type_id: "website"
-  likes: 0
+  likes: 4
   created_at: new Date(2012, 8, 5)
-  description: ""
+  description: "
+<p>
+  The Cecemel winter action was a project where you could simply exchange
+  your coupon to win some cool prices, with an additional registration flow within the website.
+</p>
+<p>
+  This project was made by Jonathan Pardon and myself.
+  I took the front-end and delivered the pages separately to
+  Jonathan so he could couple them to the database.
+</p>
+<p>
+  The main challenges for me were the <strong>animations on the intro</strong>,
+  and the <strong>parallax effect</strong> when you move the mouse.
+</p>
+<p>
+  Feel free to <a href='http://cecemel.be/winteractie/' target='_blank'>visit the website</a>.
+</p>
+"
   is_active: true
   media:
     thumb: "cecemel-winteraction.jpg"
@@ -318,11 +307,27 @@ projects = [
   }
   {
   name: "Stalion BSF"
-  client: ""
+  client: "Stalion"
   type_id: "video"
-  likes: 0
+  likes: 4
   created_at: new Date(2012, 2, 11)
-  description: ""
+  description: "
+<p>
+  This was my final project for Polygone, now <a href='http://the-manifest.be' target='_blank'>The manifest</a>.
+  Together with Mehdi Djebali, I made this movie in after effects.
+</p>
+<p>
+  It was a promotional video for Stalions exposition,
+  explaining how the product works and how the customers should use it.
+</p>
+<p>
+  I enjoyed making this project because it was a little special,
+  and for one time something <strong>different than code</strong>.
+</p>
+<p>
+  You can also watch it on <a href='#' target='_blank'>Youtube</a>.
+</p>
+"
   is_active: true
   media:
     thumb: "stalion-bsf.jpg"
@@ -330,15 +335,31 @@ projects = [
     pictures: []
     videos: []
     preview: ""
-  tags: []
+  tags: ["video", "youtube", "after effects"]
   }
   {
   name: "Sappicup"
   client: "Sappi"
   type_id: "website"
-  likes: 0
+  likes: 1
   created_at: new Date(2012, 2, 28)
-  description: ""
+  description: "
+<p>
+  This was my first <strong>BBDO</strong> project, It was kinda fun to do because it
+  was a simple website, the main idea was to get to know the company and the way the people at <strong>BBDO</strong> were working.
+</p>
+<p>
+  The project itself was a leader board for a table football game competition.
+  Player profiles and score submission were integrated.
+</p>
+<p>
+  My first experience with the <a href='http://limonade-php.github.io/' target='_blank'>limonade php</a> framework,
+  some <a href='http://lesscss.org/' target='_blank'>Less</a> preprocessing and ajax calls went quite good and smooth.
+</p>
+<p>
+  The project is now <strong>off-line</strong>.
+</p>
+"
   is_active: true
   media:
     thumb: "sappi-sappicup.jpg"
@@ -346,15 +367,28 @@ projects = [
     pictures: []
     videos: []
     preview: ""
-  tags: []
+  tags: ["php", "less", "html5", "css3", "jquery"]
   }
   {
-  name: "Volvo v40 Landingpage"
-  client: ""
+  name: "Volvo v40"
+  client: "Volvo"
   type_id: "landing page"
-  likes: 0
+  likes: 2
   created_at: new Date(2012, 9, 2)
-  description: ""
+  description: "
+<p>
+  This was one single <strong>multilingual</strong> landing page for the <strong>Volvo v40</strong> car.
+  It was a small and fun project. Build in <strong>2-4days</strong>.
+</p>
+<p>
+  I learned some more <strong>less</strong> syntax during the project and some <strong>css3 transforms</strong>.
+  The javascript for the <strong>slideshow</strong> and the <strong>Youtube iframe player</strong> were fun too.
+  Oh yeah, the <strong>webdesign</strong> was also done by me.
+</p>
+<p>
+  I made a review of this page <a href='#'>here</a>.
+</p>
+"
   is_active: true
   media:
     thumb: "volvo-v40landing.jpg"
@@ -362,31 +396,28 @@ projects = [
     pictures: []
     videos: []
     preview: ""
-  tags: []
-  }
-  {
-  name: "Autosalon"
-  client: ""
-  type_id: "website"
-  likes: 0
-  created_at: new Date(2011, 11, 10)
-  description: ""
-  is_active: true
-  media:
-    thumb: "febiac-autosalon.jpg"
-    big: "febiac-autosalon.jpg"
-    pictures: []
-    videos: []
-    preview: ""
-  tags: []
+  tags: ["php", "less", "html5", "css3", "jquery", "youtube"]
   }
   {
   name: "Eco cheques"
-  client: ""
+  client: "Edenred"
   type_id: "game"
-  likes: 0
+  likes: 2
   created_at: new Date(2011, 8, 1)
-  description: ""
+  description: "
+<p>
+  This was a game developed for <strong>Edenred</strong>, to put on their website.
+  It's a <strong>Flash</strong> game, it has some velocity and gravitation calculations in it.
+</p>
+<p>
+  The goal is to get to the final level without lossing your lives.
+  When you are out of lives the game is over.
+  Its a common <strong>arrow keys</strong> keyboard game.
+</p>
+<p>
+  You can replay this game <a href='#'>here</a>.
+</p>
+"
   is_active: true
   media:
     thumb: "cheques-game.jpg"
@@ -394,23 +425,7 @@ projects = [
     pictures: []
     videos: []
     preview: ""
-  tags: []
-  }
-  {
-  name: "Grill aux bois"
-  client: ""
-  type_id: "website"
-  likes: 0
-  created_at: new Date(2011, 6, 16)
-  description: ""
-  is_active: true
-  media:
-    thumb: "gob-chaud.jpg"
-    big: "gob-chaud.jpg"
-    pictures: []
-    videos: []
-    preview: ""
-  tags: []
+  tags: ["flash", "as", "game"]
   }
   {
   name: "Mercedes freemind"
@@ -483,7 +498,7 @@ projects = [
   media:
     thumb: "champion-rainhunters.jpg"
     big: "champion-rainhunters.jpg"
-    pictures: []
+    pictures: ["championrainhunters-1.jpg", "championrainhunters-2.jpg", "championrainhunters-3.jpg", "championrainhunters-4.jpg", "championrainhunters-5.jpg"]
     videos: []
     preview: "http://championrainhunters.com/"
   tags: ["requirejs", "fuelphp", "backbone", "grunt", "coffeescript", "html5", "sass"]

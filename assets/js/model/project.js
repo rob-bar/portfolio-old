@@ -38,6 +38,13 @@
         },
         year: function() {
           return new Date(this.created_at).getFullYear();
+        },
+        liketext: function() {
+          if (this.likes === 1) {
+            return this.likes + " like";
+          } else {
+            return this.likes + " likes";
+          }
         }
       };
 
