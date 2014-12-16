@@ -62,7 +62,7 @@ projects = [
   media:
     thumb: "own-tetris.jpg"
     big: "own-tetris.jpg"
-    pictures: []
+    pictures: ["tetris-0.jpg", "tetris-1.jpg", "tetris-2.jpg", "tetris-3.jpg"]
     videos: []
     preview: "http://games.robbiebardijn.be/tetris"
   tags: ["html5", "css3", "javascript", "jquery", "facebook", "game"]
@@ -96,7 +96,7 @@ projects = [
   media:
     thumb: "hp-spectre.jpg"
     big: "hp-spectre.jpg"
-    pictures: []
+    pictures: ["hpspectre-1.jpg", "hpspectre-2.jpg"]
     videos: []
     preview: ""
   tags: ["php", "javascript", "facebook", "html5", "less", "jquery"]
@@ -134,7 +134,7 @@ projects = [
   media:
     thumb: "own-snake.jpg"
     big: "own-snake.jpg"
-    pictures: []
+    pictures: ["snake-0.jpg", "snake-1.jpg", "snake-2.jpg", "snake-3.jpg", "snake-4.jpg"]
     videos: []
     preview: "http://games.robbiebardijn.be/games/canvassnake"
   tags: ["game", "canvas", "javascript", "php", "css3", "html5"]
@@ -201,7 +201,7 @@ projects = [
   media:
     thumb: "own-asteroids.jpg"
     big: "own-asteroids.jpg"
-    pictures: []
+    pictures: ["asteroids-1.jpg", "asteroids-2.jpg"]
     videos: []
     preview: "http://games.robbiebardijn.be/games/asteroids"
   tags: ["game", "canvas", "javascript", "php", "css3", "html5"]
@@ -267,7 +267,7 @@ projects = [
   media:
     thumb: "scansource-drivee.jpg"
     big: "scansource-drivee.jpg"
-    pictures: []
+    pictures: ["scansource-0.jpg", "scansource-1.jpg", "scansource-2.jpg", "scansource-3.jpg", "scansource-4.jpg"]
     videos: []
     preview: ""
   tags: ["fuelphp", "grunt", "javascript", "html5", "sass", "jquery"]
@@ -300,7 +300,7 @@ projects = [
   media:
     thumb: "cecemel-winteraction.jpg"
     big: "cecemel-winteraction.jpg"
-    pictures: []
+    pictures: ["cecemel-1.jpg", "cecemel-2.jpg"]
     videos: []
     preview: "http://cecemel.be/winteractie/"
   tags: []
@@ -325,7 +325,7 @@ projects = [
   and for one time something <strong>different than code</strong>.
 </p>
 <p>
-  You can also watch it on <a href='#' target='_blank'>Youtube</a>.
+  You can also watch it on <a href='https://www.youtube.com/watch?v=qIObt_jhVSU' target='_blank'>Youtube</a>.
 </p>
 "
   is_active: true
@@ -333,7 +333,7 @@ projects = [
     thumb: "stalion-bsf.jpg"
     big: "stalion-bsf.jpg"
     pictures: []
-    videos: []
+    videos: ["//www.youtube.com/embed/qIObt_jhVSU?showinfo=0&amp;autohide=1"]
     preview: ""
   tags: ["video", "youtube", "after effects"]
   }
@@ -360,11 +360,11 @@ projects = [
   The project is now <strong>off-line</strong>.
 </p>
 "
-  is_active: true
+  is_active: false
   media:
     thumb: "sappi-sappicup.jpg"
     big: "sappi-sappicup.jpg"
-    pictures: []
+    pictures: ["sappicup-1.jpg"]
     videos: []
     preview: ""
   tags: ["php", "less", "html5", "css3", "jquery"]
@@ -389,11 +389,11 @@ projects = [
   I made a review of this page <a href='#'>here</a>.
 </p>
 "
-  is_active: true
+  is_active: false
   media:
     thumb: "volvo-v40landing.jpg"
     big: "volvo-v40landing.jpg"
-    pictures: []
+    pictures: ["volvov40-1.jpg"]
     videos: []
     preview: ""
   tags: ["php", "less", "html5", "css3", "jquery", "youtube"]
@@ -460,7 +460,7 @@ projects = [
   media:
     thumb: "mercedes-freemind.jpg"
     big: "mercedes-freemind.jpg"
-    pictures: []
+    pictures: ["mercedesfreemind-0.jpg", "mercedesfreemind-1.jpg", "mercedesfreemind-2.jpg", "mercedesfreemind-3.jpg",]
     videos: []
     preview: "http://mercedesfreemind.microsite.be/"
   tags: ["fuelphp", "grunt", "javascript", "html5", "sass", "php", "css3"]

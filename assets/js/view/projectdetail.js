@@ -21,9 +21,7 @@
         "click .indic": "change_slide"
       };
 
-      ProjectDetailView.prototype.initialize = function() {
-        return this.render(new Project());
-      };
+      ProjectDetailView.prototype.initialize = function() {};
 
       ProjectDetailView.prototype.like = function(e) {
         e.preventDefault();

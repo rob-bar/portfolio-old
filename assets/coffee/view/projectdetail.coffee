@@ -13,7 +13,7 @@ define [
       "click .indic": "change_slide"
 
     initialize: ->
-      @render(new Project())
+      # @render()
 
     like: (e) ->
       e.preventDefault()

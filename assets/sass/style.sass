@@ -520,6 +520,7 @@ nav
       background-color: #636777
 
       .shade
+        pointer-eventsl
         position: absolute
         top: 0
         left: 0
@@ -527,6 +528,9 @@ nav
         +box-shadow(rgba(0, 0, 0, 0.3) 0 0 4px 0 inset)
 
       .media
+        iframe
+          position: absolute
+
         img
           height: 620px
           width: auto
@@ -922,7 +926,7 @@ nav
   body nav ul#nav li.nav
     display: none
 
-+max-screen(479px)
++max-screen(640px)
   body #main #me .baloon .norm .arrow
     +scale(0)
 

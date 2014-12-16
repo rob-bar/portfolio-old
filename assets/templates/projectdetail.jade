@@ -14,20 +14,24 @@ div.panel
         else
           img(src="/img/projects/detail/#{media}" alt=project.name).picture.hidden
 
+      each video, i in project.media.videos
+        iframe(width="100%", height="100%", src="#{video}", frameborder="0", allowfullscreen)
+
       span.shade
 
     ul.pag
       each media, i in project.media.pictures
-        if i === 0
-          li.indic.active
-            a(href="#")
-              span.normal
-              span.active
-        else
-          li.indic
-            a(href="#")
-              span.normal
-              span.active
+        if project.media.pictures.length > 0
+          if i === 0
+            li.indic.active
+              a(href="#")
+                span.normal
+                span.active
+          else
+            li.indic
+              a(href="#")
+                span.normal
+                span.active
 
     div.tr
       a(href="#").tags

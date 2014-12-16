@@ -1204,6 +1204,9 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px 0 inset;
 }
+#main .workdetail .gallery .media iframe {
+  position: absolute;
+}
 #main .workdetail .gallery .media img {
   height: 620px;
   width: auto;
@@ -1843,7 +1846,7 @@ nav ul#social > li.icon span a, nav ul#social > li.menu span a {
     display: none;
   }
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 640px) {
   body #main #me .baloon .norm .arrow {
     -moz-transform: scale(0, 0);
     -ms-transform: scale(0, 0);

@@ -76,6 +76,28 @@ buf.push("<img" + (jade.attr("src", "/img/projects/detail/" + (media) + "", true
   }
 }).call(this);
 
+// iterate project.media.videos
+;(function(){
+  var $$obj = project.media.videos;
+  if ('number' == typeof $$obj.length) {
+
+    for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+      var video = $$obj[i];
+
+buf.push("<iframe width=\"100%\" height=\"100%\"" + (jade.attr("src", "" + (video) + "", true, false)) + " frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var i in $$obj) {
+      $$l++;      var video = $$obj[i];
+
+buf.push("<iframe width=\"100%\" height=\"100%\"" + (jade.attr("src", "" + (video) + "", true, false)) + " frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>");
+    }
+
+  }
+}).call(this);
+
 buf.push("<span class=\"shade\"></span></div><ul class=\"pag\">");
 // iterate project.media.pictures
 ;(function(){
@@ -85,6 +107,8 @@ buf.push("<span class=\"shade\"></span></div><ul class=\"pag\">");
     for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
       var media = $$obj[i];
 
+if ( project.media.pictures.length > 0)
+{
 if ( i === 0)
 {
 buf.push("<li class=\"indic active\"><a href=\"#\"><span class=\"normal\"></span><span class=\"active\"></span></a></li>");
@@ -92,6 +116,7 @@ buf.push("<li class=\"indic active\"><a href=\"#\"><span class=\"normal\"></span
 else
 {
 buf.push("<li class=\"indic\"><a href=\"#\"><span class=\"normal\"></span><span class=\"active\"></span></a></li>");
+}
 }
     }
 
@@ -100,6 +125,8 @@ buf.push("<li class=\"indic\"><a href=\"#\"><span class=\"normal\"></span><span 
     for (var i in $$obj) {
       $$l++;      var media = $$obj[i];
 
+if ( project.media.pictures.length > 0)
+{
 if ( i === 0)
 {
 buf.push("<li class=\"indic active\"><a href=\"#\"><span class=\"normal\"></span><span class=\"active\"></span></a></li>");
@@ -107,6 +134,7 @@ buf.push("<li class=\"indic active\"><a href=\"#\"><span class=\"normal\"></span
 else
 {
 buf.push("<li class=\"indic\"><a href=\"#\"><span class=\"normal\"></span><span class=\"active\"></span></a></li>");
+}
 }
     }
 

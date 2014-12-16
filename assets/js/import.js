@@ -29,7 +29,7 @@
       media: {
         thumb: "own-tetris.jpg",
         big: "own-tetris.jpg",
-        pictures: [],
+        pictures: ["tetris-0.jpg", "tetris-1.jpg", "tetris-2.jpg", "tetris-3.jpg"],
         videos: [],
         preview: "http://games.robbiebardijn.be/tetris"
       },
@@ -45,7 +45,7 @@
       media: {
         thumb: "hp-spectre.jpg",
         big: "hp-spectre.jpg",
-        pictures: [],
+        pictures: ["hpspectre-1.jpg", "hpspectre-2.jpg"],
         videos: [],
         preview: ""
       },
@@ -61,7 +61,7 @@
       media: {
         thumb: "own-snake.jpg",
         big: "own-snake.jpg",
-        pictures: [],
+        pictures: ["snake-0.jpg", "snake-1.jpg", "snake-2.jpg", "snake-3.jpg", "snake-4.jpg"],
         videos: [],
         preview: "http://games.robbiebardijn.be/games/canvassnake"
       },
@@ -93,7 +93,7 @@
       media: {
         thumb: "own-asteroids.jpg",
         big: "own-asteroids.jpg",
-        pictures: [],
+        pictures: ["asteroids-1.jpg", "asteroids-2.jpg"],
         videos: [],
         preview: "http://games.robbiebardijn.be/games/asteroids"
       },
@@ -125,7 +125,7 @@
       media: {
         thumb: "scansource-drivee.jpg",
         big: "scansource-drivee.jpg",
-        pictures: [],
+        pictures: ["scansource-0.jpg", "scansource-1.jpg", "scansource-2.jpg", "scansource-3.jpg", "scansource-4.jpg"],
         videos: [],
         preview: ""
       },
@@ -141,7 +141,7 @@
       media: {
         thumb: "cecemel-winteraction.jpg",
         big: "cecemel-winteraction.jpg",
-        pictures: [],
+        pictures: ["cecemel-1.jpg", "cecemel-2.jpg"],
         videos: [],
         preview: "http://cecemel.be/winteractie/"
       },
@@ -152,13 +152,13 @@
       type_id: "video",
       likes: 4,
       created_at: new Date(2012, 2, 11),
-      description: "<p>  This was my final project for Polygone, now <a href='http://the-manifest.be' target='_blank'>The manifest</a>.  Together with Mehdi Djebali, I made this movie in after effects.</p><p>  It was a promotional video for Stalions exposition,  explaining how the product works and how the customers should use it.</p><p>  I enjoyed making this project because it was a little special,  and for one time something <strong>different than code</strong>.</p><p>  You can also watch it on <a href='#' target='_blank'>Youtube</a>.</p>",
+      description: "<p>  This was my final project for Polygone, now <a href='http://the-manifest.be' target='_blank'>The manifest</a>.  Together with Mehdi Djebali, I made this movie in after effects.</p><p>  It was a promotional video for Stalions exposition,  explaining how the product works and how the customers should use it.</p><p>  I enjoyed making this project because it was a little special,  and for one time something <strong>different than code</strong>.</p><p>  You can also watch it on <a href='https://www.youtube.com/watch?v=qIObt_jhVSU' target='_blank'>Youtube</a>.</p>",
       is_active: true,
       media: {
         thumb: "stalion-bsf.jpg",
         big: "stalion-bsf.jpg",
         pictures: [],
-        videos: [],
+        videos: ["//www.youtube.com/embed/qIObt_jhVSU?showinfo=0&amp;autohide=1"],
         preview: ""
       },
       tags: ["video", "youtube", "after effects"]
@@ -169,11 +169,11 @@
       likes: 1,
       created_at: new Date(2012, 2, 28),
       description: "<p>  This was my first <strong>BBDO</strong> project, It was kinda fun to do because it  was a simple website, the main idea was to get to know the company and the way the people at <strong>BBDO</strong> were working.</p><p>  The project itself was a leader board for a table football game competition.  Player profiles and score submission were integrated.</p><p>  My first experience with the <a href='http://limonade-php.github.io/' target='_blank'>limonade php</a> framework,  some <a href='http://lesscss.org/' target='_blank'>Less</a> preprocessing and ajax calls went quite good and smooth.</p><p>  The project is now <strong>off-line</strong>.</p>",
-      is_active: true,
+      is_active: false,
       media: {
         thumb: "sappi-sappicup.jpg",
         big: "sappi-sappicup.jpg",
-        pictures: [],
+        pictures: ["sappicup-1.jpg"],
         videos: [],
         preview: ""
       },
@@ -185,11 +185,11 @@
       likes: 2,
       created_at: new Date(2012, 9, 2),
       description: "<p>  This was one single <strong>multilingual</strong> landing page for the <strong>Volvo v40</strong> car.  It was a small and fun project. Build in <strong>2-4days</strong>.</p><p>  I learned some more <strong>less</strong> syntax during the project and some <strong>css3 transforms</strong>.  The javascript for the <strong>slideshow</strong> and the <strong>Youtube iframe player</strong> were fun too.  Oh yeah, the <strong>webdesign</strong> was also done by me.</p><p>  I made a review of this page <a href='#'>here</a>.</p>",
-      is_active: true,
+      is_active: false,
       media: {
         thumb: "volvo-v40landing.jpg",
         big: "volvo-v40landing.jpg",
-        pictures: [],
+        pictures: ["volvov40-1.jpg"],
         videos: [],
         preview: ""
       },
@@ -221,7 +221,7 @@
       media: {
         thumb: "mercedes-freemind.jpg",
         big: "mercedes-freemind.jpg",
-        pictures: [],
+        pictures: ["mercedesfreemind-0.jpg", "mercedesfreemind-1.jpg", "mercedesfreemind-2.jpg", "mercedesfreemind-3.jpg"],
         videos: [],
         preview: "http://mercedesfreemind.microsite.be/"
       },
