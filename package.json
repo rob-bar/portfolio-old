@@ -14,7 +14,7 @@
     "jade": "*",
     "mongoose": "*",
     "async": "*",
-    "grunt": "~0.4.1",
+    "grunt": "~1.5.3",
     "nodemon": "*",
     "underscore": "*",
     "oauth": "*",
